@@ -1,5 +1,5 @@
 # Laboratorio di Applicazioni Mobili
-## Informatica, Università di Bologna
+Informatica, Università di Bologna
 
 # Personal health monitor
 
