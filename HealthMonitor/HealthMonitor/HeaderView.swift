@@ -14,7 +14,7 @@ struct HeaderView: View {
             Button(action: {
                 print("Information")
             }) {
-                Image(systemName: "info.circe").font(.system(size: 24, weight: .regular))
+                Image(systemName: "heart.fill").font(.system(size: 24, weight: .regular))
             }
             .accentColor(Color.primary)
         
@@ -27,7 +27,7 @@ struct HeaderView: View {
             Button(action: {
                 print("Guide")
             }) {
-                Image(systemName: "questionmark.circe").font(.system(size: 24, weight: .regular))
+                Image(systemName: "person.fill").font(.system(size: 24, weight: .regular))
             }
             .accentColor(Color.primary)
         }

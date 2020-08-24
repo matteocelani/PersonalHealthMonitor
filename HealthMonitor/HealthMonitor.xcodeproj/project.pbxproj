@@ -14,6 +14,7 @@
 		0E0D26E7249FAC1E007E5A63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E0D26E6249FAC1E007E5A63 /* Preview Assets.xcassets */; };
 		0E0D26EA249FAC1E007E5A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E0D26E8249FAC1E007E5A63 /* LaunchScreen.storyboard */; };
 		0E1C6F3224F3D386007B5028 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F3124F3D386007B5028 /* HeaderView.swift */; };
+		0E1C6F3624F433E7007B5028 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F3524F433E7007B5028 /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0E0D26E9249FAC1E007E5A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E0D26EB249FAC1E007E5A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1C6F3124F3D386007B5028 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		0E1C6F3524F433E7007B5028 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0E0D26E1249FAC19007E5A63 /* ContentView.swift */,
 				0E0D26E3249FAC1E007E5A63 /* Assets.xcassets */,
 				0E1C6F3124F3D386007B5028 /* HeaderView.swift */,
+				0E1C6F3524F433E7007B5028 /* FooterView.swift */,
 				0E0D26E8249FAC1E007E5A63 /* LaunchScreen.storyboard */,
 				0E0D26EB249FAC1E007E5A63 /* Info.plist */,
 				0E0D26E5249FAC1E007E5A63 /* Preview Content */,
@@ -152,6 +155,7 @@
 				0E0D26DE249FAC19007E5A63 /* AppDelegate.swift in Sources */,
 				0E0D26E0249FAC19007E5A63 /* SceneDelegate.swift in Sources */,
 				0E0D26E2249FAC19007E5A63 /* ContentView.swift in Sources */,
+				0E1C6F3624F433E7007B5028 /* FooterView.swift in Sources */,
 				0E1C6F3224F3D386007B5028 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
