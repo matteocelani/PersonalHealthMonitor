@@ -10,15 +10,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        VStack {
-            HeaderView()
-            
-            Spacer()
-            
-            Text("Hello, World!")
-            
-            Spacer()
+
+            TabView {
+               Summary()
+                 .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("Riepilogo")
+                  }
+                
+                Calendar()
+                .tabItem {
+                   Image(systemName: "calendar")
+                   Text("Calendario")
+                }
+                
+                AddReport()
+                .tabItem {
+                   Image(systemName: "plus")
+                   Text("Nuovo")
+                }
+                
         }
     }
 }
