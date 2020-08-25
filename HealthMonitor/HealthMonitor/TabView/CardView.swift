@@ -11,18 +11,22 @@ import SwiftUI
 
 struct CardView: View {
     
+    //MARK: -PROPERTIES
+    
+    let id = UUID()
+    var insert : Report
     @State var value = ""
-    @State var period = ""
     @State var importance = 2
     
     var body: some View {
         VStack(alignment: .center) {
-            Text("Title Card")
+            Text(insert.title)
                 .font(.title)
             
             
-            TextField(period, text: $value)
+            TextField(insert.description, text: $value)
                 .frame(height: 30.0)
+            
                 .keyboardType(.decimalPad)
                 .background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
                 .cornerRadius(10)
@@ -49,6 +53,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(insert : ReportData[0])
     }
 }

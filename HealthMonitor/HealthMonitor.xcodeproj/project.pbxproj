@@ -17,6 +17,8 @@
 		0E1C6F5A24F564F4007B5028 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F5924F564F4007B5028 /* Calendar.swift */; };
 		0E1C6F5C24F5650D007B5028 /* AddReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F5B24F5650D007B5028 /* AddReport.swift */; };
 		0E8EDD4F24F5714C009A960A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD4E24F5714C009A960A /* CardView.swift */; };
+		0E8EDD5324F5898F009A960A /* ReportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD5224F5898F009A960A /* ReportData.swift */; };
+		0E8EDD5624F58E1C009A960A /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD5524F58E1C009A960A /* ReportModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		0E1C6F5924F564F4007B5028 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		0E1C6F5B24F5650D007B5028 /* AddReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReport.swift; sourceTree = "<group>"; };
 		0E8EDD4E24F5714C009A960A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0E8EDD5224F5898F009A960A /* ReportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportData.swift; sourceTree = "<group>"; };
+		0E8EDD5524F58E1C009A960A /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 		0E0D26DC249FAC19007E5A63 /* HealthMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				0E8EDD5424F58E07009A960A /* Model */,
+				0E8EDD5124F58976009A960A /* Data */,
 				0E1C6F5D24F5655F007B5028 /* TabView */,
 				0E0D26DD249FAC19007E5A63 /* AppDelegate.swift */,
 				0E0D26DF249FAC19007E5A63 /* SceneDelegate.swift */,
@@ -93,6 +99,22 @@
 				0E8EDD4E24F5714C009A960A /* CardView.swift */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		0E8EDD5124F58976009A960A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0E8EDD5224F5898F009A960A /* ReportData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0E8EDD5424F58E07009A960A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E8EDD5524F58E1C009A960A /* ReportModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,10 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E8EDD4F24F5714C009A960A /* CardView.swift in Sources */,
+				0E8EDD5324F5898F009A960A /* ReportData.swift in Sources */,
 				0E0D26DE249FAC19007E5A63 /* AppDelegate.swift in Sources */,
 				0E0D26E0249FAC19007E5A63 /* SceneDelegate.swift in Sources */,
 				0E1C6F5824F564A2007B5028 /* Summary.swift in Sources */,
 				0E0D26E2249FAC19007E5A63 /* ContentView.swift in Sources */,
+				0E8EDD5624F58E1C009A960A /* ReportModel.swift in Sources */,
 				0E1C6F5A24F564F4007B5028 /* Calendar.swift in Sources */,
 				0E1C6F5C24F5650D007B5028 /* AddReport.swift in Sources */,
 			);
@@ -310,6 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthMonitor/Preview Content\"";
+				DEVELOPMENT_TEAM = K7T9D9PPDQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HealthMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -329,6 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthMonitor/Preview Content\"";
+				DEVELOPMENT_TEAM = K7T9D9PPDQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HealthMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
