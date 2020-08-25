@@ -10,7 +10,11 @@ import SwiftUI
 
 struct Calendar: View {
     var body: some View {
-        Color.blue
+        NavigationView {
+            Color.blue
+            
+            .navigationBarTitle(Text("Calendario"))
+        }
     }
 }
 

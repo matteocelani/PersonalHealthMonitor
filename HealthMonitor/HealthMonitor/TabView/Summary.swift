@@ -10,7 +10,11 @@ import SwiftUI
 
 struct Summary: View {
     var body: some View {
-        Color.red
+        NavigationView {
+            Color.red
+            
+            .navigationBarTitle(Text("Sommario"))
+        }
     }
 }
 

@@ -9,8 +9,24 @@
 import SwiftUI
 
 struct AddReport: View {
+    
+    
+    
     var body: some View {
-        Color.green
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack() {
+                    CardView()
+                        
+                    CardView()
+                        
+                    CardView()
+                        
+                    CardView()
+                }
+                .navigationBarTitle(Text("Nuovo Report"))
+            }
+        }
     }
 }
 
