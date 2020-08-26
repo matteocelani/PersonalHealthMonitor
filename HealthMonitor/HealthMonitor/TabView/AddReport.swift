@@ -10,9 +10,10 @@ import SwiftUI
 
 struct AddReport: View {
     
+    @State var keyboardHeight : CGFloat = 0.0
     
     // MARK: -Report Values
-    @State var date = Date()
+    //@State var date = Date()
     @State var temperature = ""
     @State var heartbeat = ""
     @State var glycemia = ""
@@ -30,6 +31,7 @@ struct AddReport: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack() {
+                    
                     CardView(insert : ReportData[0])
                         
                     CardView(insert : ReportData[1])
@@ -37,7 +39,34 @@ struct AddReport: View {
                     CardView(insert : ReportData[2])
                         
                     CardView(insert : ReportData[3])
+                    
+                    CardViewText()
+                    
+                    Spacer()
                 }
+                    /* .offset(y: -self.keyboardHeight)
+                    .animation(.spring())
+                    .onAppear {
+                                
+                                NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) {
+                                    (notification) in
+                                    guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+                                        return
+                                    }
+                                    
+                                    self.keyboardHeight = keyboardFrame.height
+                                    
+                                }
+                                 
+                                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) {
+                                    (notification) in
+                                    
+                                    self.keyboardHeight = 0
+                                    
+                                }
+                                
+                    }
+                    */
                 .navigationBarTitle(Text("Nuovo Report"))
             }
         }

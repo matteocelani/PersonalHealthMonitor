@@ -8,6 +8,12 @@
 
 import SwiftUI
 
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 
 struct CardView: View {
     
@@ -24,12 +30,12 @@ struct CardView: View {
                 .font(.title)
             
             
-            TextField(insert.description, text: $value)
+            TextField(insert.description, text: $value){self.endEditing()}
                 .frame(height: 30.0)
-            
                 .keyboardType(.decimalPad)
-                .background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
-                .cornerRadius(10)
+                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                .background(Color(UIColor.systemBackground))
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(TextAlignment.center)
             
             Text("Importanza:")
@@ -45,10 +51,13 @@ struct CardView: View {
         }
         .padding(.all)
         .frame(width: 370.0, height: 210.0)
-        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.1))
+        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
         .cornerRadius(25.0)
 
     }
+    private func endEditing() {
+           UIApplication.shared.endEditing()
+       }
 }
 
 struct CardView_Previews: PreviewProvider {
