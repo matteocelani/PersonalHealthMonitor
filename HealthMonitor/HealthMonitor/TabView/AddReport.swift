@@ -32,6 +32,10 @@ struct AddReport: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack() {
                     
+                    CardViewData()
+                    
+                    Spacer()
+                    
                     CardView(insert : ReportData[0])
                         
                     CardView(insert : ReportData[1])
