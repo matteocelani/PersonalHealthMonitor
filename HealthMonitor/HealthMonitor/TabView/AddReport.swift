@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Combine
+
 
 struct AddReport: View {
     
@@ -48,31 +50,9 @@ struct AddReport: View {
                     
                     Spacer()
                 }
-                    /* .offset(y: -self.keyboardHeight)
-                    .animation(.spring())
-                    .onAppear {
-                                
-                                NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) {
-                                    (notification) in
-                                    guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
-                                        return
-                                    }
-                                    
-                                    self.keyboardHeight = keyboardFrame.height
-                                    
-                                }
-                                 
-                                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) {
-                                    (notification) in
-                                    
-                                    self.keyboardHeight = 0
-                                    
-                                }
-                                
-                    }
-                    */
-                .navigationBarTitle(Text("Nuovo Report"))
             }
+            .navigationBarTitle(Text("Nuovo Report"))
+            .modifier(AdaptsKeyboard())
         }
     }
 }
