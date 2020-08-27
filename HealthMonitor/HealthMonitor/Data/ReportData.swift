@@ -8,23 +8,23 @@
 
 import SwiftUI
 
-var ReportData: [Report] = [
-    Report(
+var DescriptionData: [Description] = [
+    Description(
         title : "Temperatura",
         description : "valore compreso tra 30 e 45"
     ),
     
-    Report (
+    Description (
         title : "Battito Cardiaco",
         description : "valore maggiore di 40"
     ),
     
-    Report (
+    Description (
         title : "Glicemia",
         description : "valore maggiore di 40"
     ),
     
-    Report (
+    Description (
         title : "Frequenza Respiratoria",
         description : "valore maggiore di 10"
     )

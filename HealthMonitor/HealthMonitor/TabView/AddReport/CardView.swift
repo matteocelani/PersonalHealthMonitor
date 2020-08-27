@@ -21,7 +21,8 @@ struct CardView: View {
     //MARK: -PROPERTIES
     
     let id = UUID()
-    var insert : Report
+    var insert : Description
+    
     @State var value = ""
     @State var importance = 2
     
@@ -63,6 +64,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(insert : ReportData[0])
+        CardView(insert : DescriptionData[0])
     }
 }

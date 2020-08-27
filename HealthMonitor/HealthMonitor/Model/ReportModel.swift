@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Report {
+struct Description {
     var title : String
     var description : String
 }

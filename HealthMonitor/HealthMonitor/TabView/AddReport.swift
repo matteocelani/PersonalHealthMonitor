@@ -12,10 +12,7 @@ import Combine
 
 struct AddReport: View {
     
-    @State var keyboardHeight : CGFloat = 0.0
-    
     // MARK: -Report Values
-    //@State var date = Date()
     @State var temperature = ""
     @State var heartbeat = ""
     @State var glycemia = ""
@@ -26,7 +23,36 @@ struct AddReport: View {
     @State var tempImportance = 3
     @State var heartImportance = 3
     @State var glycemiaImportance = 3
-    @State var breathImportance = 3
+    @State var breathImportance = 2
+    
+    // MARK: -Button Control
+    
+    // Enable "Add Report" button
+    /* func checkForm() -> Bool {
+        let checkTemp: Float = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
+        
+        let checkHeart: Int = Int(self.heartbeat) ?? 0
+        let checkGlycemia: Int = Int(self.glycemia) ?? 0
+        let checkBreath: Int = Int(self.breath) ?? 0
+        
+        if (checkTemp >= 30.0 && checkTemp <= 45.0){
+            if (checkHeart >= 40){
+                if (checkGlycemia >= 40){
+                    if (checkBreath >= 10){
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }*/func checkForm() -> Bool {
+        let checkTex: String = (self.text) 
+        
+        if (checkTex == ""){
+                        return true
+                    }
+        return false
+    }
     
     
     var body: some View {
@@ -38,17 +64,27 @@ struct AddReport: View {
                     
                     Spacer()
                     
-                    CardView(insert : ReportData[0])
+                    CardView(insert : DescriptionData[0])
                         
-                    CardView(insert : ReportData[1])
+                    CardView(insert : DescriptionData[1])
                         
-                    CardView(insert : ReportData[2])
+                    CardView(insert : DescriptionData[2])
                         
-                    CardView(insert : ReportData[3])
+                    CardView(insert : DescriptionData[3])
                     
                     CardViewText()
                     
+                    // MARK: -Button to Add Report
+                    Divider()
+                    
+                    Button(action: {
+                        //Your Action Here
+                    }) {
+                        ButtonView()
+                    }.disabled(!self.checkForm())
+                    
                     Spacer()
+                    
                 }
             }
             .navigationBarTitle(Text("Nuovo Report"))
