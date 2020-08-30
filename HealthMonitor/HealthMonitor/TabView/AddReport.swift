@@ -9,10 +9,22 @@
 import SwiftUI
 import Combine
 
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 
 struct AddReport: View {
     
     // MARK: -Report Values
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+    @State var date = Date()
     @State var temperature = ""
     @State var heartbeat = ""
     @State var glycemia = ""
@@ -20,15 +32,15 @@ struct AddReport: View {
     @State var text = ""
     
     // MARK: -Report Importance
-    @State var tempImportance = 3
-    @State var heartImportance = 3
-    @State var glycemiaImportance = 3
+    @State var tempImportance = 2
+    @State var heartImportance = 2
+    @State var glycemiaImportance = 2
     @State var breathImportance = 2
     
     // MARK: -Button Control
     
     // Enable "Add Report" button
-    /* func checkForm() -> Bool {
+    func checkForm() -> Bool {
         let checkTemp: Float = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
         
         let checkHeart: Int = Int(self.heartbeat) ?? 0
@@ -45,13 +57,6 @@ struct AddReport: View {
             }
         }
         return false
-    }*/func checkForm() -> Bool {
-        let checkTex: String = (self.text) 
-        
-        if (checkTex == ""){
-                        return true
-                    }
-        return false
     }
     
     
@@ -60,19 +65,159 @@ struct AddReport: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack() {
                     
-                    CardViewData()
+                    CardViewData(contentData: AnyView(
+                    VStack(alignment: .center) {
+                        Text("Seleziona una data")
+                            .font(.title)
+                        
+                        Spacer()
+                        
+                        DatePicker("", selection: $date, in: ...Date(),displayedComponents: .date)
+                        .labelsHidden()
+                        .padding()
+                        .frame(maxHeight: 100)
+                        
+                        Spacer()
+                        
+                        Text("\(date, formatter: dateFormatter)")
+
+                    }
+))
                     
                     Spacer()
                     
-                    CardView(insert : DescriptionData[0])
-                        
-                    CardView(insert : DescriptionData[1])
-                        
-                    CardView(insert : DescriptionData[2])
-                        
-                    CardView(insert : DescriptionData[3])
+                    // MARK: -Add Temperature
+                     CardView(content: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Temperatura")
+                                .font(.title)
+                            
+                            
+                            TextField("valore compreso tra 30 e 45", text: $temperature){self.endEditing()}
+                                .frame(height: 30.0)
+                                .keyboardType(.decimalPad)
+                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            Text("Importanza:")
+                            Picker(selection: $tempImportance, label: Text("Determinare un importanza")) {
+                                Text("1").tag(0)
+                                Text("2").tag(1)
+                                Text("3").tag(2)
+                                Text("4").tag(3)
+                                Text("5").tag(4)
+                            }.pickerStyle(SegmentedPickerStyle())
+
+
+                        }
+                    ))
+
                     
-                    CardViewText()
+                    // MARK: -Add Heartbeat
+                     CardView(content: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Battito Cardiaco")
+                                .font(.title)
+                            
+                            
+                            TextField("valore maggiore di 40", text: $heartbeat){self.endEditing()}
+                                .frame(height: 30.0)
+                                .keyboardType(.decimalPad)
+                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            Text("Importanza:")
+                            Picker(selection: $heartImportance, label: Text("Determinare un importanza")) {
+                                Text("1").tag(0)
+                                Text("2").tag(1)
+                                Text("3").tag(2)
+                                Text("4").tag(3)
+                                Text("5").tag(4)
+                            }.pickerStyle(SegmentedPickerStyle())
+
+
+                        }
+                    ))
+
+                        
+                    // MARK: -Add Glycemia
+                     CardView(content: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Glicemia")
+                                .font(.title)
+                            
+                            
+                            TextField("valore maggiore di 40", text: $glycemia){self.endEditing()}
+                                .frame(height: 30.0)
+                                .keyboardType(.decimalPad)
+                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            Text("Importanza:")
+                            Picker(selection: $glycemiaImportance, label: Text("Determinare un importanza")) {
+                                Text("1").tag(0)
+                                Text("2").tag(1)
+                                Text("3").tag(2)
+                                Text("4").tag(3)
+                                Text("5").tag(4)
+                            }.pickerStyle(SegmentedPickerStyle())
+
+
+                        }
+                    ))
+
+                    
+                    // MARK: -Add Breath
+                     CardView(content: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Frequenza Respiratoria")
+                                .font(.title)
+                            
+                            
+                            TextField("valore maggiore di 10", text: $breath){self.endEditing()}
+                                .frame(height: 30.0)
+                                .keyboardType(.decimalPad)
+                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            Text("Importanza:")
+                            Picker(selection: $breathImportance, label: Text("Determinare un importanza")) {
+                                Text("1").tag(0)
+                                Text("2").tag(1)
+                                Text("3").tag(2)
+                                Text("4").tag(3)
+                                Text("5").tag(4)
+                            }.pickerStyle(SegmentedPickerStyle())
+
+
+                        }
+                    ))
+                    
+                    // MARK: -Add Text
+                    CardView(content: AnyView(
+                            VStack(alignment: .center) {
+                                Text("Note")
+                                    .font(.title)
+                                
+                                
+                                TextField("Aggiungi delle note. Sezione facolatativa.", text: $text)
+                                    .frame(height: 100.0)
+                                    //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                                    .background(Color(UIColor.systemBackground))
+                                    .cornerRadius(10)
+                                    .multilineTextAlignment(TextAlignment.center)
+                            
+                            }
+
+                    ))
                     
                     // MARK: -Button to Add Report
                     Divider()
@@ -91,6 +236,10 @@ struct AddReport: View {
             .modifier(AdaptsKeyboard())
         }
     }
+    private func endEditing() {
+           UIApplication.shared.endEditing()
+       }
+
 }
 
 struct AddReport_Previews: PreviewProvider {
