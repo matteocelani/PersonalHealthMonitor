@@ -19,7 +19,7 @@ struct ContentView: View {
                     Text("Riepilogo")
                   }
                 
-                CalendarView()
+                CalendarTab()
                 .tabItem {
                    Image(systemName: "calendar")
                    Text("Calendario")
