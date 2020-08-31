@@ -9,9 +9,17 @@
 import Foundation
 
 extension Date {
+    
+    static func startFrom() -> Date {
+        let start = DateFormatter()
+        start.dateFormat = "yyyy/MM/dd"
+        return start.date(from: "2018/12/31")!
+    }
 
-    static func daysFromToday(_ days: Int) -> Date {
-        Date().addingTimeInterval(TimeInterval(60*60*24*days))
+    static func endFrom() -> Date {
+        let end = DateFormatter()
+        end.dateFormat = "yyyy/MM/dd"
+        return end.date(from: "2022/01/01")!
     }
 
 }

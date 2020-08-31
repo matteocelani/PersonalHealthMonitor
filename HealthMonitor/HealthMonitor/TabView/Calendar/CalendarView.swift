@@ -9,7 +9,7 @@
 import ElegantCalendar
 import SwiftUI
 
-struct CalendarView: View {
+struct CalendarView: View, ElegantCalendarDelegate {
 
     @ObservedObject private var calendarManager: ElegantCalendarManager
 
@@ -52,7 +52,7 @@ extension CalendarView: ElegantCalendarDataSource {
 
     func calendar(canSelectDate date: Date) -> Bool {
         let day = currentCalendar.dateComponents([.day], from: date).day!
-        return day != 4
+        return day != 0
     }
 
     func calendar(viewForSelectedDate date: Date, dimensions size: CGSize) -> AnyView {
@@ -62,7 +62,7 @@ extension CalendarView: ElegantCalendarDataSource {
     
 }
 
-extension CalendarView: ElegantCalendarDelegate {
+/*extension CalendarView: ElegantCalendarDelegate {
 
     func calendar(didSelectDay date: Date) {
         print("Selected date: \(date)")
@@ -80,10 +80,10 @@ extension CalendarView: ElegantCalendarDelegate {
         print("Year displayed: \(date)")
     }
 
-}
+}*/
 
-struct CalendarView_Previews: PreviewProvider {
+/*struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView(ascVisits: Visit.mocks(start: .daysFromToday(-365*2), end: .daysFromToday(365*2)), initialMonth: nil)
     }
-}
+}*/

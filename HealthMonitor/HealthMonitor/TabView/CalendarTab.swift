@@ -15,16 +15,16 @@ import ElegantCalendar
 struct CalendarTab: View {
     
     var body: some View {
-        NavigationView {
-//            Color.blue
+//          NavigationView {
+//          Color.blue
             CalendarView(
             ascVisits: Visit.mocks(
-                start: .daysFromToday(-20*36),
-                end: .daysFromToday(55*36)),
+                start: .startFrom(),
+                end: .endFrom()),
             initialMonth: Date())
             
-            .navigationBarTitle(Text("Calendario"))
-        }
+//            .navigationBarTitle(Text("Calendario"))
+//        }
     }
 }
 

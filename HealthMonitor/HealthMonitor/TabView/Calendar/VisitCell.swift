@@ -18,7 +18,7 @@ struct VisitCell: View {
 
             VStack(alignment: .leading) {
                 locationName
-                visitDuration
+                visitDescription
             }
 
             Spacer()
@@ -38,13 +38,13 @@ private extension VisitCell {
     }
 
     var locationName: some View {
-        Text(visit.locationName)
+        Text(visit.reportName)
             .font(.system(size: 16))
             .lineLimit(1)
     }
 
-    var visitDuration: some View {
-        Text(visit.duration)
+    var visitDescription: some View {
+        Text(visit.description)
             .font(.system(size: 10))
             .lineLimit(1)
     }

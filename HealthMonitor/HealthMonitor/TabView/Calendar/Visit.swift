@@ -13,13 +13,13 @@ let screen = UIScreen.main.bounds
 
 struct Visit {
 
-    let locationName: String
+    let reportName: String
     let tagColor: Color
     let arrivalDate: Date
     let departureDate: Date
 
-    var duration: String {
-        arrivalDate.timeOnlyWithPadding + " ➝ " + departureDate.timeOnlyWithPadding
+    var description: String {
+        "Descrizione"
     }
 
 }
@@ -35,7 +35,7 @@ extension Visit: Identifiable {
 extension Visit {
 
     static func mock(withDate date: Date) -> Visit {
-        Visit(locationName: "Apple Inc",
+        Visit(reportName: "Nuovo Report",
               tagColor: .randomColor,
               arrivalDate: date,
               departureDate: date.addingTimeInterval(60*60))
@@ -62,7 +62,7 @@ private extension Calendar {
             matchingPolicy: .nextTime) { date, _, stop in
             if let date = date {
                 if date < end {
-                    for _ in 0..<Int.random(in: visitCountRange) {
+                    for _ in 0...1 {
                         visits.append(.mock(withDate: date))
                     }
                 } else {

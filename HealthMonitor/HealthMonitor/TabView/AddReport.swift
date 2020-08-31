@@ -19,6 +19,7 @@ extension UIApplication {
 struct AddReport: View {
     
     // MARK: -Report Values
+    @State var title = ""
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -51,7 +52,9 @@ struct AddReport: View {
             if (checkHeart >= 40){
                 if (checkGlycemia >= 40){
                     if (checkBreath >= 10){
+                        if (title != "") {
                         return true
+                        }
                     }
                 }
             }
@@ -65,6 +68,34 @@ struct AddReport: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack() {
                     
+                    // MARK: -Add Title
+                        VStack(alignment: .center) {
+                            Text("Nome del Report")
+                                .font(.title)
+                            
+                            
+                            TextField("Titolo", text: $title){self.endEditing()}
+                                .frame(height: 30.0)
+                                //.keyboardType(.decimalPad)
+                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            TextField("Descrizione", text: $text){self.endEditing()}
+                                .frame(height: 30.0)
+                                //.keyboardType(.decimalPad)
+                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                        }
+                        .padding(.all)
+                        .frame(width: 370.0, height: 140.0)
+                        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
+                        .cornerRadius(25.0)
+                    
+                    // MARK: -Select Data
                     CardViewData(contentData: AnyView(
                     VStack(alignment: .center) {
                         Text("Seleziona una data")
@@ -199,24 +230,6 @@ struct AddReport: View {
 
 
                         }
-                    ))
-                    
-                    // MARK: -Add Text
-                    CardView(content: AnyView(
-                            VStack(alignment: .center) {
-                                Text("Note")
-                                    .font(.title)
-                                
-                                
-                                TextField("Aggiungi delle note. Sezione facolatativa.", text: $text)
-                                    .frame(height: 100.0)
-                                    //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
-                                    .background(Color(UIColor.systemBackground))
-                                    .cornerRadius(10)
-                                    .multilineTextAlignment(TextAlignment.center)
-                            
-                            }
-
                     ))
                     
                     // MARK: -Button to Add Report

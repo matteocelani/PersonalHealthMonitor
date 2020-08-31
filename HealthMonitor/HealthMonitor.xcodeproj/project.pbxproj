@@ -55,6 +55,7 @@
 		0E56716B24FC1E2D002D8FD7 /* LightDarkThemePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDarkThemePreview.swift; sourceTree = "<group>"; };
 		0E56716D24FC1E4F002D8FD7 /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
 		0E56716F24FC2468002D8FD7 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../../Library/Developer/Xcode/DerivedData/HealthMonitor-bsvdytnkmmiefcdkfazhsxmcedps/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
+		0E56717124FCFDBD002D8FD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0E72C35C24F7B34A00D98AFD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0E8EDD4E24F5714C009A960A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0E8EDD5224F5898F009A960A /* ReportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportData.swift; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 0E0D26D1249FAC19007E5A63;
 			packageReferences = (
@@ -279,6 +281,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0E0D26E9249FAC1E007E5A63 /* Base */,
+				0E56717124FCFDBD002D8FD7 /* it */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -350,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
