@@ -33,14 +33,12 @@ struct AddReport: View {
     @State var breath = ""
     
     // MARK: -Report Importance
-    @State var tempImportance : Int = 2
-    @State var heartImportance : Int = 2
-    @State var glycemiaImportance : Int = 2
-    @State var breathImportance : Int = 2
+    @State var tempImportance = 2
+    @State var heartImportance = 2
+    @State var glycemiaImportance = 2
+    @State var breathImportance = 2
     
     // MARK: -Button Control
-    
-    // Enable "Add Report" button
     func validateForm() -> Bool {
         let checkTemp: Float = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
         
@@ -62,6 +60,39 @@ struct AddReport: View {
         return false
     }
     
+    // MARK: -CoreData Control
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    func newReport() {
+        let newReport = Report(context: self.managedObjectContext)
+        
+        newReport.id = UUID()
+        
+        newReport.title = self.title
+        newReport.text = self.text
+        
+        newReport.temperature = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
+        newReport.tempImportance = Int16(self.tempImportance+1)
+        
+        newReport.heartbeat = Int16(self.heartbeat)!
+        newReport.heartImportance = Int16(self.heartImportance+1)
+        
+        newReport.glycemia = Int16(self.glycemia)!
+        newReport.glycemiaImportance = Int16(self.glycemiaImportance+1)
+        
+        newReport.breath = Int16(self.breath)!
+        newReport.breathImportance = Int16(self.breathImportance+1)
+        
+        do {
+         try self.managedObjectContext.save()
+         print("Report Salvato.")
+        } catch {
+         print("Errore: \(error.localizedDescription)")
+         }
+    }
+    
+    
+    // MARK: -Body
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -227,7 +258,7 @@ struct AddReport: View {
                     Divider()
                     
                     Button(action: {
-                        //Your Action Here
+                        self.newReport()
                     }) {
                         ButtonView()
                     }.disabled(!self.validateForm())

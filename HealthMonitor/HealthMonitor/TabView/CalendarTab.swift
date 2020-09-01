@@ -16,7 +16,7 @@ struct CalendarTab: View {
     
     var body: some View {
 //          NavigationView {
-//          Color.blue
+        
             CalendarView(
             ascVisits: Visit.mocks(
                 start: .startFrom(),
