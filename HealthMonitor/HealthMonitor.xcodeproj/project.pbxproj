@@ -12,7 +12,6 @@
 		0E0D26E2249FAC19007E5A63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0D26E1249FAC19007E5A63 /* ContentView.swift */; };
 		0E0D26E4249FAC1E007E5A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E0D26E3249FAC1E007E5A63 /* Assets.xcassets */; };
 		0E0D26E7249FAC1E007E5A63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E0D26E6249FAC1E007E5A63 /* Preview Assets.xcassets */; };
-		0E0D26EA249FAC1E007E5A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E0D26E8249FAC1E007E5A63 /* LaunchScreen.storyboard */; };
 		0E1C6F5824F564A2007B5028 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F5724F564A2007B5028 /* Summary.swift */; };
 		0E1C6F5A24F564F4007B5028 /* CalendarTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F5924F564F4007B5028 /* CalendarTab.swift */; };
 		0E1C6F5C24F5650D007B5028 /* AddReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F5B24F5650D007B5028 /* AddReport.swift */; };
@@ -26,10 +25,10 @@
 		0E56716C24FC1E2D002D8FD7 /* LightDarkThemePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716B24FC1E2D002D8FD7 /* LightDarkThemePreview.swift */; };
 		0E56716E24FC1E4F002D8FD7 /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716D24FC1E4F002D8FD7 /* Color+Custom.swift */; };
 		0E56717024FC2469002D8FD7 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E56716F24FC2468002D8FD7 /* ElegantCalendar.xcassets */; };
+		0E56717424FD340B002D8FD7 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0E56717324FD340B002D8FD7 /* SwiftUICharts */; };
+		0E56717724FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E56717524FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld */; };
 		0E72C35D24F7B34A00D98AFD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72C35C24F7B34A00D98AFD /* ButtonView.swift */; };
 		0E8EDD4F24F5714C009A960A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD4E24F5714C009A960A /* CardView.swift */; };
-		0E8EDD5324F5898F009A960A /* ReportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD5224F5898F009A960A /* ReportData.swift */; };
-		0E8EDD5624F58E1C009A960A /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD5524F58E1C009A960A /* ReportModel.swift */; };
 		0ECC099324F6535C00C780DD /* CardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC099224F6535C00C780DD /* CardViewData.swift */; };
 		0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		0E0D26E1249FAC19007E5A63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E0D26E3249FAC1E007E5A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E0D26E6249FAC1E007E5A63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0E0D26E9249FAC1E007E5A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E0D26EB249FAC1E007E5A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E1C6F5724F564A2007B5028 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		0E1C6F5924F564F4007B5028 /* CalendarTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTab.swift; sourceTree = "<group>"; };
@@ -55,11 +53,9 @@
 		0E56716B24FC1E2D002D8FD7 /* LightDarkThemePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDarkThemePreview.swift; sourceTree = "<group>"; };
 		0E56716D24FC1E4F002D8FD7 /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
 		0E56716F24FC2468002D8FD7 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../../Library/Developer/Xcode/DerivedData/HealthMonitor-bsvdytnkmmiefcdkfazhsxmcedps/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
-		0E56717124FCFDBD002D8FD7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0E56717624FE9A76002D8FD7 /* Report.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Report.xcdatamodel; sourceTree = "<group>"; };
 		0E72C35C24F7B34A00D98AFD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0E8EDD4E24F5714C009A960A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		0E8EDD5224F5898F009A960A /* ReportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportData.swift; sourceTree = "<group>"; };
-		0E8EDD5524F58E1C009A960A /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		0ECC099224F6535C00C780DD /* CardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewData.swift; sourceTree = "<group>"; };
 		0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E56715B24FBF377002D8FD7 /* ElegantCalendar in Frameworks */,
+				0E56717424FD340B002D8FD7 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,16 +93,14 @@
 		0E0D26DC249FAC19007E5A63 /* HealthMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				0E8EDD5424F58E07009A960A /* Model */,
-				0E8EDD5124F58976009A960A /* Data */,
 				0E1C6F5D24F5655F007B5028 /* TabView */,
 				0E0D26DD249FAC19007E5A63 /* AppDelegate.swift */,
 				0E0D26DF249FAC19007E5A63 /* SceneDelegate.swift */,
 				0E0D26E1249FAC19007E5A63 /* ContentView.swift */,
 				0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */,
-				0E0D26E3249FAC1E007E5A63 /* Assets.xcassets */,
-				0E0D26E8249FAC1E007E5A63 /* LaunchScreen.storyboard */,
+				0E56717524FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld */,
 				0E0D26EB249FAC1E007E5A63 /* Info.plist */,
+				0E0D26E3249FAC1E007E5A63 /* Assets.xcassets */,
 				0E0D26E5249FAC1E007E5A63 /* Preview Content */,
 			);
 			path = HealthMonitor;
@@ -156,22 +151,6 @@
 			path = AddReport;
 			sourceTree = "<group>";
 		};
-		0E8EDD5124F58976009A960A /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				0E8EDD5224F5898F009A960A /* ReportData.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		0E8EDD5424F58E07009A960A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0E8EDD5524F58E1C009A960A /* ReportModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,6 +169,7 @@
 			name = HealthMonitor;
 			packageProductDependencies = (
 				0E56715A24FBF377002D8FD7 /* ElegantCalendar */,
+				0E56717324FD340B002D8FD7 /* SwiftUICharts */,
 			);
 			productName = HealthMonitor;
 			productReference = 0E0D26DA249FAC19007E5A63 /* HealthMonitor.app */;
@@ -222,6 +202,7 @@
 			mainGroup = 0E0D26D1249FAC19007E5A63;
 			packageReferences = (
 				0E56715924FBF377002D8FD7 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+				0E56717224FD340B002D8FD7 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 0E0D26DB249FAC19007E5A63 /* Products */;
 			projectDirPath = "";
@@ -237,7 +218,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E0D26EA249FAC1E007E5A63 /* LaunchScreen.storyboard in Resources */,
 				0E0D26E7249FAC1E007E5A63 /* Preview Assets.xcassets in Resources */,
 				0E0D26E4249FAC1E007E5A63 /* Assets.xcassets in Resources */,
 				0E56717024FC2469002D8FD7 /* ElegantCalendar.xcassets in Resources */,
@@ -252,10 +232,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E8EDD4F24F5714C009A960A /* CardView.swift in Sources */,
-				0E8EDD5324F5898F009A960A /* ReportData.swift in Sources */,
 				0E56716824FC1DEB002D8FD7 /* VisitsListView.swift in Sources */,
 				0E0D26DE249FAC19007E5A63 /* AppDelegate.swift in Sources */,
 				0E0D26E0249FAC19007E5A63 /* SceneDelegate.swift in Sources */,
+				0E56717724FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld in Sources */,
 				0E56716624FC1DC2002D8FD7 /* VisitPreviewConstants.swift in Sources */,
 				0ECC099324F6535C00C780DD /* CardViewData.swift in Sources */,
 				0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */,
@@ -266,7 +246,6 @@
 				0E56716C24FC1E2D002D8FD7 /* LightDarkThemePreview.swift in Sources */,
 				0E72C35D24F7B34A00D98AFD /* ButtonView.swift in Sources */,
 				0E56716424FC1DA8002D8FD7 /* VisitCell.swift in Sources */,
-				0E8EDD5624F58E1C009A960A /* ReportModel.swift in Sources */,
 				0E1C6F5A24F564F4007B5028 /* CalendarTab.swift in Sources */,
 				0E56716A24FC1E12002D8FD7 /* Date+Additions.swift in Sources */,
 				0E1C6F5C24F5650D007B5028 /* AddReport.swift in Sources */,
@@ -275,18 +254,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		0E0D26E8249FAC1E007E5A63 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E0D26E9249FAC1E007E5A63 /* Base */,
-				0E56717124FCFDBD002D8FD7 /* it */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0E0D26EC249FAC1E007E5A63 /* Debug */ = {
@@ -477,6 +444,14 @@
 				minimumVersion = 4.3.0;
 			};
 		};
+		0E56717224FD340B002D8FD7 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -485,7 +460,25 @@
 			package = 0E56715924FBF377002D8FD7 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
 			productName = ElegantCalendar;
 		};
+		0E56717324FD340B002D8FD7 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E56717224FD340B002D8FD7 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		0E56717524FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0E56717624FE9A76002D8FD7 /* Report.xcdatamodel */,
+			);
+			currentVersion = 0E56717624FE9A76002D8FD7 /* Report.xcdatamodel */;
+			path = HealthMonitor.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0E0D26D2249FAC19007E5A63 /* Project object */;
 }

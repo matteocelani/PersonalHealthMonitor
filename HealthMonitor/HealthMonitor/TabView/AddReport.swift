@@ -20,6 +20,7 @@ struct AddReport: View {
     
     // MARK: -Report Values
     @State var title = ""
+    @State var text = ""
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -30,18 +31,17 @@ struct AddReport: View {
     @State var heartbeat = ""
     @State var glycemia = ""
     @State var breath = ""
-    @State var text = ""
     
     // MARK: -Report Importance
-    @State var tempImportance = 2
-    @State var heartImportance = 2
-    @State var glycemiaImportance = 2
-    @State var breathImportance = 2
+    @State var tempImportance : Int = 2
+    @State var heartImportance : Int = 2
+    @State var glycemiaImportance : Int = 2
+    @State var breathImportance : Int = 2
     
     // MARK: -Button Control
     
     // Enable "Add Report" button
-    func checkForm() -> Bool {
+    func validateForm() -> Bool {
         let checkTemp: Float = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
         
         let checkHeart: Int = Int(self.heartbeat) ?? 0
@@ -62,7 +62,6 @@ struct AddReport: View {
         return false
     }
     
-    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -76,16 +75,12 @@ struct AddReport: View {
                             
                             TextField("Titolo", text: $title){self.endEditing()}
                                 .frame(height: 30.0)
-                                //.keyboardType(.decimalPad)
-                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
                                 .background(Color(UIColor.systemBackground))
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(TextAlignment.center)
                             
                             TextField("Descrizione", text: $text){self.endEditing()}
                                 .frame(height: 30.0)
-                                //.keyboardType(.decimalPad)
-                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
                                 .background(Color(UIColor.systemBackground))
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(TextAlignment.center)
@@ -127,7 +122,6 @@ struct AddReport: View {
                             TextField("valore compreso tra 30 e 45", text: $temperature){self.endEditing()}
                                 .frame(height: 30.0)
                                 .keyboardType(.decimalPad)
-                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
                                 .background(Color(UIColor.systemBackground))
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(TextAlignment.center)
@@ -156,7 +150,6 @@ struct AddReport: View {
                             TextField("valore maggiore di 40", text: $heartbeat){self.endEditing()}
                                 .frame(height: 30.0)
                                 .keyboardType(.decimalPad)
-                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
                                 .background(Color(UIColor.systemBackground))
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(TextAlignment.center)
@@ -185,7 +178,6 @@ struct AddReport: View {
                             TextField("valore maggiore di 40", text: $glycemia){self.endEditing()}
                                 .frame(height: 30.0)
                                 .keyboardType(.decimalPad)
-                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
                                 .background(Color(UIColor.systemBackground))
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(TextAlignment.center)
@@ -214,7 +206,6 @@ struct AddReport: View {
                             TextField("valore maggiore di 10", text: $breath){self.endEditing()}
                                 .frame(height: 30.0)
                                 .keyboardType(.decimalPad)
-                                //.background(/*@START_MENU_TOKEN@*/Color.white/*@END_MENU_TOKEN@*/)
                                 .background(Color(UIColor.systemBackground))
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(TextAlignment.center)
@@ -239,7 +230,7 @@ struct AddReport: View {
                         //Your Action Here
                     }) {
                         ButtonView()
-                    }.disabled(!self.checkForm())
+                    }.disabled(!self.validateForm())
                     
                     Spacer()
                     

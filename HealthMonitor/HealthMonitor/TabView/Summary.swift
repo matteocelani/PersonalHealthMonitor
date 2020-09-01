@@ -7,11 +7,14 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct Summary: View {
     var body: some View {
         NavigationView {
-            Color.red
+//          Color.red
+            
+            LineChartView(data: [40,41,39,39,38,37,37,37,36], title: "Title", legend: "Legendary")
             
             .navigationBarTitle(Text("Sommario"))
         }
