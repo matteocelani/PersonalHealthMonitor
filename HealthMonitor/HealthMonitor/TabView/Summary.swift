@@ -14,7 +14,8 @@ struct Summary: View {
     @FetchRequest(
         entity: Report.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Report.date, ascending: false)]
-    ) var reports: FetchedResults<Report>
+    )
+    var reports: FetchedResults<Report>
     
     var body: some View {
         NavigationView {

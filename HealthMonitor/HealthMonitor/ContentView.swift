@@ -10,6 +10,14 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
+    
+    //    MARK: -CoreData Setup
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(
+        entity: Report.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Report.date, ascending: false)]
+    ) var reports: FetchedResults<Report>
+    
     var body: some View {
 
             TabView {
@@ -19,7 +27,7 @@ struct ContentView: View {
                     Text("Riepilogo")
                   }
                 
-                CalendarTab()
+                CalendarTab(reports: self.reports)
                 .tabItem {
                    Image(systemName: "calendar")
                    Text("Calendario")
@@ -32,11 +40,5 @@ struct ContentView: View {
                 }
                 
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

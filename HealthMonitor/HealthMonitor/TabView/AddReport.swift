@@ -67,6 +67,7 @@ struct AddReport: View {
         let newReport = Report(context: self.managedObjectContext)
         
         newReport.id = UUID()
+        newReport.date = self.date
         
         newReport.title = self.title
         newReport.text = self.text

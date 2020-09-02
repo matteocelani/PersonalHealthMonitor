@@ -15,19 +15,16 @@
 		0E1C6F5824F564A2007B5028 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F5724F564A2007B5028 /* Summary.swift */; };
 		0E1C6F5A24F564F4007B5028 /* CalendarTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F5924F564F4007B5028 /* CalendarTab.swift */; };
 		0E1C6F5C24F5650D007B5028 /* AddReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1C6F5B24F5650D007B5028 /* AddReport.swift */; };
-		0E56715B24FBF377002D8FD7 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0E56715A24FBF377002D8FD7 /* ElegantCalendar */; };
-		0E56716024FC1D39002D8FD7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56715F24FC1D39002D8FD7 /* CalendarView.swift */; };
-		0E56716224FC1D8A002D8FD7 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716124FC1D8A002D8FD7 /* Visit.swift */; };
-		0E56716424FC1DA8002D8FD7 /* VisitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716324FC1DA8002D8FD7 /* VisitCell.swift */; };
-		0E56716624FC1DC2002D8FD7 /* VisitPreviewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716524FC1DC2002D8FD7 /* VisitPreviewConstants.swift */; };
-		0E56716824FC1DEB002D8FD7 /* VisitsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716724FC1DEB002D8FD7 /* VisitsListView.swift */; };
-		0E56716A24FC1E12002D8FD7 /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716924FC1E12002D8FD7 /* Date+Additions.swift */; };
-		0E56716C24FC1E2D002D8FD7 /* LightDarkThemePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716B24FC1E2D002D8FD7 /* LightDarkThemePreview.swift */; };
-		0E56716E24FC1E4F002D8FD7 /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E56716D24FC1E4F002D8FD7 /* Color+Custom.swift */; };
-		0E56717024FC2469002D8FD7 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E56716F24FC2468002D8FD7 /* ElegantCalendar.xcassets */; };
 		0E56717424FD340B002D8FD7 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0E56717324FD340B002D8FD7 /* SwiftUICharts */; };
 		0E56717724FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E56717524FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld */; };
 		0E72C35D24F7B34A00D98AFD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72C35C24F7B34A00D98AFD /* ButtonView.swift */; };
+		0E8E01132500164E005FDBCC /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E01122500164E005FDBCC /* CalendarDate.swift */; };
+		0E8E011525001681005FDBCC /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E011425001681005FDBCC /* CalendarCell.swift */; };
+		0E8E01172500169C005FDBCC /* ReportSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E01162500169C005FDBCC /* ReportSheet.swift */; };
+		0E8E0119250016B5005FDBCC /* CalendarMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E0118250016B5005FDBCC /* CalendarMonth.swift */; };
+		0E8E011B250016D8005FDBCC /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E011A250016D8005FDBCC /* CalendarController.swift */; };
+		0E8E011D25001702005FDBCC /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E011C25001702005FDBCC /* CalendarManager.swift */; };
+		0E8E011F2500171D005FDBCC /* CalendarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E011E2500171D005FDBCC /* CalendarColor.swift */; };
 		0E8EDD4F24F5714C009A960A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD4E24F5714C009A960A /* CardView.swift */; };
 		0ECC099324F6535C00C780DD /* CardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC099224F6535C00C780DD /* CardViewData.swift */; };
 		0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */; };
@@ -44,17 +41,15 @@
 		0E1C6F5724F564A2007B5028 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		0E1C6F5924F564F4007B5028 /* CalendarTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTab.swift; sourceTree = "<group>"; };
 		0E1C6F5B24F5650D007B5028 /* AddReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReport.swift; sourceTree = "<group>"; };
-		0E56715F24FC1D39002D8FD7 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		0E56716124FC1D8A002D8FD7 /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
-		0E56716324FC1DA8002D8FD7 /* VisitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitCell.swift; sourceTree = "<group>"; };
-		0E56716524FC1DC2002D8FD7 /* VisitPreviewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitPreviewConstants.swift; sourceTree = "<group>"; };
-		0E56716724FC1DEB002D8FD7 /* VisitsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsListView.swift; sourceTree = "<group>"; };
-		0E56716924FC1E12002D8FD7 /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
-		0E56716B24FC1E2D002D8FD7 /* LightDarkThemePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDarkThemePreview.swift; sourceTree = "<group>"; };
-		0E56716D24FC1E4F002D8FD7 /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
-		0E56716F24FC2468002D8FD7 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../../Library/Developer/Xcode/DerivedData/HealthMonitor-bsvdytnkmmiefcdkfazhsxmcedps/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		0E56717624FE9A76002D8FD7 /* Report.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Report.xcdatamodel; sourceTree = "<group>"; };
 		0E72C35C24F7B34A00D98AFD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		0E8E01122500164E005FDBCC /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
+		0E8E011425001681005FDBCC /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		0E8E01162500169C005FDBCC /* ReportSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSheet.swift; sourceTree = "<group>"; };
+		0E8E0118250016B5005FDBCC /* CalendarMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonth.swift; sourceTree = "<group>"; };
+		0E8E011A250016D8005FDBCC /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		0E8E011C25001702005FDBCC /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		0E8E011E2500171D005FDBCC /* CalendarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarColor.swift; sourceTree = "<group>"; };
 		0E8EDD4E24F5714C009A960A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0ECC099224F6535C00C780DD /* CardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewData.swift; sourceTree = "<group>"; };
 		0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsKeyboard.swift; sourceTree = "<group>"; };
@@ -65,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E56715B24FBF377002D8FD7 /* ElegantCalendar in Frameworks */,
 				0E56717424FD340B002D8FD7 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,7 +70,6 @@
 		0E0D26D1249FAC19007E5A63 = {
 			isa = PBXGroup;
 			children = (
-				0E56716F24FC2468002D8FD7 /* ElegantCalendar.xcassets */,
 				0E0D26DC249FAC19007E5A63 /* HealthMonitor */,
 				0E0D26DB249FAC19007E5A63 /* Products */,
 			);
@@ -129,14 +122,13 @@
 		0E56715E24FC1C89002D8FD7 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				0E56715F24FC1D39002D8FD7 /* CalendarView.swift */,
-				0E56716124FC1D8A002D8FD7 /* Visit.swift */,
-				0E56716324FC1DA8002D8FD7 /* VisitCell.swift */,
-				0E56716524FC1DC2002D8FD7 /* VisitPreviewConstants.swift */,
-				0E56716724FC1DEB002D8FD7 /* VisitsListView.swift */,
-				0E56716924FC1E12002D8FD7 /* Date+Additions.swift */,
-				0E56716B24FC1E2D002D8FD7 /* LightDarkThemePreview.swift */,
-				0E56716D24FC1E4F002D8FD7 /* Color+Custom.swift */,
+				0E8E01122500164E005FDBCC /* CalendarDate.swift */,
+				0E8E011425001681005FDBCC /* CalendarCell.swift */,
+				0E8E01162500169C005FDBCC /* ReportSheet.swift */,
+				0E8E0118250016B5005FDBCC /* CalendarMonth.swift */,
+				0E8E011A250016D8005FDBCC /* CalendarController.swift */,
+				0E8E011C25001702005FDBCC /* CalendarManager.swift */,
+				0E8E011E2500171D005FDBCC /* CalendarColor.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -168,7 +160,6 @@
 			);
 			name = HealthMonitor;
 			packageProductDependencies = (
-				0E56715A24FBF377002D8FD7 /* ElegantCalendar */,
 				0E56717324FD340B002D8FD7 /* SwiftUICharts */,
 			);
 			productName = HealthMonitor;
@@ -201,7 +192,6 @@
 			);
 			mainGroup = 0E0D26D1249FAC19007E5A63;
 			packageReferences = (
-				0E56715924FBF377002D8FD7 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
 				0E56717224FD340B002D8FD7 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 0E0D26DB249FAC19007E5A63 /* Products */;
@@ -220,7 +210,6 @@
 			files = (
 				0E0D26E7249FAC1E007E5A63 /* Preview Assets.xcassets in Resources */,
 				0E0D26E4249FAC1E007E5A63 /* Assets.xcassets in Resources */,
-				0E56717024FC2469002D8FD7 /* ElegantCalendar.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,24 +221,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E8EDD4F24F5714C009A960A /* CardView.swift in Sources */,
-				0E56716824FC1DEB002D8FD7 /* VisitsListView.swift in Sources */,
+				0E8E011F2500171D005FDBCC /* CalendarColor.swift in Sources */,
 				0E0D26DE249FAC19007E5A63 /* AppDelegate.swift in Sources */,
 				0E0D26E0249FAC19007E5A63 /* SceneDelegate.swift in Sources */,
 				0E56717724FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld in Sources */,
-				0E56716624FC1DC2002D8FD7 /* VisitPreviewConstants.swift in Sources */,
 				0ECC099324F6535C00C780DD /* CardViewData.swift in Sources */,
+				0E8E011B250016D8005FDBCC /* CalendarController.swift in Sources */,
+				0E8E01172500169C005FDBCC /* ReportSheet.swift in Sources */,
 				0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */,
-				0E56716024FC1D39002D8FD7 /* CalendarView.swift in Sources */,
 				0E1C6F5824F564A2007B5028 /* Summary.swift in Sources */,
-				0E56716E24FC1E4F002D8FD7 /* Color+Custom.swift in Sources */,
 				0E0D26E2249FAC19007E5A63 /* ContentView.swift in Sources */,
-				0E56716C24FC1E2D002D8FD7 /* LightDarkThemePreview.swift in Sources */,
 				0E72C35D24F7B34A00D98AFD /* ButtonView.swift in Sources */,
-				0E56716424FC1DA8002D8FD7 /* VisitCell.swift in Sources */,
 				0E1C6F5A24F564F4007B5028 /* CalendarTab.swift in Sources */,
-				0E56716A24FC1E12002D8FD7 /* Date+Additions.swift in Sources */,
+				0E8E011D25001702005FDBCC /* CalendarManager.swift in Sources */,
+				0E8E01132500164E005FDBCC /* CalendarDate.swift in Sources */,
 				0E1C6F5C24F5650D007B5028 /* AddReport.swift in Sources */,
-				0E56716224FC1D8A002D8FD7 /* Visit.swift in Sources */,
+				0E8E0119250016B5005FDBCC /* CalendarMonth.swift in Sources */,
+				0E8E011525001681005FDBCC /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,14 +424,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E56715924FBF377002D8FD7 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ThasianX/ElegantCalendar";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.0;
-			};
-		};
 		0E56717224FD340B002D8FD7 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -455,11 +435,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E56715A24FBF377002D8FD7 /* ElegantCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0E56715924FBF377002D8FD7 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
-			productName = ElegantCalendar;
-		};
 		0E56717324FD340B002D8FD7 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0E56717224FD340B002D8FD7 /* XCRemoteSwiftPackageReference "ChartView" */;
