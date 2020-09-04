@@ -52,7 +52,12 @@ struct CalendarMonth: View {
                                             self.showReportSheet = true
                                     }
                                     .sheet(isPresented: self.$showReportSheet) {
-                                        ReportSheet()
+                                        if self.isReport(date: self.CalendarManager.selectedDate) {
+                                            ReportSheet(reports: self.reports, date: self.CalendarManager.selectedDate)
+                                        }
+                                        else {
+                                            AddReportSheet(showReportSheet: self.$showReportSheet, date: self.CalendarManager.selectedDate).environment(\.managedObjectContext, self.managedObjectContext)
+                                        }
                                     }
                                 } else {
                                     Text("").frame(width: self.cellWidth, height: self.cellWidth)
@@ -168,10 +173,7 @@ struct CalendarMonth: View {
     }
      
     func isSpecialDate(date: Date) -> Bool {
-        return isSelectedDate(date: date) ||
-            isStartDate(date: date) ||
-            isEndDate(date: date) ||
-            isOneOfSelectedDates(date: date)
+        return isSelectedDate(date: date)
     }
     
     func isOneOfSelectedDates(date: Date) -> Bool {

@@ -26,6 +26,7 @@
 		0E8E011D25001702005FDBCC /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E011C25001702005FDBCC /* CalendarManager.swift */; };
 		0E8E011F2500171D005FDBCC /* CalendarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E011E2500171D005FDBCC /* CalendarColor.swift */; };
 		0E8EDD4F24F5714C009A960A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD4E24F5714C009A960A /* CardView.swift */; };
+		0E9FC3FE2502434700FC9CC4 /* AddReportSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9FC3FD2502434700FC9CC4 /* AddReportSheet.swift */; };
 		0ECC099324F6535C00C780DD /* CardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC099224F6535C00C780DD /* CardViewData.swift */; };
 		0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		0E8E011C25001702005FDBCC /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		0E8E011E2500171D005FDBCC /* CalendarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarColor.swift; sourceTree = "<group>"; };
 		0E8EDD4E24F5714C009A960A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0E9FC3FD2502434700FC9CC4 /* AddReportSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportSheet.swift; sourceTree = "<group>"; };
 		0ECC099224F6535C00C780DD /* CardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewData.swift; sourceTree = "<group>"; };
 		0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 				0E8E011A250016D8005FDBCC /* CalendarController.swift */,
 				0E8E011C25001702005FDBCC /* CalendarManager.swift */,
 				0E8E011E2500171D005FDBCC /* CalendarColor.swift */,
+				0E9FC3FD2502434700FC9CC4 /* AddReportSheet.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				0E8E011B250016D8005FDBCC /* CalendarController.swift in Sources */,
 				0E8E01172500169C005FDBCC /* ReportSheet.swift in Sources */,
 				0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */,
+				0E9FC3FE2502434700FC9CC4 /* AddReportSheet.swift in Sources */,
 				0E1C6F5824F564A2007B5028 /* Summary.swift in Sources */,
 				0E0D26E2249FAC19007E5A63 /* ContentView.swift in Sources */,
 				0E72C35D24F7B34A00D98AFD /* ButtonView.swift in Sources */,

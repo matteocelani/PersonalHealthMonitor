@@ -39,6 +39,7 @@ struct CalendarTab: View {
           .navigationBarTitle(Text("Calendario"))
       }
     }
+    
 }
 
 /*struct Calendar_Previews: PreviewProvider {

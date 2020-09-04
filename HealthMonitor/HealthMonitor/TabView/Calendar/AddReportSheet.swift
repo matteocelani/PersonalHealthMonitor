@@ -1,22 +1,18 @@
 //
-//  AddReport.swift
+//  AddReportSheet.swift
 //  HealthMonitor
 //
-//  Created by Matteo Celani on 25/08/2020.
+//  Created by Matteo Celani on 04/09/2020.
 //  Copyright © 2020 Matteo Celani. All rights reserved.
 //
 
 import SwiftUI
 import Combine
 
-extension UIApplication {
-    func endEditing() {
-        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-
-
-struct AddReport: View {
+struct AddReportSheet: View {
+    
+    @Binding var showReportSheet : Bool
+    @Environment (\.presentationMode) var presentationMode
     
     // MARK: -Report Values
     @State var title = ""
@@ -39,7 +35,6 @@ struct AddReport: View {
     @State var breathImportance = 2
     
     // MARK: -Button Control
-    @State private var showingAlert = false
     func validateForm() -> Bool {
         let checkTemp: Float = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
         
@@ -75,8 +70,6 @@ struct AddReport: View {
         self.heartImportance = 2
         self.glycemiaImportance = 2
         self.breathImportance = 2
-        
-        self.showingAlert = true
     }
     
     // MARK: -CoreData Control
@@ -106,6 +99,7 @@ struct AddReport: View {
         do {
          try self.managedObjectContext.save()
          print("Report Salvato.")
+         self.presentationMode.wrappedValue.dismiss()
         } catch {
          print("Errore: \(error.localizedDescription)")
          }
@@ -116,8 +110,8 @@ struct AddReport: View {
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
+                Spacer()
                 VStack() {
-                    
                     // MARK: -Add Title
                         VStack(alignment: .center) {
                             Text("Nome del Report")
@@ -280,19 +274,23 @@ struct AddReport: View {
                     Button(action: {
                         self.newReport()
                         self.clearField()
+                        self.showReportSheet = false
+                        self.presentationMode.wrappedValue.dismiss()
                     }) {
                         ButtonView()
                     }.disabled(!self.validateForm())
-                    .alert(isPresented: $showingAlert) {
-                        Alert(title: Text("Il tuo report è stato aggiunto"), message: Text("Puoi modificarlo nel calendario o in riepilogo"), dismissButton: .default(Text("Capito")))
-                    }
-                    
+        
                     Spacer()
                     
                 }
             }
-            .navigationBarTitle(Text("Nuovo Report"))
+            .navigationBarTitle(Text("Nuovo Report"), displayMode: .inline)
             .modifier(AdaptsKeyboard())
+            .navigationBarItems(trailing: Button(action: {
+                self.showReportSheet = false
+            }) {
+                Text("Chiudi").bold()
+            })
         }
     }
     private func endEditing() {
