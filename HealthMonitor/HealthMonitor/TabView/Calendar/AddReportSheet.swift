@@ -289,7 +289,7 @@ struct AddReportSheet: View {
             .navigationBarItems(trailing: Button(action: {
                 self.showReportSheet = false
             }) {
-                Text("Chiudi").bold()
+                Text("Fine").bold()
             })
         }
     }

@@ -8,20 +8,14 @@
 
 import SwiftUI
 
-extension Notification.Name {
-
-    static var didSelectDeleteItem: Notification.Name {
-        return Notification.Name("Elimina Report")
-    }
-}
-
 struct ReportSheet: View {
     
     // CoreData Environment
     @Environment(\.managedObjectContext) var managedObjectContext
     var reports: FetchedResults<Report>
-    
     var date = Date()
+    
+    @State var showEditSheet = false
     
     var body: some View {        
         for list in self.reports {
@@ -37,8 +31,15 @@ struct ReportSheet: View {
                     Text(String(list.glycemia))
                     Text(String(list.glycemiaImportance))
                     Text(String(list.breath))
-                    Text(String(list.breathImportance))
-                    }
+                    //Text(String(list.breathImportance))
+                        Button(action: {
+                                self.showEditSheet.toggle()
+                            }) {
+                                Text("Show Detail")
+                            }.sheet(isPresented: $showEditSheet) {
+                                EditViewSheet(showEditSheet: self.$showEditSheet, title: list.title!, text: list.text!)         .environment(\.managedObjectContext, self.managedObjectContext)
+                            }
+                        }
                     )
                 }
             }
