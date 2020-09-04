@@ -11,8 +11,7 @@ import Combine
 
 struct AddReportSheet: View {
     
-    @Binding var showReportSheet : Bool
-    @Environment (\.presentationMode) var presentationMode
+    @Binding var showSheet : Bool
     
     // MARK: -Report Values
     @State var title = ""
@@ -99,7 +98,6 @@ struct AddReportSheet: View {
         do {
          try self.managedObjectContext.save()
          print("Report Salvato.")
-         self.presentationMode.wrappedValue.dismiss()
         } catch {
          print("Errore: \(error.localizedDescription)")
          }
@@ -274,8 +272,7 @@ struct AddReportSheet: View {
                     Button(action: {
                         self.newReport()
                         self.clearField()
-                        self.showReportSheet = false
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.showSheet = false
                     }) {
                         ButtonView()
                     }.disabled(!self.validateForm())
@@ -287,9 +284,9 @@ struct AddReportSheet: View {
             .navigationBarTitle(Text("Nuovo Report"), displayMode: .inline)
             .modifier(AdaptsKeyboard())
             .navigationBarItems(trailing: Button(action: {
-                self.showReportSheet = false
+                self.showSheet = false
             }) {
-                Text("Fine").bold()
+                Text("Chiudi").bold()
             })
         }
     }

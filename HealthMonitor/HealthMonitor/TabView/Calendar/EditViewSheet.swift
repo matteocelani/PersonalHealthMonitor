@@ -10,8 +10,10 @@ import SwiftUI
 
 struct EditViewSheet: View {
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    var reports: FetchedResults<Report>
+    
     @Binding var showEditSheet : Bool
-    @Environment (\.presentationMode) var presentationMode
     
     // MARK: -Report Values
     @State var title : String
@@ -22,38 +24,78 @@ struct EditViewSheet: View {
         return formatter
     }
     @State var date : Date
-    @State var temperature : Float
-    @State var heartbeat : Int
-    @State var glycemia : Int
-    @State var breath : Int
+    @State var temperature : String
+    @State var heartbeat : String
+    @State var glycemia : String
+    @State var breath : String
     
     // MARK: -Report Importance
-    @State var tempImportance: Int
-    @State var heartImportance: Int
-    @State var glycemiaImportance: Int
-    @State var breathImportance: Int
+    @State var tempImportance: Int16
+    @State var heartImportance: Int16
+    @State var glycemiaImportance: Int16
+    @State var breathImportance: Int16
+    
+    @State var id : UUID
+    
+
     
     // MARK: -Button Control
     @State private var showingAlert = false
-    func validateForm() -> Bool {
-        let checkTemp: Float = Float(self.temperature)
-        
-        let checkHeart: Int = Int(self.heartbeat)
-        let checkGlycemia: Int = Int(self.glycemia)
-        let checkBreath: Int = Int(self.breath)
-        
-        if (checkTemp >= 30.0 && checkTemp <= 45.0){
-            if (checkHeart >= 40){
-                if (checkGlycemia >= 40){
-                    if (checkBreath >= 10){
-                        if (title != "") {
-                        return true
-                        }
-                    }
-                }
+     func validateForm() -> Bool {
+         let checkTemp: Float = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
+         
+         let checkHeart: Int = Int(self.heartbeat) ?? 0
+         let checkGlycemia: Int = Int(self.glycemia) ?? 0
+         let checkBreath: Int = Int(self.breath) ?? 0
+         
+         if (checkTemp >= 30.0 && checkTemp <= 45.0){
+             if (checkHeart >= 40){
+                 if (checkGlycemia >= 40){
+                     if (checkBreath >= 10){
+                         if (title != "") {
+                         return true
+                         }
+                     }
+                 }
+             }
+         }
+         return false
+     }
+    
+    // MARK: -Edit Report
+
+    func editReport() {
+        for list in self.reports {
+            if CompareId(id: id,  referenceId: list.id!) {
+                list.date = self.date
+                
+                list.title = self.title
+                list.text = self.text
+                
+                list.temperature = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
+                list.tempImportance = Int16(self.tempImportance+1)
+                
+                list.heartbeat = Int16(self.heartbeat)!
+                list.heartImportance = Int16(self.heartImportance+1)
+                
+                list.glycemia = Int16(self.glycemia)!
+                list.glycemiaImportance = Int16(self.glycemiaImportance+1)
+                
+                list.breath = Int16(self.breath)!
+                list.breathImportance = Int16(self.breathImportance+1)
+                
             }
         }
-        return false
+        do {
+          try self.managedObjectContext.save()
+          print("Report Modificato.")
+         } catch {
+          print("Errore: \(error.localizedDescription)")
+          }
+    }
+    
+    func CompareId(id: UUID, referenceId: UUID) -> Bool {
+        return id == referenceId
     }
     
     var body: some View {
@@ -113,7 +155,7 @@ struct EditViewSheet: View {
                                         .font(.title)
                                     
                                     
-                                    TextField("valore compreso tra 30 e 45", text: String(temperature))
+                                    TextField("valore compreso tra 30 e 45", text: $temperature)
                                         .frame(height: 30.0)
                                         .keyboardType(.decimalPad)
                                         .background(Color(UIColor.systemBackground))
@@ -141,7 +183,7 @@ struct EditViewSheet: View {
                                         .font(.title)
                                     
                                     
-                                    TextField("valore maggiore di 40", text: String(heartbeat))
+                                    TextField("valore maggiore di 40", text: $heartbeat)
                                         .frame(height: 30.0)
                                         .keyboardType(.decimalPad)
                                         .background(Color(UIColor.systemBackground))
@@ -169,7 +211,7 @@ struct EditViewSheet: View {
                                         .font(.title)
                                     
                                     
-                                    TextField("valore maggiore di 40", text: String(glycemia))
+                                    TextField("valore maggiore di 40", text: $glycemia)
                                         .frame(height: 30.0)
                                         .keyboardType(.decimalPad)
                                         .background(Color(UIColor.systemBackground))
@@ -197,7 +239,7 @@ struct EditViewSheet: View {
                                         .font(.title)
                                     
                                     
-                                    TextField("valore maggiore di 10", text: String(breath))
+                                    TextField("valore maggiore di 10", text: $breath)
                                         .frame(height: 30.0)
                                         .keyboardType(.decimalPad)
                                         .background(Color(UIColor.systemBackground))
@@ -221,8 +263,8 @@ struct EditViewSheet: View {
                             Divider()
                             
                             Button(action: {
+                                self.editReport()
                                 self.showEditSheet = false
-                                self.presentationMode.wrappedValue.dismiss()
                             }) {
                                 VStack(alignment: .center){
                                     Text("Modifica Report")
@@ -243,7 +285,7 @@ struct EditViewSheet: View {
                     .navigationBarItems(trailing: Button(action: {
                         self.showEditSheet = false
                     }) {
-                        Text("Fine").bold()
+                        Text("Chiudi").bold()
                     })
                 }
             }

@@ -25,7 +25,7 @@ struct CalendarMonth: View {
     }
     let cellWidth = CGFloat(32)
     
-    @State var showReportSheet = false
+    @State var showSheet = false
     
     
     var body: some View {
@@ -49,14 +49,16 @@ struct CalendarMonth: View {
                                         cellWidth: self.cellWidth)
                                         .onTapGesture {
                                             self.dateTapped(date: column)
-                                            self.showReportSheet = true
+                                            self.showSheet = true
                                     }
-                                    .sheet(isPresented: self.$showReportSheet) {
-                                        if self.isReport(date: self.CalendarManager.selectedDate) {
-                                            ReportSheet(reports: self.reports, date: self.CalendarManager.selectedDate)
+                                    .sheet(isPresented: self.$showSheet) {
+                                        if !self.isReport(date: self.CalendarManager.selectedDate ?? Date()) {
+                                            AddReportSheet(showSheet: self.$showSheet, date: self.CalendarManager.selectedDate ?? Date())
+                                            .environment(\.managedObjectContext, self.managedObjectContext)
                                         }
                                         else {
-                                            AddReportSheet(showReportSheet: self.$showReportSheet, date: self.CalendarManager.selectedDate).environment(\.managedObjectContext, self.managedObjectContext)
+                                            ReportSheet(showSheet: self.$showSheet, reports: self.reports, date: self.CalendarManager.selectedDate)
+                                            .environment(\.managedObjectContext, self.managedObjectContext)
                                         }
                                     }
                                 } else {

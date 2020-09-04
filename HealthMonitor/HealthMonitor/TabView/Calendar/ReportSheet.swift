@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ReportSheet: View {
     
+    @Binding var showSheet : Bool
+    
     // CoreData Environment
     @Environment(\.managedObjectContext) var managedObjectContext
     var reports: FetchedResults<Report>
@@ -35,9 +37,23 @@ struct ReportSheet: View {
                         Button(action: {
                                 self.showEditSheet.toggle()
                             }) {
-                                Text("Show Detail")
+                                Text("Modifica Report")
                             }.sheet(isPresented: $showEditSheet) {
-                                EditViewSheet(showEditSheet: self.$showEditSheet, title: list.title!, text: list.text!)         .environment(\.managedObjectContext, self.managedObjectContext)
+                                EditViewSheet(
+                                    reports : self.reports,
+                                    showEditSheet: self.$showEditSheet,
+                                    title: list.title!,
+                                    text: list.text ?? "",
+                                    date: list.date!,
+                                    temperature: String(list.temperature),
+                                    heartbeat: String(list.heartbeat),
+                                    glycemia: String(list.glycemia),
+                                    breath: String(list.breath),
+                                    tempImportance: list.tempImportance,
+                                    heartImportance: list.heartImportance,
+                                    glycemiaImportance: list.glycemiaImportance,
+                                    breathImportance: list.breathImportance,
+                                    id : list.id!)
                             }
                         }
                     )
