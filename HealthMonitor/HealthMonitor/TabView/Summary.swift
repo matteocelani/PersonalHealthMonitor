@@ -11,10 +11,8 @@ import SwiftUICharts
 
 struct Summary: View {
     
-    @FetchRequest(
-        entity: Report.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Report.date, ascending: false)]
-    )
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: Report.entity(), sortDescriptors: [])
     var reports: FetchedResults<Report>
     
     init() {
@@ -52,16 +50,28 @@ struct Summary: View {
                 ))
                 Spacer()
                 }
-                }
+            } else {
             List{
-            LineChartView(data: self.reportTempArray(), title: "Temperatura",form: ChartForm.large,rateValue: 0)
+                NavigationLink(destination: AllReport()) {
+                        ListView(content: AnyView(
+                            Text("Tutti i report")
+                            .font(.headline)
+                ))
+                }
+                
+            LineChartView(data: self.reportTempArray(), title: "Temperatura", form: ChartForm.large,rateValue: 0)
+                .padding(.top)
             Spacer()
             LineChartView(data: self.reportHeaArray(), title: "Battito Cardiaco",form: ChartForm.large, rateValue: 0)
+                .padding(.top)
             Spacer()
             LineChartView(data: self.reportGlyArray(), title: "Glicemia",form: ChartForm.large, rateValue: 0)
+                .padding(.top)
             Spacer()
             LineChartView(data: self.reportBreArray(), title: "Frequenza Respiratoria",form: ChartForm.large, rateValue: 0)
+                .padding(.top)
             Spacer()
+                }
                 }
             }
         .navigationBarTitle(Text("Sommario"))
@@ -70,7 +80,7 @@ struct Summary: View {
     
     private func reportTempArray() -> [Double] {
         var array = [Double]()
-        for report in self.reports.reversed(){
+        for report in self.reports{
             array.append(Double(report.temperature))
         }
         return array
@@ -78,7 +88,7 @@ struct Summary: View {
     
     private func reportHeaArray() -> [Double] {
         var array = [Double]()
-        for report in self.reports.reversed(){
+        for report in self.reports{
             array.append(Double(report.heartbeat))
         }
         return array
@@ -86,7 +96,7 @@ struct Summary: View {
     
     private func reportGlyArray() -> [Double] {
         var array = [Double]()
-        for report in self.reports.reversed(){
+        for report in self.reports{
             array.append(Double(report.glycemia))
         }
         return array
@@ -94,7 +104,7 @@ struct Summary: View {
     
     private func reportBreArray() -> [Double] {
         var array = [Double]()
-        for report in self.reports.reversed(){
+        for report in self.reports{
             array.append(Double(report.breath))
         }
         return array

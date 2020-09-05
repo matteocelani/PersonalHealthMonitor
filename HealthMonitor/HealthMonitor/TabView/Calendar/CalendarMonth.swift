@@ -52,12 +52,12 @@ struct CalendarMonth: View {
                                             self.showSheet = true
                                     }
                                     .sheet(isPresented: self.$showSheet) {
-                                        if !self.isReport(date: self.CalendarManager.selectedDate ?? Date()) {
-                                            AddReportSheet(showSheet: self.$showSheet, date: self.CalendarManager.selectedDate ?? Date())
+                                        if self.isReport(date: self.CalendarManager.selectedDate ?? Date()) {
+                                            ReportSheet(showSheet: self.$showSheet, reports: self.reports, date: self.CalendarManager.selectedDate)
                                             .environment(\.managedObjectContext, self.managedObjectContext)
                                         }
                                         else {
-                                            ReportSheet(showSheet: self.$showSheet, reports: self.reports, date: self.CalendarManager.selectedDate)
+                                            AddReportSheet(showSheet: self.$showSheet, date: self.CalendarManager.selectedDate ?? Date())
                                             .environment(\.managedObjectContext, self.managedObjectContext)
                                         }
                                     }

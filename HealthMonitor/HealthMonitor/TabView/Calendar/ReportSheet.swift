@@ -24,20 +24,56 @@ struct ReportSheet: View {
             if CompareDate(date: date, referenceDate: list.date ?? Date()) {
                 return AnyView (
                     VStack {
-                    Text("\(list.title!)")
-                    Text("\(list.text!)")
-                    Text(String(list.temperature))
-                    Text(String(list.tempImportance))
-                    Text(String(list.heartbeat))
-                    Text(String(list.heartImportance))
-                    Text(String(list.glycemia))
-                    Text(String(list.glycemiaImportance))
-                    Text(String(list.breath))
-                    //Text(String(list.breathImportance))
+                        Spacer()
+                        Text("\(list.title!)")
+                            .font(.title)
+                        Text("\(list.text!)")
+                        Spacer()
+                        HStack {
+                            ReportData(content: AnyView(
+                                VStack{
+                                    Text("Temperatura").font(.headline)
+                                    Text(String(list.temperature))
+                                    Text(String(list.tempImportance))
+                                }
+                            )).padding()
+
+                            ReportData(content: AnyView(
+                                VStack{
+                                    Text("Battito Cardiaco").font(.headline)
+                                    Text(String(list.heartbeat))
+                                    Text(String(list.heartImportance))
+                                }
+                            )).padding()
+                        }
+                        HStack {
+                            ReportData(content: AnyView(
+                                VStack{
+                                    Text("Glicemia").font(.headline)
+                                    Text(String(list.glycemia))
+                                    Text(String(list.glycemiaImportance))
+                                }
+                            )).padding()
+
+                            ReportData(content: AnyView(
+                                VStack{
+                                    Text("Frequenza Respiratoria").font(.headline)
+                                    Text(String(list.breath))
+                                    Text(String(list.breathImportance))
+                                }
+                            )).padding()
+                        }
                         Button(action: {
                                 self.showEditSheet.toggle()
                             }) {
-                                Text("Modifica Report")
+                                VStack(alignment: .center){
+                                    Text("Modifica il Report")
+                                        .font(.title)
+                                }
+                                .padding(.all)
+                                .frame(width: 370.0, height: 70.0)
+                                .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
+                                .cornerRadius(14.0)
                             }.sheet(isPresented: $showEditSheet) {
                                 EditViewSheet(
                                     reports : self.reports,

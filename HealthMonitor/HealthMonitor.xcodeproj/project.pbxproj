@@ -27,9 +27,14 @@
 		0E8E011D25001702005FDBCC /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E011C25001702005FDBCC /* CalendarManager.swift */; };
 		0E8E011F2500171D005FDBCC /* CalendarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E011E2500171D005FDBCC /* CalendarColor.swift */; };
 		0E8EDD4F24F5714C009A960A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EDD4E24F5714C009A960A /* CardView.swift */; };
+		0E8FA18B2503D935004A6C88 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FA18A2503D935004A6C88 /* ListView.swift */; };
+		0E8FA18D2503DA59004A6C88 /* AllReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8FA18C2503DA59004A6C88 /* AllReport.swift */; };
 		0E9FC3FE2502434700FC9CC4 /* AddReportSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9FC3FD2502434700FC9CC4 /* AddReportSheet.swift */; };
 		0ECC099324F6535C00C780DD /* CardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC099224F6535C00C780DD /* CardViewData.swift */; };
 		0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */; };
+		0ED4619C2503EA8600F58E83 /* ListReportDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED4619B2503EA8600F58E83 /* ListReportDetail.swift */; };
+		0ED4619E2503FB0E00F58E83 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED4619D2503FB0E00F58E83 /* FilterSheet.swift */; };
+		0ED461A2250406E400F58E83 /* ReportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED461A1250406E400F58E83 /* ReportData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,9 +59,14 @@
 		0E8E011C25001702005FDBCC /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		0E8E011E2500171D005FDBCC /* CalendarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarColor.swift; sourceTree = "<group>"; };
 		0E8EDD4E24F5714C009A960A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0E8FA18A2503D935004A6C88 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		0E8FA18C2503DA59004A6C88 /* AllReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReport.swift; sourceTree = "<group>"; };
 		0E9FC3FD2502434700FC9CC4 /* AddReportSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportSheet.swift; sourceTree = "<group>"; };
 		0ECC099224F6535C00C780DD /* CardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewData.swift; sourceTree = "<group>"; };
 		0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsKeyboard.swift; sourceTree = "<group>"; };
+		0ED4619B2503EA8600F58E83 /* ListReportDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReportDetail.swift; sourceTree = "<group>"; };
+		0ED4619D2503FB0E00F58E83 /* FilterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheet.swift; sourceTree = "<group>"; };
+		0ED461A1250406E400F58E83 /* ReportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				0E1C6F5724F564A2007B5028 /* Summary.swift */,
+				0E8FA1892503D920004A6C88 /* Summary */,
 				0E1C6F5924F564F4007B5028 /* CalendarTab.swift */,
 				0E56715E24FC1C89002D8FD7 /* Calendar */,
 				0E1C6F5B24F5650D007B5028 /* AddReport.swift */,
@@ -129,6 +140,7 @@
 				0E8E01122500164E005FDBCC /* CalendarDate.swift */,
 				0E8E011425001681005FDBCC /* CalendarCell.swift */,
 				0E8E01162500169C005FDBCC /* ReportSheet.swift */,
+				0ED461A1250406E400F58E83 /* ReportData.swift */,
 				0E44DAA825025654001A349B /* EditViewSheet.swift */,
 				0E8E0118250016B5005FDBCC /* CalendarMonth.swift */,
 				0E8E011A250016D8005FDBCC /* CalendarController.swift */,
@@ -147,6 +159,17 @@
 				0E72C35C24F7B34A00D98AFD /* ButtonView.swift */,
 			);
 			path = AddReport;
+			sourceTree = "<group>";
+		};
+		0E8FA1892503D920004A6C88 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FA18C2503DA59004A6C88 /* AllReport.swift */,
+				0ED4619B2503EA8600F58E83 /* ListReportDetail.swift */,
+				0E8FA18A2503D935004A6C88 /* ListView.swift */,
+				0ED4619D2503FB0E00F58E83 /* FilterSheet.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,18 +254,23 @@
 				0E0D26DE249FAC19007E5A63 /* AppDelegate.swift in Sources */,
 				0E0D26E0249FAC19007E5A63 /* SceneDelegate.swift in Sources */,
 				0E56717724FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld in Sources */,
+				0E8FA18D2503DA59004A6C88 /* AllReport.swift in Sources */,
 				0ECC099324F6535C00C780DD /* CardViewData.swift in Sources */,
 				0E8E011B250016D8005FDBCC /* CalendarController.swift in Sources */,
 				0E8E01172500169C005FDBCC /* ReportSheet.swift in Sources */,
 				0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */,
 				0E9FC3FE2502434700FC9CC4 /* AddReportSheet.swift in Sources */,
+				0ED4619E2503FB0E00F58E83 /* FilterSheet.swift in Sources */,
 				0E1C6F5824F564A2007B5028 /* Summary.swift in Sources */,
 				0E0D26E2249FAC19007E5A63 /* ContentView.swift in Sources */,
 				0E72C35D24F7B34A00D98AFD /* ButtonView.swift in Sources */,
 				0E44DAA925025655001A349B /* EditViewSheet.swift in Sources */,
+				0ED4619C2503EA8600F58E83 /* ListReportDetail.swift in Sources */,
+				0ED461A2250406E400F58E83 /* ReportData.swift in Sources */,
 				0E1C6F5A24F564F4007B5028 /* CalendarTab.swift in Sources */,
 				0E8E011D25001702005FDBCC /* CalendarManager.swift in Sources */,
 				0E8E01132500164E005FDBCC /* CalendarDate.swift in Sources */,
+				0E8FA18B2503D935004A6C88 /* ListView.swift in Sources */,
 				0E1C6F5C24F5650D007B5028 /* AddReport.swift in Sources */,
 				0E8E0119250016B5005FDBCC /* CalendarMonth.swift in Sources */,
 				0E8E011525001681005FDBCC /* CalendarCell.swift in Sources */,
