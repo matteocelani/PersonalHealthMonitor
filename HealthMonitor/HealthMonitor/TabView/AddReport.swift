@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import Foundation
 
 extension UIApplication {
     func endEditing() {
@@ -77,10 +78,23 @@ struct AddReport: View {
         self.breathImportance = 2
         
         self.showingAlert = true
+        
+        self.endEditing()
     }
     
     // MARK: -CoreData Control
     @Environment(\.managedObjectContext) var managedObjectContext
+    var reports: FetchedResults<Report>
+    
+    func controlReport() {
+        for report in reports {
+            if CompareDate(date: report.date!, referenceDate: self.date){
+                avgReport(report: report)
+                return
+            }
+        }
+        newReport()
+    }
     
     func newReport() {
         let newReport = Report(context: self.managedObjectContext)
@@ -91,17 +105,17 @@ struct AddReport: View {
         newReport.title = self.title
         newReport.text = self.text
         
-        newReport.temperature = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
-        newReport.tempImportance = Int16(self.tempImportance+1)
+        newReport.temperature = Float(self.temperature.replacingOccurrences(of: ",", with: "."))!
+        newReport.tempImportance = Int16(self.tempImportance)
         
         newReport.heartbeat = Int16(self.heartbeat)!
-        newReport.heartImportance = Int16(self.heartImportance+1)
+        newReport.heartImportance = Int16(self.heartImportance)
         
         newReport.glycemia = Int16(self.glycemia)!
-        newReport.glycemiaImportance = Int16(self.glycemiaImportance+1)
+        newReport.glycemiaImportance = Int16(self.glycemiaImportance)
         
         newReport.breath = Int16(self.breath)!
-        newReport.breathImportance = Int16(self.breathImportance+1)
+        newReport.breathImportance = Int16(self.breathImportance)
         
         do {
          try self.managedObjectContext.save()
@@ -109,6 +123,46 @@ struct AddReport: View {
         } catch {
          print("Errore: \(error.localizedDescription)")
          }
+    }
+    
+    func avgReport(report:Report) {
+        
+        report.title = self.title
+        report.text = self.text
+        
+        report.temperature = (report.temperature + Float(self.temperature.replacingOccurrences(of: ",", with: "."))!)/2
+        report.tempImportance = Int16(self.tempImportance)
+        
+        report.heartbeat = (report.heartbeat + Int16(self.heartbeat)!)/2
+        report.heartImportance = Int16(self.heartImportance)
+        
+            report.glycemia = (report.glycemia + Int16(self.glycemia)!)/2
+        report.glycemiaImportance = Int16(self.glycemiaImportance)
+        
+            report.breath = (report.breath + Int16(self.breath)!)/2
+        report.breathImportance = Int16(self.breathImportance)
+        
+        do {
+         try self.managedObjectContext.save()
+         print("Report Salvato.")
+        } catch {
+         print("Errore: \(error.localizedDescription)")
+         }
+    }
+    
+    func CompareDate(date: Date, referenceDate: Date) -> Bool {
+        let order = Calendar.current.compare(date, to: referenceDate, toGranularity: .day)
+        
+        switch order {
+        case .orderedDescending:
+            return false
+        case .orderedAscending:
+            return false
+        case .orderedSame:
+            return true
+        default:
+            return false
+        }
     }
     
     
@@ -278,7 +332,7 @@ struct AddReport: View {
                     Divider()
                     
                     Button(action: {
-                        self.newReport()
+                        self.controlReport()
                         self.clearField()
                     }) {
                         ButtonView()

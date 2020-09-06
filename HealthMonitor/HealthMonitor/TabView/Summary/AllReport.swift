@@ -28,7 +28,7 @@ struct AllReport: View {
          print("Errore: \(error.localizedDescription)")
          }
         }
-    
+    @State var showSheet = false
     @State var showFilterSheet = false
     
     var body: some View {
@@ -36,7 +36,7 @@ struct AllReport: View {
             ForEach(reports, id: \.id) { report in
                 VStack{
                     HStack {
-                        NavigationLink(destination: AllReport()) {
+                        NavigationLink(destination: ReportView(report: report, date: report.date!, showSheet: self.$showSheet, reports: self.reports )) {
                             ListReportDetail(report: report, date: report.date!)
                         }
                     }

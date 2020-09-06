@@ -54,23 +54,30 @@ struct Summary: View {
             List{
                 NavigationLink(destination: AllReport()) {
                         ListView(content: AnyView(
+                            HStack {
+                                Image(systemName: "list.bullet").foregroundColor(.black).font(.largeTitle)
+                            Spacer()
                             Text("Tutti i report")
                             .font(.headline)
+                            Spacer()
+                            }
                 ))
                 }
-                
-            LineChartView(data: self.reportTempArray(), title: "Temperatura", form: ChartForm.large,rateValue: 0)
+                Divider()
+                HStack {
+            LineChartView(data: self.reportTempArray(), title: "Temperatura",rateValue: 0)
                 .padding(.top)
-            Spacer()
-            LineChartView(data: self.reportHeaArray(), title: "Battito Cardiaco",form: ChartForm.large, rateValue: 0)
+            //Spacer()
+            LineChartView(data: self.reportHeaArray(), title: "Battito", rateValue: 0)
                 .padding(.top)
-            Spacer()
-            LineChartView(data: self.reportGlyArray(), title: "Glicemia",form: ChartForm.large, rateValue: 0)
+           // Spacer()
+                }
+                HStack {
+            LineChartView(data: self.reportGlyArray(), title: "Glicemia", rateValue: 0)
                 .padding(.top)
-            Spacer()
-            LineChartView(data: self.reportBreArray(), title: "Frequenza Respiratoria",form: ChartForm.large, rateValue: 0)
+            LineChartView(data: self.reportBreArray(), title: "Respiro", rateValue: 0)
                 .padding(.top)
-            Spacer()
+                }
                 }
                 }
             }

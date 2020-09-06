@@ -33,7 +33,7 @@ struct ContentView: View {
                    Text("Calendario")
                 }
                 
-                AddReport()
+                AddReport(reports: reports)
                 .tabItem {
                    Image(systemName: "plus")
                    Text("Nuovo")

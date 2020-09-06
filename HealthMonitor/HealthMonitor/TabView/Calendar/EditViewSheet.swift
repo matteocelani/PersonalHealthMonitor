@@ -14,6 +14,7 @@ struct EditViewSheet: View {
     var reports: FetchedResults<Report>
     
     @Binding var showEditSheet : Bool
+    @Binding var showSheet: Bool
     
     // MARK: -Report Values
     @State var title : String
@@ -73,16 +74,16 @@ struct EditViewSheet: View {
                 list.text = self.text
                 
                 list.temperature = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
-                list.tempImportance = Int16(self.tempImportance+1)
+                list.tempImportance = Int16(self.tempImportance)
                 
                 list.heartbeat = Int16(self.heartbeat)!
-                list.heartImportance = Int16(self.heartImportance+1)
+                list.heartImportance = Int16(self.heartImportance)
                 
                 list.glycemia = Int16(self.glycemia)!
-                list.glycemiaImportance = Int16(self.glycemiaImportance+1)
+                list.glycemiaImportance = Int16(self.glycemiaImportance)
                 
                 list.breath = Int16(self.breath)!
-                list.breathImportance = Int16(self.breathImportance+1)
+                list.breathImportance = Int16(self.breathImportance)
                 
             }
         }
@@ -95,6 +96,7 @@ struct EditViewSheet: View {
     }
     
     func CompareId(id: UUID, referenceId: UUID) -> Bool {
+
         return id == referenceId
     }
     
@@ -265,6 +267,7 @@ struct EditViewSheet: View {
                             Button(action: {
                                 self.editReport()
                                 self.showEditSheet = false
+                                self.showSheet = false
                             }) {
                                 VStack(alignment: .center){
                                     Text("Modifica Report")
@@ -289,4 +292,5 @@ struct EditViewSheet: View {
                     })
                 }
             }
+
 }

@@ -57,7 +57,7 @@ struct CalendarMonth: View {
                                             .environment(\.managedObjectContext, self.managedObjectContext)
                                         }
                                         else {
-                                            AddReportSheet(showSheet: self.$showSheet, date: self.CalendarManager.selectedDate ?? Date())
+                                            AddReportSheet(showSheet: self.$showSheet, date: self.CalendarManager.selectedDate ?? Date(), reports: self.reports)
                                             .environment(\.managedObjectContext, self.managedObjectContext)
                                         }
                                     }

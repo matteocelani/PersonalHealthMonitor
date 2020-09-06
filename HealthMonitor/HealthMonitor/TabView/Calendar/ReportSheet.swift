@@ -7,11 +7,10 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ReportSheet: View {
-    
     @Binding var showSheet : Bool
-    
     // CoreData Environment
     @Environment(\.managedObjectContext) var managedObjectContext
     var reports: FetchedResults<Report>
@@ -25,24 +24,32 @@ struct ReportSheet: View {
                 return AnyView (
                     VStack {
                         Spacer()
-                        Text("\(list.title!)")
-                            .font(.title)
-                        Text("\(list.text!)")
+                        Text("\(list.title!)").font(.largeTitle)
+                        Text("\(list.text!)").font(.headline)
+                        Divider()
                         Spacer()
                         HStack {
                             ReportData(content: AnyView(
-                                VStack{
+                                VStack(){
                                     Text("Temperatura").font(.headline)
-                                    Text(String(list.temperature))
-                                    Text(String(list.tempImportance))
+                                    Image(systemName: "staroflife.fill").foregroundColor(.blue).font(.largeTitle)
+                                    Spacer()
+                                    Text(String(list.temperature)).font(.largeTitle)
+                                    Spacer()
+                                    Text("Importanza valore").font(.subheadline)
+                                    Text(String(list.tempImportance+1))
                                 }
                             )).padding()
 
                             ReportData(content: AnyView(
                                 VStack{
                                     Text("Battito Cardiaco").font(.headline)
-                                    Text(String(list.heartbeat))
-                                    Text(String(list.heartImportance))
+                                    Image(systemName: "heart.fill").foregroundColor(.red).font(.largeTitle)
+                                    Spacer()
+                                    Text(String(list.heartbeat)).font(.largeTitle)
+                                    Spacer()
+                                    Text("Importanza valore").font(.subheadline)
+                                    Text(String(list.heartImportance+1))
                                 }
                             )).padding()
                         }
@@ -50,19 +57,31 @@ struct ReportSheet: View {
                             ReportData(content: AnyView(
                                 VStack{
                                     Text("Glicemia").font(.headline)
-                                    Text(String(list.glycemia))
-                                    Text(String(list.glycemiaImportance))
+                                    Image(systemName: "bandage.fill").foregroundColor(.yellow).font(.largeTitle)
+                                    Spacer()
+                                    Text(String(list.glycemia)).font(.largeTitle)
+                                    Spacer()
+                                    Text("Importanza valore").font(.subheadline)
+                                    Text(String(list.glycemiaImportance+1))
                                 }
                             )).padding()
 
                             ReportData(content: AnyView(
                                 VStack{
                                     Text("Frequenza Respiratoria").font(.headline)
-                                    Text(String(list.breath))
-                                    Text(String(list.breathImportance))
+                                    Image(systemName: "waveform.path.ecg").foregroundColor(.green).font(.largeTitle)
+                                    Spacer()
+                                    Text(String(list.breath)).font(.largeTitle)
+                                    Spacer()
+                                    Text("Importanza valore").font(.subheadline)
+                                    Text(String(list.breathImportance+1))
                                 }
                             )).padding()
                         }
+                        Divider()
+                        Spacer()
+                        
+                        VStack {
                         Button(action: {
                                 self.showEditSheet.toggle()
                             }) {
@@ -78,6 +97,7 @@ struct ReportSheet: View {
                                 EditViewSheet(
                                     reports : self.reports,
                                     showEditSheet: self.$showEditSheet,
+                                    showSheet: self.$showSheet,
                                     title: list.title!,
                                     text: list.text ?? "",
                                     date: list.date!,
@@ -91,6 +111,39 @@ struct ReportSheet: View {
                                     breathImportance: list.breathImportance,
                                     id : list.id!)
                             }
+                            
+                            Button(action: {
+                                    self.showEditSheet.toggle()
+                                }) {
+                                    VStack(alignment: .center){
+                                        Text("Elimina il Report")
+                                            .font(.title)
+                                            .foregroundColor(.red)
+                                    }
+                                    .padding(.all)
+                                    .frame(width: 370.0, height: 70.0)
+                                    .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
+                                    .cornerRadius(14.0)
+                                }.sheet(isPresented: $showEditSheet) {
+                                    EditViewSheet(
+                                        reports : self.reports,
+                                        showEditSheet: self.$showEditSheet,
+                                        showSheet: self.$showSheet,
+                                        title: list.title!,
+                                        text: list.text ?? "",
+                                        date: list.date!,
+                                        temperature: String(list.temperature),
+                                        heartbeat: String(list.heartbeat),
+                                        glycemia: String(list.glycemia),
+                                        breath: String(list.breath),
+                                        tempImportance: list.tempImportance,
+                                        heartImportance: list.heartImportance,
+                                        glycemiaImportance: list.glycemiaImportance,
+                                        breathImportance: list.breathImportance,
+                                        id : list.id!)
+                                }
+                            .padding()
+                        }
                         }
                     )
                 }
