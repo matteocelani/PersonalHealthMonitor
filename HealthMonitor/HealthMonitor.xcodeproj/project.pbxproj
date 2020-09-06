@@ -215,11 +215,9 @@
 			};
 			buildConfigurationList = 0E0D26D5249FAC19007E5A63 /* Build configuration list for PBXProject "HealthMonitor" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = it;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
 				it,
 			);
 			mainGroup = 0E0D26D1249FAC19007E5A63;
