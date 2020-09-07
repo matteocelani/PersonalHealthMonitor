@@ -109,7 +109,7 @@ struct ReportSheet: View {
                                     heartImportance: list.heartImportance,
                                     glycemiaImportance: list.glycemiaImportance,
                                     breathImportance: list.breathImportance,
-                                    id : list.id!)
+                                    id : list.id!).environment(\.managedObjectContext, self.managedObjectContext)
                             }
                             
                             Button(action: {
@@ -140,7 +140,7 @@ struct ReportSheet: View {
                                         heartImportance: list.heartImportance,
                                         glycemiaImportance: list.glycemiaImportance,
                                         breathImportance: list.breathImportance,
-                                        id : list.id!)
+                                        id : list.id!).environment(\.managedObjectContext, self.managedObjectContext)
                                 }
                             .padding()
                         }

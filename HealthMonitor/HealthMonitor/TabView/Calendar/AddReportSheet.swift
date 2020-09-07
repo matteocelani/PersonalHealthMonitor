@@ -28,7 +28,7 @@ struct AddReportSheet: View {
     @State var breath = ""
     
     // MARK: -Report Importance
-    @State var tempImportance : Int16 = 2
+    @State var tempImportance = 2
     @State var heartImportance = 2
     @State var glycemiaImportance = 2
     @State var breathImportance = 2

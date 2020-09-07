@@ -55,7 +55,7 @@ struct Summary: View {
                 NavigationLink(destination: AllReport()) {
                         ListView(content: AnyView(
                             HStack {
-                                Image(systemName: "list.bullet").foregroundColor(.black).font(.largeTitle)
+                                Image(systemName: "list.bullet").font(.largeTitle)
                             Spacer()
                             Text("Tutti i report")
                             .font(.headline)

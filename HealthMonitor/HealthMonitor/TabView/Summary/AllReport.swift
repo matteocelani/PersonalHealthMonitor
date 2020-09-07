@@ -12,7 +12,7 @@ struct AllReport: View {
     
     // CoreData Environment
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: Report.entity(), sortDescriptors: [])
+    @FetchRequest(entity: Report.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Report.date, ascending: false)])
     var reports: FetchedResults<Report>
     
     func deleteReport(at offsets : IndexSet) {
@@ -28,12 +28,44 @@ struct AllReport: View {
          print("Errore: \(error.localizedDescription)")
          }
         }
+    
     @State var showSheet = false
-    @State var showFilterSheet = false
+    @State var avgImportance = 0
+    @State var showFilter = false
+    
+        private func filterReport() -> [FetchedResults<Report>.Element] {
+            return self.reports.filter({
+                avgImp(tempImp: $0.tempImportance, heartImp: $0.heartImportance, glyImp: $0.glycemiaImportance, breImpo: $0.breathImportance) >= self.avgImportance
+            })
+    }
+    
+    func avgImp(tempImp: Int16, heartImp: Int16, glyImp: Int16, breImpo: Int16) -> Int16 {
+        let avgImp : Int16 = (tempImp + heartImp + glyImp + breImpo)/4
+        return avgImp
+    }
     
     var body: some View {
         List{
-            ForEach(reports, id: \.id) { report in
+            VStack {
+                Toggle(isOn: $showFilter){
+                    Text("Attiva filtri")
+                }
+                }
+            
+            if showFilter {
+            VStack(alignment: .leading) {
+                Text("Importanza:").font(.headline)
+                Text("Solo elementi che hanno una media di importanza:").font(.subheadline)
+                Picker(selection: $avgImportance, label: Text("Determinare un importanza")) {
+                    Text("1").tag(0)
+                    Text("2").tag(1)
+                    Text("3").tag(2)
+                    Text("4").tag(3)
+                    Text("5").tag(4)
+                }.pickerStyle(SegmentedPickerStyle())
+                Divider()
+            }
+            ForEach(filterReport(), id: \.id) { report in
                 VStack{
                     HStack {
                         NavigationLink(destination: ReportView(report: report, date: report.date!, showSheet: self.$showSheet, reports: self.reports )) {
@@ -43,15 +75,21 @@ struct AllReport: View {
                     Divider()
                 }
             }.onDelete(perform: self.deleteReport)
+        } else {
+                ForEach(reports, id: \.id) { report in
+                 VStack{
+                     HStack {
+                         
+                         NavigationLink(destination: ReportView(report: report, date: report.date!, showSheet: self.$showSheet, reports: self.reports )) {
+                             ListReportDetail(report: report, date: report.date!)
+                         }
+                     }
+                     Divider()
+                 }
+             }.onDelete(perform: self.deleteReport)
+            }
         }
-        .sheet(isPresented: $showFilterSheet) {
-        FilterSheet()
-                        }
         .navigationBarTitle("Tutti i report")
-        .navigationBarItems(trailing: Button(action: {
-            self.showFilterSheet = true
-        }) {
-            Text("Filtri").bold()
-        })
     }
+    
 }
