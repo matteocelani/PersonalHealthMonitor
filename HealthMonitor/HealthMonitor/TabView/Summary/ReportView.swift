@@ -44,7 +44,10 @@ struct ReportView: View {
                             Text("Temperatura").font(.headline)
                             Image(systemName: "staroflife.fill").foregroundColor(.blue).font(.largeTitle)
                             Spacer()
-                            Text(String(report.temperature)).font(.largeTitle)
+                            HStack {
+                                Text(String(report.temperature)).font(.largeTitle)
+                                Text("°C").font(.title)
+                            }
                             Spacer()
                             Text("Importanza valore").font(.subheadline)
                             Text(String(report.tempImportance+1))
@@ -56,7 +59,10 @@ struct ReportView: View {
                             Text("Battito Cardiaco").font(.headline)
                             Image(systemName: "heart.fill").foregroundColor(.red).font(.largeTitle)
                             Spacer()
-                            Text(String(report.heartbeat)).font(.largeTitle)
+                            HStack {
+                                Text(String(report.heartbeat)).font(.largeTitle)
+                                Text("bpm").font(.title)
+                            }
                             Spacer()
                             Text("Importanza valore").font(.subheadline)
                             Text(String(report.heartImportance+1))
@@ -69,7 +75,10 @@ struct ReportView: View {
                             Text("Glicemia").font(.headline)
                             Image(systemName: "bandage.fill").foregroundColor(.yellow).font(.largeTitle)
                             Spacer()
-                            Text(String(report.glycemia)).font(.largeTitle)
+                            HStack {
+                                Text(String(report.glycemia)).font(.largeTitle)
+                                Text("mg/dl").font(.title)
+                            }
                             Spacer()
                             Text("Importanza valore").font(.subheadline)
                             Text(String(report.glycemiaImportance+1))

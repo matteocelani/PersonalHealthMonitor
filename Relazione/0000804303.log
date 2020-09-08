@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.10)  21 JUN 2020 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.5)  8 SEP 2020 03:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -52,6 +52,18 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
+(/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2020/03/24 1.8d listings language file
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2020/03/24 1.8d listings language file
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
@@ -244,7 +256,23 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
-(./0000804303.aux)
+(./0000804303.aux
+
+LaTeX Warning: Label `fig:figure3' multiply defined.
+
+
+LaTeX Warning: Label `fig:figure3' multiply defined.
+
+
+LaTeX Warning: Label `fig:figure3' multiply defined.
+
+
+LaTeX Warning: Label `fig:figure3' multiply defined.
+
+
+LaTeX Warning: Label `fig:figure3' multiply defined.
+
+)
 \openout1 = `0000804303.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -333,29 +361,107 @@ e
 \tf@toc=\write3
 \openout3 = `0000804303.toc'.
 
- [2] [3]
+ [2] [3] [4]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+11.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+<img/riepilogo_iniziale.png, id=21, 481.8pt x 963.09813pt>
+File: img/riepilogo_iniziale.png Graphic file (type png)
+<use img/riepilogo_iniziale.png>
+Package pdftex.def Info: img/riepilogo_iniziale.png  used on input line 123.
+(pdftex.def)             Requested size: 103.50105pt x 206.88571pt.
+<img/calendario_iniziale.png, id=23, 476.27937pt x 958.07938pt>
+File: img/calendario_iniziale.png Graphic file (type png)
+<use img/calendario_iniziale.png>
+Package pdftex.def Info: img/calendario_iniziale.png  used on input line 124.
+(pdftex.def)             Requested size: 103.50105pt x 208.19054pt.
+<img/nuovo_iniziale.png, id=24, 476.27937pt x 951.555pt>
+File: img/nuovo_iniziale.png Graphic file (type png)
+<use img/nuovo_iniziale.png>
+Package pdftex.def Info: img/nuovo_iniziale.png  used on input line 125.
+(pdftex.def)             Requested size: 103.50105pt x 206.77278pt.
+ [5 <./img/riepilogo_iniziale.png> <./img/calendario_iniziale.png> <./img/nuovo
+_iniziale.png>]
+File: img/riepilogo_iniziale.png Graphic file (type png)
+<use img/riepilogo_iniziale.png>
+Package pdftex.def Info: img/riepilogo_iniziale.png  used on input line 145.
+(pdftex.def)             Requested size: 103.50105pt x 206.88571pt.
+<img/grafico1.png, id=34, 463.23062pt x 919.435pt>
+File: img/grafico1.png Graphic file (type png)
+<use img/grafico1.png>
+Package pdftex.def Info: img/grafico1.png  used on input line 160.
+(pdftex.def)             Requested size: 103.50105pt x 205.43294pt.
+<img/grafico2.png, id=35, 467.7475pt x 927.465pt>
+File: img/grafico2.png Graphic file (type png)
+<use img/grafico2.png>
+Package pdftex.def Info: img/grafico2.png  used on input line 161.
+(pdftex.def)             Requested size: 103.50105pt x 205.21754pt.
+<img/grafico3.png, id=36, 466.74374pt x 920.43875pt>
+File: img/grafico3.png Graphic file (type png)
+<use img/grafico3.png>
+Package pdftex.def Info: img/grafico3.png  used on input line 162.
+(pdftex.def)             Requested size: 103.50105pt x 204.09825pt.
+
+[6]
+<img/tutti1.png, id=41, 463.7325pt x 922.94812pt>
+File: img/tutti1.png Graphic file (type png)
+<use img/tutti1.png>
+Package pdftex.def Info: img/tutti1.png  used on input line 191.
+(pdftex.def)             Requested size: 103.50105pt x 205.99257pt.
+<img/tutti2.png, id=42, 462.72874pt x 928.97063pt>
+File: img/tutti2.png Graphic file (type png)
+<use img/tutti2.png>
+Package pdftex.def Info: img/tutti2.png  used on input line 192.
+(pdftex.def)             Requested size: 103.50105pt x 207.77615pt.
+<img/tutti3.png, id=43, 464.23438pt x 924.95563pt>
+File: img/tutti3.png Graphic file (type png)
+<use img/tutti3.png>
+Package pdftex.def Info: img/tutti3.png  used on input line 193.
+(pdftex.def)             Requested size: 103.50105pt x 206.2148pt.
+ [7 <./img/grafico1.png> <./img/grafico2.png> <./img/grafico3.png>]
+File: img/riepilogo_iniziale.png Graphic file (type png)
+<use img/riepilogo_iniziale.png>
+Package pdftex.def Info: img/riepilogo_iniziale.png  used on input line 212.
+(pdftex.def)             Requested size: 103.50105pt x 206.88571pt.
+ [8 <./img/tutti1.png> <./img/tutti2.png> <./img/tutti3.png>]
+File: img/riepilogo_iniziale.png Graphic file (type png)
+<use img/riepilogo_iniziale.png>
+Package pdftex.def Info: img/riepilogo_iniziale.png  used on input line 236.
+(pdftex.def)             Requested size: 103.50105pt x 206.88571pt.
+
 No file 0000804303.bbl.
-[4] (./0000804303.aux) ) 
+[9] [10] (./0000804303.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 7933 strings out of 480608
- 149935 string characters out of 5903630
- 396839 words of memory out of 5000000
- 23729 multiletter control sequences out of 15000+600000
- 544413 words of font info for 57 fonts, out of 8000000 for 9000
+ 8469 strings out of 480608
+ 156446 string characters out of 5903631
+ 469378 words of memory out of 5000000
+ 24233 multiletter control sequences out of 15000+600000
+ 547526 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,46p,1263b,382s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-
-super/cm-super-t1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm
--super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-s
-uper/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-sup
-er/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super
-/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/s
-frm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfr
-m1728.pfb>
-Output written on 0000804303.pdf (4 pages, 89506 bytes).
+ 36i,7n,51p,1263b,1235s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texli
+ve/2020/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on 0000804303.pdf (10 pages, 2712335 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

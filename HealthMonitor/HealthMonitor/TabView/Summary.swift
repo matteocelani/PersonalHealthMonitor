@@ -12,7 +12,7 @@ import SwiftUICharts
 struct Summary: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: Report.entity(), sortDescriptors: [])
+    @FetchRequest(entity: Report.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Report.date, ascending: false)])
     var reports: FetchedResults<Report>
     
     init() {
@@ -22,7 +22,7 @@ struct Summary: View {
             // To remove only extra separators below the list:
             UITableView.appearance().tableFooterView = UIView()
         }
-
+        
         // To remove all separators including the actual ones:
         UITableView.appearance().separatorStyle = .none
     }
@@ -30,59 +30,59 @@ struct Summary: View {
     var body: some View {
         NavigationView {
             Group{
-            if (reports.isEmpty){
-                VStack{
-                Text("Aggiungi il tuo primo report")
-                .font(.title)
-                
-                Spacer()
-                
-                MultiLineChartView(data: [([8,32,11,23,40,28], GradientColors.green), ([90,99,78,111,70,60,77], GradientColors.purple), ([34,56,72,38,43,100,50], GradientColors.orngPink)], title: "Report")
-                
-                Spacer()
-                
-                CardView(content: AnyView(
-                    VStack(alignment: .leading){
-                    Text("Health Monitor è un app che giornalmente ti ricorda di aggiungere un nuovo report, tenendo sempre sott'occhio alcuni parametri vitali come temperatura, battito cardiaco, respirazione e glicemia.")
-                    Text("E' fornita di un calendario nel quale sono presenti giornalmente i report.")
-                    Text("Cosa aspetti iniza subito a monitorare i tuoi parametri.")
-                    }
-                ))
-                Spacer()
-                }
-            } else {
-            List{
-                NavigationLink(destination: AllReport()) {
-                        ListView(content: AnyView(
-                            HStack {
-                                Image(systemName: "list.bullet").font(.largeTitle)
-                            Spacer()
-                            Text("Tutti i report")
-                            .font(.headline)
-                            Spacer()
+                if (reports.isEmpty){
+                    VStack{
+                        Text("Aggiungi il tuo primo report")
+                            .font(.title)
+                        
+                        Spacer()
+                        
+                        MultiLineChartView(data: [([8,32,11,23,40,28], GradientColors.green), ([90,99,78,111,70,60,77], GradientColors.purple), ([34,56,72,38,43,100,50], GradientColors.orngPink)], title: "Report")
+                        
+                        Spacer()
+                        
+                        CardView(content: AnyView(
+                            VStack(alignment: .leading){
+                                Text("Health Monitor è un app che giornalmente ti ricorda di aggiungere un nuovo report, tenendo sempre sott'occhio alcuni parametri vitali come temperatura, battito cardiaco, respirazione e glicemia.")
+                                Text("E' fornita di un calendario nel quale sono presenti giornalmente i report.")
+                                Text("Cosa aspetti iniza subito a monitorare i tuoi parametri.")
                             }
-                ))
-                }
-                Divider()
-                HStack {
-            LineChartView(data: self.reportTempArray(), title: "Temperatura",rateValue: 0)
-                .padding(.top)
-            //Spacer()
-            LineChartView(data: self.reportHeaArray(), title: "Battito", rateValue: 0)
-                .padding(.top)
-           // Spacer()
-                }
-                HStack {
-            LineChartView(data: self.reportGlyArray(), title: "Glicemia", rateValue: 0)
-                .padding(.top)
-            LineChartView(data: self.reportBreArray(), title: "Respiro", rateValue: 0)
-                .padding(.top)
-                }
-                }
+                        ))
+                        Spacer()
+                    }
+                } else {
+                    List{
+                        NavigationLink(destination: AllReport()) {
+                            ListView(content: AnyView(
+                                HStack {
+                                    Image(systemName: "list.bullet").font(.largeTitle)
+                                    Spacer()
+                                    Text("Tutti i report")
+                                        .font(.headline)
+                                    Spacer()
+                                }
+                            ))
+                        }
+                        Divider()
+                        HStack {
+                            LineChartView(data: self.reportTempArray(), title: "Temperatura",rateValue: 0)
+                                .padding(.top)
+                            //Spacer()
+                            LineChartView(data: self.reportHeaArray(), title: "Battito", rateValue: 0)
+                                .padding(.top)
+                            // Spacer()
+                        }
+                        HStack {
+                            LineChartView(data: self.reportGlyArray(), title: "Glicemia", rateValue: 0)
+                                .padding(.top)
+                            LineChartView(data: self.reportBreArray(), title: "Respiro", rateValue: 0)
+                                .padding(.top)
+                        }
+                    }
                 }
             }
-        .navigationBarTitle(Text("Sommario"))
-    }
+            .navigationBarTitle(Text("Sommario"))
+        }
     }
     
     private func reportTempArray() -> [Double] {

@@ -24,11 +24,11 @@
 
 \usepackage{listings}
 \lstset{
+language=Swift,
 basicstyle=\small\ttfamily,
 columns=flexible,
 breaklines=true,
 breakatwhitespace=false,
-numbers=left,
 literate={à}{{\'a}}1 {è}{{\'e}}1 {ò}{{\'o}}1 {ù}{{\'u}}1 {ì}{{\'\i}}1,
 }
 
@@ -68,7 +68,9 @@ Docente: 					& Federico Montori  \\
 \medskip
 Tutor didattico: 		& Luca Sciullo \\ 
 Mail: 							& matteo.celani@studio.unibo.it \\
+\bigskip
 Matricola: 					& 0000804303 \\
+GitHub: 					&www.github.com/matteocelani/PersonalHealthMonitor\\
 \end{tabular}
 \end{center}
 
@@ -78,9 +80,6 @@ Matricola: 					& 0000804303 \\
 \newpage
 \tableofcontents
 
-%----------------------------------------------------------------------------------------
-%	ESERCIZIO 1
-%----------------------------------------------------------------------------------------
 \newpage
 \section{Personal health monitor}
 
@@ -97,6 +96,157 @@ L'applicazione deve avvisare l'utente se non ha ancora inserito un rapporto per 
 \subsection{Grafici}
 
 L'applicazione dovrebbe essere in grado di raccogliere statistiche sull'utilizzo che visualizzano almeno due grafici di qualsiasi tipo (grafico a torta, diagramma a riquadri, istogramma, grafico a linee, ecc.) Che mostrano dati utili (ad esempio la variazione di informazioni sanitarie nell'arco di una settimana, la variazione di il numero di rapporti raccolti ogni giorno, ecc.).
+
+%----------------------------------------------------------------------------------------
+%	Introduzione app
+%----------------------------------------------------------------------------------------
+
+\newpage
+\section{HealtMonitor per iOS}
+
+Questa versione di HealtMonitor è stata pensata e sviluppa per \textbf{iOS 13} usando \textbf{Swift 5} su \textbf{xCode 11}.
+
+L'app è divisa in 3 sezioni principali richiamate nel ContentView.swift : 
+\begin{itemize}
+  \item \texttt{Summary()}
+  \item \texttt{CalendarTab()}
+  \item \texttt{AddReport() }
+\end{itemize}
+
+Ogni view viene invocata tramite la TabView, in \textit{"Riepilogo"} abbiamo i grafici dei valori inseriti e la lista di tutti i report, in \textit{"Calendario"} abbiamo un calendario organizzato per mesi dove si può controllare i giorni in cui si è inserito il report, infine possiamo aggiungere un nuovo report nell'ultima tab \textit{"Nuovo"}.
+
+\medskip
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{img/riepilogo_iniziale.png}\hfill
+\includegraphics[width=.3\textwidth]{img/calendario_iniziale.png}\hfill
+\includegraphics[width=.3\textwidth]{img/nuovo_iniziale.png}
+
+\caption{Schermate Iniziali}
+\label{fig:figure3}
+
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+%	Riepilogo
+%----------------------------------------------------------------------------------------
+
+\newpage
+\section{Riepilogo}
+
+In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno inoltre è presenta una lista dove si possono consultare tutti i Report. I report possono essere visualizzati tramite alcuni filtri, possono essere modificati ed eliminati.\\
+Se non è presente nessun dato viene caricata una schermata iniziale di benvenuto. 
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{img/riepilogo_iniziale.png}
+
+\caption{Schermata di benvenuto}
+\label{fig:figure3}
+\end{figure}
+
+\subsection{Grafici}
+
+Quando si inseriscono i dati, si iniziano a generare 4 grafici uno per ogni valore presente nel Report.\\
+I grafici generati usando un pacchetto Swift dal nome \textbf{\textit{"SwiftUICharts"}}, esso permette di generare grafici, prendendo in input array di dati di tipo Double. Si è reso necessario trasformare i \textbf{Core Data} in array ordinati con tutti gli elementi di tipo Double tramite 4 semplici funzioni: \texttt{reportTempArray()}, \texttt{reportHeaArray()}, \texttt{reportGlyArray()}, \texttt{reportBreArray()}.\\
+I valori dei grafici sono ordinati per data, basta trascinare il dito sopra al grafico per visualizzarli. 
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{img/grafico1.png}\hfill
+\includegraphics[width=.3\textwidth]{img/grafico2.png}\hfill
+\includegraphics[width=.3\textwidth]{img/grafico3.png}
+
+\caption{Grafici con valori}
+\label{fig:figure3}
+
+\end{figure}
+
+\newpage
+
+\subsection{Tutti i grafici}
+
+\begin{lstlisting}
+NavigationLink(destination: AllReport()) {
+	ListView(content: AnyView(
+		HStack {
+			Image(systemName: "list.bullet").font(.largeTitle)
+			Spacer()
+			Text("Tutti i report")
+			.font(.headline)
+			 Spacer()
+		}
+	))
+}
+
+\end{lstlisting}
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{img/tutti1.png}\hfill
+\includegraphics[width=.3\textwidth]{img/tutti2.png}\hfill
+\includegraphics[width=.3\textwidth]{img/tutti3.png}
+
+\caption{Grafici con valori}
+\label{fig:figure3}
+
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+%	Calendario
+%----------------------------------------------------------------------------------------
+
+\newpage
+\section{Calendario}
+
+In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno inoltre è presenta una lista dove si possono consultare tutti i Report. Se non è presente nessun dato viene caricata una schermata iniziale di benvenuto. 
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{img/riepilogo_iniziale.png}
+
+\caption{Schermata di benvenuto}
+\label{fig:figure3}
+\end{figure}
+
+\subsection{Grafici}
+
+Quando si inseriscono i dati, si iniziano a generare 4 grafici uno per ogni valore presente nel Report.\\
+I grafici generati usando un pacchetto Swift \textbf{\textit{"SwiftUICharts"}}
+
+
+%----------------------------------------------------------------------------------------
+%	Nuovo
+%----------------------------------------------------------------------------------------
+
+\newpage
+\section{Nuovo}
+
+In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno inoltre è presenta una lista dove si possono consultare tutti i Report. Se non è presente nessun dato viene caricata una schermata iniziale di benvenuto. 
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{img/riepilogo_iniziale.png}
+
+\caption{Schermata di benvenuto}
+\label{fig:figure3}
+\end{figure}
+
+\subsection{Grafici}
+
+Quando si inseriscono i dati, si iniziano a generare 4 grafici uno per ogni valore presente nel Report.\\
+I grafici generati usando un pacchetto Swift \textbf{\textit{"SwiftUICharts"}}
+
+
+
+
 
 
 %----------------------------------------------------------------------------------------
