@@ -161,7 +161,18 @@ struct ReportSheet: View {
     }
     
     func CompareDate(date: Date, referenceDate: Date) -> Bool {
-        return date == referenceDate
+        let order = Calendar.current.compare(date, to: referenceDate, toGranularity: .day)
+        
+        switch order {
+        case .orderedDescending:
+            return false
+        case .orderedAscending:
+            return false
+        case .orderedSame:
+            return true
+        default:
+            return false
+        }
     }
 
     func deleteReport(at offsets : IndexSet) {

@@ -20,9 +20,3 @@ struct ButtonView: View {
         .cornerRadius(14.0)
     }
 }
-
-struct ButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonView()
-    }
-}

@@ -18,6 +18,7 @@
 		0E44DAA925025655001A349B /* EditViewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E44DAA825025654001A349B /* EditViewSheet.swift */; };
 		0E56717424FD340B002D8FD7 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0E56717324FD340B002D8FD7 /* SwiftUICharts */; };
 		0E56717724FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E56717524FE9A76002D8FD7 /* HealthMonitor.xcdatamodeld */; };
+		0E67D4432507BF3000AABEDB /* FutureDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E67D4422507BF3000AABEDB /* FutureDay.swift */; };
 		0E72C35D24F7B34A00D98AFD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72C35C24F7B34A00D98AFD /* ButtonView.swift */; };
 		0E87600025056FF2009CA0F0 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E875FFF25056FF2009CA0F0 /* ReportView.swift */; };
 		0E8E01132500164E005FDBCC /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E01122500164E005FDBCC /* CalendarDate.swift */; };
@@ -34,8 +35,8 @@
 		0ECC099324F6535C00C780DD /* CardViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC099224F6535C00C780DD /* CardViewData.swift */; };
 		0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */; };
 		0ED4619C2503EA8600F58E83 /* ListReportDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED4619B2503EA8600F58E83 /* ListReportDetail.swift */; };
-		0ED4619E2503FB0E00F58E83 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED4619D2503FB0E00F58E83 /* FilterSheet.swift */; };
 		0ED461A2250406E400F58E83 /* ReportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED461A1250406E400F58E83 /* ReportData.swift */; };
+		0ED660B12507E0C300F532E7 /* FilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED660B02507E0C300F532E7 /* FilterSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		0E1C6F5B24F5650D007B5028 /* AddReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReport.swift; sourceTree = "<group>"; };
 		0E44DAA825025654001A349B /* EditViewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewSheet.swift; sourceTree = "<group>"; };
 		0E56717624FE9A76002D8FD7 /* Report.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Report.xcdatamodel; sourceTree = "<group>"; };
+		0E67D4422507BF3000AABEDB /* FutureDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureDay.swift; sourceTree = "<group>"; };
 		0E72C35C24F7B34A00D98AFD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0E875FFF25056FF2009CA0F0 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		0E8E01122500164E005FDBCC /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
@@ -67,8 +69,8 @@
 		0ECC099224F6535C00C780DD /* CardViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewData.swift; sourceTree = "<group>"; };
 		0ECC09DC24F7A7E300C780DD /* AdaptsKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsKeyboard.swift; sourceTree = "<group>"; };
 		0ED4619B2503EA8600F58E83 /* ListReportDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReportDetail.swift; sourceTree = "<group>"; };
-		0ED4619D2503FB0E00F58E83 /* FilterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheet.swift; sourceTree = "<group>"; };
 		0ED461A1250406E400F58E83 /* ReportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportData.swift; sourceTree = "<group>"; };
+		0ED660B02507E0C300F532E7 /* FilterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				0ED461A1250406E400F58E83 /* ReportData.swift */,
 				0E44DAA825025654001A349B /* EditViewSheet.swift */,
 				0E8E0118250016B5005FDBCC /* CalendarMonth.swift */,
+				0E67D4422507BF3000AABEDB /* FutureDay.swift */,
 				0E8E011A250016D8005FDBCC /* CalendarController.swift */,
 				0E8E011C25001702005FDBCC /* CalendarManager.swift */,
 				0E8E011E2500171D005FDBCC /* CalendarColor.swift */,
@@ -170,7 +173,7 @@
 				0ED4619B2503EA8600F58E83 /* ListReportDetail.swift */,
 				0E875FFF25056FF2009CA0F0 /* ReportView.swift */,
 				0E8FA18A2503D935004A6C88 /* ListView.swift */,
-				0ED4619D2503FB0E00F58E83 /* FilterSheet.swift */,
+				0ED660B02507E0C300F532E7 /* FilterSheet.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -261,9 +264,9 @@
 				0E8E01172500169C005FDBCC /* ReportSheet.swift in Sources */,
 				0ECC09DD24F7A7E300C780DD /* AdaptsKeyboard.swift in Sources */,
 				0E9FC3FE2502434700FC9CC4 /* AddReportSheet.swift in Sources */,
-				0ED4619E2503FB0E00F58E83 /* FilterSheet.swift in Sources */,
 				0E1C6F5824F564A2007B5028 /* Summary.swift in Sources */,
 				0E0D26E2249FAC19007E5A63 /* ContentView.swift in Sources */,
+				0E67D4432507BF3000AABEDB /* FutureDay.swift in Sources */,
 				0E72C35D24F7B34A00D98AFD /* ButtonView.swift in Sources */,
 				0E44DAA925025655001A349B /* EditViewSheet.swift in Sources */,
 				0ED4619C2503EA8600F58E83 /* ListReportDetail.swift in Sources */,
@@ -276,6 +279,7 @@
 				0E1C6F5C24F5650D007B5028 /* AddReport.swift in Sources */,
 				0E8E0119250016B5005FDBCC /* CalendarMonth.swift in Sources */,
 				0E8E011525001681005FDBCC /* CalendarCell.swift in Sources */,
+				0ED660B12507E0C300F532E7 /* FilterSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

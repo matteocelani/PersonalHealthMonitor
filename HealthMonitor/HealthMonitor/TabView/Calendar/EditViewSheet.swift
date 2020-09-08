@@ -38,8 +38,6 @@ struct EditViewSheet: View {
     
     @State var id : UUID
     
-
-    
     // MARK: -Button Control
     @State private var showingAlert = false
      func validateForm() -> Bool {
@@ -165,15 +163,7 @@ struct EditViewSheet: View {
                                         .multilineTextAlignment(TextAlignment.center)
                                     
                                     Text("Importanza:")
-                                    Picker(selection: $tempImportance, label: Text("Determinare un importanza")) {
-                                        Text("1").tag(0)
-                                        Text("2").tag(1)
-                                        Text("3").tag(2)
-                                        Text("4").tag(3)
-                                        Text("5").tag(4)
-                                    }.pickerStyle(SegmentedPickerStyle())
-
-
+                                    Stepper("Importance: \(tempImportance)", value: $tempImportance, in: 1...5)
                                 }
                             ))
 
@@ -193,15 +183,7 @@ struct EditViewSheet: View {
                                         .multilineTextAlignment(TextAlignment.center)
                                     
                                     Text("Importanza:")
-                                    Picker(selection: $heartImportance, label: Text("Determinare un importanza")) {
-                                        Text("1").tag(0)
-                                        Text("2").tag(1)
-                                        Text("3").tag(2)
-                                        Text("4").tag(3)
-                                        Text("5").tag(4)
-                                    }.pickerStyle(SegmentedPickerStyle())
-
-
+                                    Stepper("Importance: \(heartImportance)", value: $heartImportance, in: 1...5)
                                 }
                             ))
 
@@ -221,13 +203,7 @@ struct EditViewSheet: View {
                                         .multilineTextAlignment(TextAlignment.center)
                                     
                                     Text("Importanza:")
-                                    Picker(selection: $glycemiaImportance, label: Text("Determinare un importanza")) {
-                                        Text("1").tag(0)
-                                        Text("2").tag(1)
-                                        Text("3").tag(2)
-                                        Text("4").tag(3)
-                                        Text("5").tag(4)
-                                    }.pickerStyle(SegmentedPickerStyle())
+                                    Stepper("Importance: \(glycemiaImportance)", value: $glycemiaImportance, in: 1...5)
 
 
                                 }
@@ -249,15 +225,7 @@ struct EditViewSheet: View {
                                         .multilineTextAlignment(TextAlignment.center)
                                     
                                     Text("Importanza:")
-                                    Picker(selection: $breathImportance, label: Text("Determinare un importanza")) {
-                                        Text("1").tag(0)
-                                        Text("2").tag(1)
-                                        Text("3").tag(2)
-                                        Text("4").tag(3)
-                                        Text("5").tag(4)
-                                    }.pickerStyle(SegmentedPickerStyle())
-
-
+                                    Stepper("Importance: \(breathImportance)", value: $breathImportance, in: 1...5)
                                 }
                             ))
                             
@@ -268,6 +236,7 @@ struct EditViewSheet: View {
                                 self.editReport()
                                 self.showEditSheet = false
                                 self.showSheet = false
+                                
                             }) {
                                 VStack(alignment: .center){
                                     Text("Modifica Report")

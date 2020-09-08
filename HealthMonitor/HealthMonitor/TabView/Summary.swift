@@ -16,16 +16,11 @@ struct Summary: View {
     var reports: FetchedResults<Report>
     
     init() {
-        if #available(iOS 14.0, *) {
-            // iOS 14 doesn't have extra separators below the list by default.
-        } else {
-            // To remove only extra separators below the list:
-            UITableView.appearance().tableFooterView = UIView()
-        }
-        
         // To remove all separators including the actual ones:
         UITableView.appearance().separatorStyle = .none
     }
+    
+    @State var showSheet = false
     
     var body: some View {
         NavigationView {
@@ -65,7 +60,7 @@ struct Summary: View {
                         }
                         Divider()
                         HStack {
-                            LineChartView(data: self.reportTempArray(), title: "Temperatura",rateValue: 0)
+                            LineChartView(data: self.reportTempArray(), title: "Temp",rateValue: 0)
                                 .padding(.top)
                             //Spacer()
                             LineChartView(data: self.reportHeaArray(), title: "Battito", rateValue: 0)
@@ -82,6 +77,13 @@ struct Summary: View {
                 }
             }
             .navigationBarTitle(Text("Sommario"))
+            .navigationBarItems(trailing: Button(action: {
+                self.showSheet = true
+            }) {
+                Image(systemName: "bell.fill").font(.title)
+            })
+        }.sheet(isPresented: self.$showSheet) {
+            FilterSheet(showSheet: self.$showSheet)
         }
     }
     

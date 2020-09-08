@@ -16,20 +16,9 @@ struct ReportData: View {
                 self.content
             }
             .padding(.all)
-            .frame(width: 150.0, height: 200.0)
+            .frame(width: 170.0, height: 200.0)
             .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
             .cornerRadius(12.0)
 
         }
-}
-
-struct ReportData_Previews: PreviewProvider {
-    static var previews: some View {
-        HStack {
-        ReportData(content: AnyView(Text("Hello Words")))
-            .padding()
-            ReportData(content: AnyView(Text("Hello Words")))
-            .padding()
-        }
-    }
 }

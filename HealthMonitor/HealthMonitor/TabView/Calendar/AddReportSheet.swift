@@ -28,10 +28,10 @@ struct AddReportSheet: View {
     @State var breath = ""
     
     // MARK: -Report Importance
-    @State var tempImportance = 2
-    @State var heartImportance = 2
-    @State var glycemiaImportance = 2
-    @State var breathImportance = 2
+    @State var tempImportance = 3
+    @State var heartImportance = 3
+    @State var glycemiaImportance = 3
+    @State var breathImportance = 3
     
     // MARK: -Button Control
     func validateForm() -> Bool {
@@ -234,11 +234,11 @@ struct AddReportSheet: View {
                             
                             Text("Importanza:")
                             Picker(selection: $heartImportance, label: Text("Determinare un importanza")) {
-                                Text("1").tag(0)
-                                Text("2").tag(1)
-                                Text("3").tag(2)
-                                Text("4").tag(3)
-                                Text("5").tag(4)
+                                Text("1").tag(1)
+                                Text("2").tag(2)
+                                Text("3").tag(3)
+                                Text("4").tag(4)
+                                Text("5").tag(5)
                             }.pickerStyle(SegmentedPickerStyle())
 
 
@@ -262,11 +262,11 @@ struct AddReportSheet: View {
                             
                             Text("Importanza:")
                             Picker(selection: $glycemiaImportance, label: Text("Determinare un importanza")) {
-                                Text("1").tag(0)
-                                Text("2").tag(1)
-                                Text("3").tag(2)
-                                Text("4").tag(3)
-                                Text("5").tag(4)
+                                Text("1").tag(1)
+                                Text("2").tag(2)
+                                Text("3").tag(3)
+                                Text("4").tag(4)
+                                Text("5").tag(5)
                             }.pickerStyle(SegmentedPickerStyle())
 
 
@@ -290,11 +290,11 @@ struct AddReportSheet: View {
                             
                             Text("Importanza:")
                             Picker(selection: $breathImportance, label: Text("Determinare un importanza")) {
-                                Text("1").tag(0)
-                                Text("2").tag(1)
-                                Text("3").tag(2)
-                                Text("4").tag(3)
-                                Text("5").tag(4)
+                                Text("1").tag(1)
+                                Text("2").tag(2)
+                                Text("3").tag(3)
+                                Text("4").tag(4)
+                                Text("5").tag(5)
                             }.pickerStyle(SegmentedPickerStyle())
 
 

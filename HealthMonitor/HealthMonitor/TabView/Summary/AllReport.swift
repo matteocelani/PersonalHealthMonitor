@@ -30,7 +30,7 @@ struct AllReport: View {
         }
     
     @State var showSheet = false
-    @State var avgImportance = 0
+    @State var avgImportance = 1
     @State var showFilter = false
     
         private func filterReport() -> [FetchedResults<Report>.Element] {
@@ -57,18 +57,18 @@ struct AllReport: View {
                 Text("Importanza:").font(.headline)
                 Text("Solo elementi che hanno una media di importanza:").font(.subheadline)
                 Picker(selection: $avgImportance, label: Text("Determinare un importanza")) {
-                    Text("1").tag(0)
-                    Text("2").tag(1)
-                    Text("3").tag(2)
-                    Text("4").tag(3)
-                    Text("5").tag(4)
+                    Text("1").tag(1)
+                    Text("2").tag(2)
+                    Text("3").tag(3)
+                    Text("4").tag(4)
+                    Text("5").tag(5)
                 }.pickerStyle(SegmentedPickerStyle())
                 Divider()
             }
             ForEach(filterReport(), id: \.id) { report in
                 VStack{
                     HStack {
-                        NavigationLink(destination: ReportView(report: report, date: report.date!, showSheet: self.$showSheet, reports: self.reports )) {
+                        NavigationLink(destination: ReportView(report: report, date: report.date!, showSheet: self.$showSheet, reports: self.reports)) {
                             ListReportDetail(report: report, date: report.date!)
                         }
                     }
@@ -80,7 +80,7 @@ struct AllReport: View {
                  VStack{
                      HStack {
                          
-                         NavigationLink(destination: ReportView(report: report, date: report.date!, showSheet: self.$showSheet, reports: self.reports )) {
+                         NavigationLink(destination: ReportView(report: report, date: report.date!, showSheet: self.$showSheet, reports: self.reports)) {
                              ListReportDetail(report: report, date: report.date!)
                          }
                      }

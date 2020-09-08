@@ -56,9 +56,11 @@ struct CalendarMonth: View {
                                             ReportSheet(showSheet: self.$showSheet, reports: self.reports, date: self.CalendarManager.selectedDate)
                                             .environment(\.managedObjectContext, self.managedObjectContext)
                                         }
-                                        else {
+                                        else if (self.CompareDate(date: Date(), referenceDate: self.CalendarManager.selectedDate!)) {
                                             AddReportSheet(showSheet: self.$showSheet, date: self.CalendarManager.selectedDate ?? Date(), reports: self.reports)
                                             .environment(\.managedObjectContext, self.managedObjectContext)
+                                        } else {
+                                            FutureDay(showSheet: self.$showSheet)
                                         }
                                     }
                                 } else {
@@ -72,6 +74,21 @@ struct CalendarMonth: View {
             }.frame(minWidth: 0, maxWidth: .infinity)
         }.background(CalendarManager.colors.monthBackColor)
         .padding()
+    }
+    
+    func CompareDate(date: Date, referenceDate: Date) -> Bool {
+        let order = Calendar.current.compare(date, to: referenceDate, toGranularity: .day)
+        
+        switch order {
+        case .orderedDescending:
+            return true
+        case .orderedAscending:
+            return false
+        case .orderedSame:
+            return false
+        default:
+            return false
+        }
     }
 
      func isThisMonth(date: Date) -> Bool {

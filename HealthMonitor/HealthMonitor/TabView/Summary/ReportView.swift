@@ -26,7 +26,7 @@ struct ReportView: View {
     var reports: FetchedResults<Report>
     
     @State var showEditSheet = false
-    
+     
     var body: some View {
         Group {
             VStack {
@@ -50,7 +50,7 @@ struct ReportView: View {
                             }
                             Spacer()
                             Text("Importanza valore").font(.subheadline)
-                            Text(String(report.tempImportance+1))
+                            Text(String(report.tempImportance))
                         }
                     )).padding()
                     
@@ -65,7 +65,7 @@ struct ReportView: View {
                             }
                             Spacer()
                             Text("Importanza valore").font(.subheadline)
-                            Text(String(report.heartImportance+1))
+                            Text(String(report.heartImportance))
                         }
                     )).padding()
                 }
@@ -81,19 +81,20 @@ struct ReportView: View {
                             }
                             Spacer()
                             Text("Importanza valore").font(.subheadline)
-                            Text(String(report.glycemiaImportance+1))
+                            Text(String(report.glycemiaImportance))
                         }
                     )).padding()
                     
                     ReportData(content: AnyView(
                         VStack{
-                            Text("Frequenza Respiratoria").font(.headline)
+                            Text("Frequenza").font(.headline)
+                            Text("Respiratoria").font(.headline)
                             Image(systemName: "waveform.path.ecg").foregroundColor(.green).font(.largeTitle)
                             Spacer()
                             Text(String(report.breath)).font(.largeTitle)
                             Spacer()
                             Text("Importanza valore").font(.subheadline)
-                            Text(String(report.breathImportance+1))
+                            Text(String(report.breathImportance))
                         }
                     )).padding()
                 }
