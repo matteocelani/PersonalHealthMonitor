@@ -22,7 +22,7 @@ struct CalendarTab: View {
         start.dateFormat = "yyyy/MM/dd"
         return start.date(from: "2020/01/01")!
     }
-
+    
     static func endFrom() -> Date {
         let end = DateFormatter()
         end.dateFormat = "yyyy/MM/dd"
@@ -35,15 +35,9 @@ struct CalendarTab: View {
         NavigationView {
             
             CalendarController(reports: self.reports, CalendarManager: self.CalManager)
-            
-          .navigationBarTitle(Text("Calendario"))
-      }
+                
+                .navigationBarTitle(Text("Calendario"))
+        }
     }
     
 }
-
-/*struct Calendar_Previews: PreviewProvider {
-    static var previews: some View {
-        Calendar()
-    }
-}*/

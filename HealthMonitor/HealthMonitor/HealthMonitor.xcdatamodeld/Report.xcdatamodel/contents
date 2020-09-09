@@ -14,11 +14,7 @@
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="SetNotification" representedClassName="SetNotification" syncable="YES" codeGenerationType="class">
-        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-    </entity>
     <elements>
         <element name="Report" positionX="-54" positionY="-9" width="128" height="28"/>
-        <element name="SetNotification" positionX="-54" positionY="-18" width="128" height="58"/>
     </elements>
 </model>

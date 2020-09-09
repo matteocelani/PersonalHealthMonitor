@@ -18,11 +18,11 @@ struct CalendarController: View {
     
     
     var body: some View {
-            List {
-                ForEach(0..<numberOfMonths()) { index in
-                    CalendarMonth(reports: self.reports, CalendarManager: self.CalendarManager, monthOffset: index)
-                }
+        List {
+            ForEach(0..<numberOfMonths()) { index in
+                CalendarMonth(reports: self.reports, CalendarManager: self.CalendarManager, monthOffset: index)
             }
+        }
     }
     
     func numberOfMonths() -> Int {

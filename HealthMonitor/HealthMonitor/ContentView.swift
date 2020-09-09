@@ -19,26 +19,26 @@ struct ContentView: View {
     ) var reports: FetchedResults<Report>
     
     var body: some View {
-
-            TabView {
-               Summary()
-                 .tabItem {
+        
+        TabView {
+            Summary()
+                .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Riepilogo")
-                  }
-                
-                CalendarTab(reports: self.reports)
+            }
+            
+            CalendarTab(reports: self.reports)
                 .tabItem {
-                   Image(systemName: "calendar")
-                   Text("Calendario")
-                }
-                
-                AddReport(reports: reports)
+                    Image(systemName: "calendar")
+                    Text("Calendario")
+            }
+            
+            AddReport(reports: reports)
                 .tabItem {
-                   Image(systemName: "plus")
-                   Text("Nuovo")
-                }
-                
+                    Image(systemName: "plus")
+                    Text("Nuovo")
+            }
+            
         }
     }
 }

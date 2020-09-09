@@ -11,7 +11,7 @@ import Combine
 import SwiftUI
 
 class CalendarColor : ObservableObject {
-
+    
     // foreground colors
     @Published var textColor: Color = Color.primary
     @Published var todayColor: Color = Color.white
@@ -30,5 +30,5 @@ class CalendarColor : ObservableObject {
     // headers background colors
     @Published var weekdayHeaderBackColor: Color = Color.clear
     @Published var monthBackColor: Color = Color.clear
-
+    
 }

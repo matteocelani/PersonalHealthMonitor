@@ -46,7 +46,7 @@ struct AddReportSheet: View {
                 if (checkGlycemia >= 40){
                     if (checkBreath >= 10){
                         if (title != "") {
-                        return true
+                            return true
                         }
                     }
                 }
@@ -91,11 +91,11 @@ struct AddReportSheet: View {
         newReport.breathImportance = Int16(self.breathImportance)
         
         do {
-         try self.managedObjectContext.save()
-         print("Report Salvato.")
+            try self.managedObjectContext.save()
+            print("Report Salvato.")
         } catch {
-         print("Errore: \(error.localizedDescription)")
-         }
+            print("Errore: \(error.localizedDescription)")
+        }
     }
     
     func avgReport(report:Report) {
@@ -109,18 +109,18 @@ struct AddReportSheet: View {
         report.heartbeat = (report.heartbeat + Int16(self.heartbeat)!)/2
         report.heartImportance = Int16(self.heartImportance)
         
-            report.glycemia = (report.glycemia + Int16(self.glycemia)!)/2
+        report.glycemia = (report.glycemia + Int16(self.glycemia)!)/2
         report.glycemiaImportance = Int16(self.glycemiaImportance)
         
-            report.breath = (report.breath + Int16(self.breath)!)/2
+        report.breath = (report.breath + Int16(self.breath)!)/2
         report.breathImportance = Int16(self.breathImportance)
         
         do {
-         try self.managedObjectContext.save()
-         print("Report Salvato.")
+            try self.managedObjectContext.save()
+            print("Report Salvato.")
         } catch {
-         print("Errore: \(error.localizedDescription)")
-         }
+            print("Errore: \(error.localizedDescription)")
+        }
     }
     
     func CompareDate(date: Date, referenceDate: Date) -> Bool {
@@ -146,52 +146,52 @@ struct AddReportSheet: View {
                 Spacer()
                 VStack() {
                     // MARK: -Add Title
-                        VStack(alignment: .center) {
-                            Text("Nome del Report")
-                                .font(.title)
-                            
-                            
-                            TextField("Titolo", text: $title){self.endEditing()}
-                                .frame(height: 30.0)
-                                .background(Color(UIColor.systemBackground))
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .multilineTextAlignment(TextAlignment.center)
-                            
-                            TextField("Descrizione", text: $text){self.endEditing()}
-                                .frame(height: 30.0)
-                                .background(Color(UIColor.systemBackground))
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .multilineTextAlignment(TextAlignment.center)
-                        }
-                        .padding(.all)
-                        .frame(width: 370.0, height: 140.0)
-                        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
-                        .cornerRadius(25.0)
+                    VStack(alignment: .center) {
+                        Text("Nome del Report")
+                            .font(.title)
+                        
+                        
+                        TextField("Titolo", text: $title){self.endEditing()}
+                            .frame(height: 30.0)
+                            .background(Color(UIColor.systemBackground))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .multilineTextAlignment(TextAlignment.center)
+                        
+                        TextField("Descrizione", text: $text){self.endEditing()}
+                            .frame(height: 30.0)
+                            .background(Color(UIColor.systemBackground))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .multilineTextAlignment(TextAlignment.center)
+                    }
+                    .padding(.all)
+                    .frame(width: 370.0, height: 140.0)
+                    .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
+                    .cornerRadius(25.0)
                     
                     // MARK: -Select Data
                     CardViewData(contentData: AnyView(
-                    VStack(alignment: .center) {
-                        Text("Seleziona una data")
-                            .font(.title)
-                        
-                        Spacer()
-                        
-                        DatePicker("", selection: $date, in: ...Date(),displayedComponents: .date)
-                        .labelsHidden()
-                        .padding()
-                        .frame(maxHeight: 100)
-                        
-                        Spacer()
-                        
-                        Text("\(date, formatter: dateFormatter)")
-
-                    }
-))
+                        VStack(alignment: .center) {
+                            Text("Seleziona una data")
+                                .font(.title)
+                            
+                            Spacer()
+                            
+                            DatePicker("", selection: $date, in: ...Date(),displayedComponents: .date)
+                                .labelsHidden()
+                                .padding()
+                                .frame(maxHeight: 100)
+                            
+                            Spacer()
+                            
+                            Text("\(date, formatter: dateFormatter)")
+                            
+                        }
+                    ))
                     
                     Spacer()
                     
                     // MARK: -Add Temperature
-                     CardView(content: AnyView(
+                    CardView(content: AnyView(
                         VStack(alignment: .center) {
                             Text("Temperatura")
                                 .font(.title)
@@ -212,14 +212,14 @@ struct AddReportSheet: View {
                                 Text("4").tag(3)
                                 Text("5").tag(4)
                             }.pickerStyle(SegmentedPickerStyle())
-
-
+                            
+                            
                         }
                     ))
-
+                    
                     
                     // MARK: -Add Heartbeat
-                     CardView(content: AnyView(
+                    CardView(content: AnyView(
                         VStack(alignment: .center) {
                             Text("Battito Cardiaco")
                                 .font(.title)
@@ -240,14 +240,14 @@ struct AddReportSheet: View {
                                 Text("4").tag(4)
                                 Text("5").tag(5)
                             }.pickerStyle(SegmentedPickerStyle())
-
-
+                            
+                            
                         }
                     ))
-
-                        
+                    
+                    
                     // MARK: -Add Glycemia
-                     CardView(content: AnyView(
+                    CardView(content: AnyView(
                         VStack(alignment: .center) {
                             Text("Glicemia")
                                 .font(.title)
@@ -268,14 +268,14 @@ struct AddReportSheet: View {
                                 Text("4").tag(4)
                                 Text("5").tag(5)
                             }.pickerStyle(SegmentedPickerStyle())
-
-
+                            
+                            
                         }
                     ))
-
+                    
                     
                     // MARK: -Add Breath
-                     CardView(content: AnyView(
+                    CardView(content: AnyView(
                         VStack(alignment: .center) {
                             Text("Frequenza Respiratoria")
                                 .font(.title)
@@ -296,8 +296,8 @@ struct AddReportSheet: View {
                                 Text("4").tag(4)
                                 Text("5").tag(5)
                             }.pickerStyle(SegmentedPickerStyle())
-
-
+                            
+                            
                         }
                     ))
                     
@@ -310,7 +310,7 @@ struct AddReportSheet: View {
                     }) {
                         ButtonView()
                     }.disabled(!self.validateForm())
-        
+                    
                     Spacer()
                     
                 }
@@ -325,7 +325,7 @@ struct AddReportSheet: View {
         }
     }
     private func endEditing() {
-           UIApplication.shared.endEditing()
-       }
-
+        UIApplication.shared.endEditing()
+    }
+    
 }

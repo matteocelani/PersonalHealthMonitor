@@ -32,7 +32,7 @@ class LocalNotificationManager: ObservableObject {
     
     func sendNotification(start: Date) ->(){
         
-//        removeAllPendingNotificationRequests()
+        //        removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
         content.title = "Report Giornaliero"
@@ -62,11 +62,11 @@ struct FilterSheet: View {
         NavigationView {
             VStack{
                 if notificationManager.state {
-                                VStack(alignment: .leading){
-                    Text("Le notifiche sono attive.").font(.headline).padding(.top)
-                    Text("Per disattivarle va in Impostazioni > Notifiche > HealthMonitor").padding(.bottom)
+                    VStack(alignment: .leading){
+                        Text("Le notifiche sono attive.").font(.headline).padding(.top).padding(.leading)
+                        Text("Per disattivarle va in Impostazioni > Notifiche > HealthMonitor").padding(.bottom).padding(.leading)
                     }
-
+                    
                     CardViewData(contentData: AnyView(
                         VStack(alignment: .center) {
                             Text("Orario delle Notifiche")
@@ -86,6 +86,7 @@ struct FilterSheet: View {
                     VStack {
                         Button(action: {
                             withAnimation {
+                                self.showSheet = false
                                 self.notificationManager.sendNotification(start: self.date)
                             }
                         }) {
@@ -103,12 +104,12 @@ struct FilterSheet: View {
                     
                 } else {
                     VStack(alignment: .leading){
-                        Text("Le notifiche sono disattive.").font(.headline).padding(.top)
-                    Text("Per attivarle va in Impostazioni > Notifiche > HealthMonitor").padding(.bottom)
+                        Text("Le notifiche sono disattive.").font(.headline).padding(.top).padding(.leading)
+                        Text("Per attivarle va in Impostazioni > Notifiche > HealthMonitor").padding(.bottom).padding(.leading)
                     }
                     
                 }
-                            Spacer()
+                Spacer()
             }
             .navigationBarTitle("Notifiche")
             .navigationBarItems(trailing: Button(action: {

@@ -9,7 +9,7 @@
 import SwiftUI
 
 class CalendarManager : ObservableObject {
-
+    
     @Published var calendar = Calendar.current
     @Published var minimumDate: Date = Date()
     @Published var maximumDate: Date = Date()
@@ -24,7 +24,7 @@ class CalendarManager : ObservableObject {
     @Published var mode: Int = 0
     
     var colors = CalendarColor()
-  
+    
     init(calendar: Calendar, minimumDate: Date, maximumDate: Date, selectedDates: [Date] = [Date](), mode: Int) {
         self.calendar = calendar
         self.minimumDate = minimumDate

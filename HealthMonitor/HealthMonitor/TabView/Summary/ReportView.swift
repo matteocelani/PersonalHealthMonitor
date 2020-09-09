@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import UIKit
+import Foundation
 
 struct ReportView: View {
     
@@ -26,7 +28,7 @@ struct ReportView: View {
     var reports: FetchedResults<Report>
     
     @State var showEditSheet = false
-     
+    
     var body: some View {
         Group {
             VStack {
@@ -129,38 +131,6 @@ struct ReportView: View {
                             breathImportance: self.report.breathImportance,
                             id : self.report.id!).environment(\.managedObjectContext, self.managedObjectContext)
                     }
-                    
-                    Button(action: {
-                        self.showEditSheet.toggle()
-                    }) {
-                        VStack(alignment: .center){
-                            Text("Elimina il Report")
-                                .font(.title)
-                                .foregroundColor(.red)
-                        }
-                        .padding(.all)
-                        .frame(width: 370.0, height: 70.0)
-                        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
-                        .cornerRadius(14.0)
-                    }.sheet(isPresented: $showEditSheet) {
-                        EditViewSheet(
-                            reports : self.reports,
-                            showEditSheet: self.$showEditSheet,
-                            showSheet: self.$showSheet,
-                            title: self.report.title!,
-                            text: self.report.text ?? "",
-                            date: self.report.date!,
-                            temperature: String(self.report.temperature),
-                            heartbeat: String(self.report.heartbeat),
-                            glycemia: String(self.report.glycemia),
-                            breath: String(self.report.breath),
-                            tempImportance: self.report.tempImportance,
-                            heartImportance: self.report.heartImportance,
-                            glycemiaImportance: self.report.glycemiaImportance,
-                            breathImportance: self.report.breathImportance,
-                            id : self.report.id!).environment(\.managedObjectContext, self.managedObjectContext)
-                    }
-                    .padding()
                     
                     Spacer()
                 }

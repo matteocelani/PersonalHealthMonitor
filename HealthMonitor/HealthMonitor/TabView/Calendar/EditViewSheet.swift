@@ -40,29 +40,29 @@ struct EditViewSheet: View {
     
     // MARK: -Button Control
     @State private var showingAlert = false
-     func validateForm() -> Bool {
-         let checkTemp: Float = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
-         
-         let checkHeart: Int = Int(self.heartbeat) ?? 0
-         let checkGlycemia: Int = Int(self.glycemia) ?? 0
-         let checkBreath: Int = Int(self.breath) ?? 0
-         
-         if (checkTemp >= 30.0 && checkTemp <= 45.0){
-             if (checkHeart >= 40){
-                 if (checkGlycemia >= 40){
-                     if (checkBreath >= 10){
-                         if (title != "") {
-                         return true
-                         }
-                     }
-                 }
-             }
-         }
-         return false
-     }
+    func validateForm() -> Bool {
+        let checkTemp: Float = Float(self.temperature.replacingOccurrences(of: ",", with: ".")) ?? Float(0)
+        
+        let checkHeart: Int = Int(self.heartbeat) ?? 0
+        let checkGlycemia: Int = Int(self.glycemia) ?? 0
+        let checkBreath: Int = Int(self.breath) ?? 0
+        
+        if (checkTemp >= 30.0 && checkTemp <= 45.0){
+            if (checkHeart >= 40){
+                if (checkGlycemia >= 40){
+                    if (checkBreath >= 10){
+                        if (title != "") {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        return false
+    }
     
     // MARK: -Edit Report
-
+    
     func editReport() {
         for list in self.reports {
             if CompareId(id: id,  referenceId: list.id!) {
@@ -86,180 +86,180 @@ struct EditViewSheet: View {
             }
         }
         do {
-          try self.managedObjectContext.save()
-          print("Report Modificato.")
-         } catch {
-          print("Errore: \(error.localizedDescription)")
-          }
+            try self.managedObjectContext.save()
+            print("Report Modificato.")
+        } catch {
+            print("Errore: \(error.localizedDescription)")
+        }
     }
     
     func CompareId(id: UUID, referenceId: UUID) -> Bool {
-
+        
         return id == referenceId
     }
     
     var body: some View {
         NavigationView {
-                    ScrollView(.vertical, showsIndicators: false) {
-                        Spacer()
-                        VStack() {
-                            // MARK: -Add Title
-                                VStack(alignment: .center) {
-                                    Text("Nome del Report")
-                                        .font(.title)
-                                    
-                                    
-                                     TextField("Titolo", text: $title)
-                                        .frame(height: 30.0)
-                                        .background(Color(UIColor.systemBackground))
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .multilineTextAlignment(TextAlignment.center)
-                                    
-                                    TextField("Descrizione", text: $text)
-                                        .frame(height: 30.0)
-                                        .background(Color(UIColor.systemBackground))
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .multilineTextAlignment(TextAlignment.center)
-                                }
-                                .padding(.all)
-                                .frame(width: 370.0, height: 140.0)
-                                .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
-                                .cornerRadius(25.0)
+            ScrollView(.vertical, showsIndicators: false) {
+                Spacer()
+                VStack() {
+                    // MARK: -Add Title
+                    VStack(alignment: .center) {
+                        Text("Nome del Report")
+                            .font(.title)
+                        
+                        
+                        TextField("Titolo", text: $title)
+                            .frame(height: 30.0)
+                            .background(Color(UIColor.systemBackground))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .multilineTextAlignment(TextAlignment.center)
+                        
+                        TextField("Descrizione", text: $text)
+                            .frame(height: 30.0)
+                            .background(Color(UIColor.systemBackground))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .multilineTextAlignment(TextAlignment.center)
+                    }
+                    .padding(.all)
+                    .frame(width: 370.0, height: 140.0)
+                    .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
+                    .cornerRadius(25.0)
+                    
+                    // MARK: -Select Data
+                    CardViewData(contentData: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Seleziona una data")
+                                .font(.title)
                             
-                            // MARK: -Select Data
-                            CardViewData(contentData: AnyView(
-                            VStack(alignment: .center) {
-                                Text("Seleziona una data")
-                                    .font(.title)
-                                
-                                Spacer()
-                                
-                                DatePicker("", selection: $date, in: ...Date(),displayedComponents: .date)
+                            Spacer()
+                            
+                            DatePicker("", selection: $date, in: ...Date(),displayedComponents: .date)
                                 .labelsHidden()
                                 .padding()
                                 .frame(maxHeight: 100)
-                                
-                                Spacer()
-                                
-                                Text("\(date, formatter: dateFormatter)")
-
-                            }
-        ))
                             
                             Spacer()
                             
-                            // MARK: -Add Temperature
-                             CardView(content: AnyView(
-                                VStack(alignment: .center) {
-                                    Text("Temperatura")
-                                        .font(.title)
-                                    
-                                    
-                                    TextField("valore compreso tra 30 e 45", text: $temperature)
-                                        .frame(height: 30.0)
-                                        .keyboardType(.decimalPad)
-                                        .background(Color(UIColor.systemBackground))
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .multilineTextAlignment(TextAlignment.center)
-                                    
-                                    Text("Importanza:")
-                                    Stepper("Importance: \(tempImportance)", value: $tempImportance, in: 1...5)
-                                }
-                            ))
-
-                            
-                            // MARK: -Add Heartbeat
-                             CardView(content: AnyView(
-                                VStack(alignment: .center) {
-                                    Text("Battito Cardiaco")
-                                        .font(.title)
-                                    
-                                    
-                                    TextField("valore maggiore di 40", text: $heartbeat)
-                                        .frame(height: 30.0)
-                                        .keyboardType(.decimalPad)
-                                        .background(Color(UIColor.systemBackground))
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .multilineTextAlignment(TextAlignment.center)
-                                    
-                                    Text("Importanza:")
-                                    Stepper("Importance: \(heartImportance)", value: $heartImportance, in: 1...5)
-                                }
-                            ))
-
-                                
-                            // MARK: -Add Glycemia
-                             CardView(content: AnyView(
-                                VStack(alignment: .center) {
-                                    Text("Glicemia")
-                                        .font(.title)
-                                    
-                                    
-                                    TextField("valore maggiore di 40", text: $glycemia)
-                                        .frame(height: 30.0)
-                                        .keyboardType(.decimalPad)
-                                        .background(Color(UIColor.systemBackground))
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .multilineTextAlignment(TextAlignment.center)
-                                    
-                                    Text("Importanza:")
-                                    Stepper("Importance: \(glycemiaImportance)", value: $glycemiaImportance, in: 1...5)
-
-
-                                }
-                            ))
-
-                            
-                            // MARK: -Add Breath
-                             CardView(content: AnyView(
-                                VStack(alignment: .center) {
-                                    Text("Frequenza Respiratoria")
-                                        .font(.title)
-                                    
-                                    
-                                    TextField("valore maggiore di 10", text: $breath)
-                                        .frame(height: 30.0)
-                                        .keyboardType(.decimalPad)
-                                        .background(Color(UIColor.systemBackground))
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .multilineTextAlignment(TextAlignment.center)
-                                    
-                                    Text("Importanza:")
-                                    Stepper("Importance: \(breathImportance)", value: $breathImportance, in: 1...5)
-                                }
-                            ))
-                            
-                            // MARK: -Button to Add Report
-                            Divider()
-                            
-                            Button(action: {
-                                self.editReport()
-                                self.showEditSheet = false
-                                self.showSheet = false
-                                
-                            }) {
-                                VStack(alignment: .center){
-                                    Text("Modifica Report")
-                                        .font(.title)
-                                }
-                                .padding(.all)
-                                .frame(width: 370.0, height: 70.0)
-                                .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
-                                .cornerRadius(14.0)
-                            }.disabled(!self.validateForm())
-                
-                            Spacer()
+                            Text("\(date, formatter: dateFormatter)")
                             
                         }
-                    }
-                    .navigationBarTitle(Text("Modifica il report"), displayMode: .inline)
-                    .modifier(AdaptsKeyboard())
-                    .navigationBarItems(trailing: Button(action: {
+                    ))
+                    
+                    Spacer()
+                    
+                    // MARK: -Add Temperature
+                    CardView(content: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Temperatura")
+                                .font(.title)
+                            
+                            
+                            TextField("valore compreso tra 30 e 45", text: $temperature)
+                                .frame(height: 30.0)
+                                .keyboardType(.decimalPad)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            Text("Importanza:")
+                            Stepper("Importance: \(tempImportance)", value: $tempImportance, in: 1...5)
+                        }
+                    ))
+                    
+                    
+                    // MARK: -Add Heartbeat
+                    CardView(content: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Battito Cardiaco")
+                                .font(.title)
+                            
+                            
+                            TextField("valore maggiore di 40", text: $heartbeat)
+                                .frame(height: 30.0)
+                                .keyboardType(.decimalPad)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            Text("Importanza:")
+                            Stepper("Importance: \(heartImportance)", value: $heartImportance, in: 1...5)
+                        }
+                    ))
+                    
+                    
+                    // MARK: -Add Glycemia
+                    CardView(content: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Glicemia")
+                                .font(.title)
+                            
+                            
+                            TextField("valore maggiore di 40", text: $glycemia)
+                                .frame(height: 30.0)
+                                .keyboardType(.decimalPad)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            Text("Importanza:")
+                            Stepper("Importance: \(glycemiaImportance)", value: $glycemiaImportance, in: 1...5)
+                            
+                            
+                        }
+                    ))
+                    
+                    
+                    // MARK: -Add Breath
+                    CardView(content: AnyView(
+                        VStack(alignment: .center) {
+                            Text("Frequenza Respiratoria")
+                                .font(.title)
+                            
+                            
+                            TextField("valore maggiore di 10", text: $breath)
+                                .frame(height: 30.0)
+                                .keyboardType(.decimalPad)
+                                .background(Color(UIColor.systemBackground))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .multilineTextAlignment(TextAlignment.center)
+                            
+                            Text("Importanza:")
+                            Stepper("Importance: \(breathImportance)", value: $breathImportance, in: 1...5)
+                        }
+                    ))
+                    
+                    // MARK: -Button to Add Report
+                    Divider()
+                    
+                    Button(action: {
+                        self.editReport()
                         self.showEditSheet = false
+                        self.showSheet = false
+                        
                     }) {
-                        Text("Chiudi").bold()
-                    })
+                        VStack(alignment: .center){
+                            Text("Modifica Report")
+                                .font(.title)
+                        }
+                        .padding(.all)
+                        .frame(width: 370.0, height: 70.0)
+                        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
+                        .cornerRadius(14.0)
+                    }.disabled(!self.validateForm())
+                    
+                    Spacer()
+                    
                 }
             }
-
+            .navigationBarTitle(Text("Modifica il report"), displayMode: .inline)
+            .modifier(AdaptsKeyboard())
+            .navigationBarItems(trailing: Button(action: {
+                self.showEditSheet = false
+            }) {
+                Text("Chiudi").bold()
+            })
+        }
+    }
+    
 }

@@ -18,6 +18,21 @@ struct ReportSheet: View {
     
     @State var showEditSheet = false
     
+    func deleteReport(reports: Report) {
+        for report in self.reports {
+            if (report.id == reports.id) {
+                managedObjectContext.delete(report)
+            }
+        }
+        
+        do {
+            try self.managedObjectContext.save()
+            print("Report Salvato.")
+        } catch {
+            print("Errore: \(error.localizedDescription)")
+        }
+    }
+    
     var body: some View {        
         for list in self.reports {
             if CompareDate(date: date, referenceDate: list.date ?? Date()) {
@@ -43,7 +58,7 @@ struct ReportSheet: View {
                                     Text(String(list.tempImportance+1))
                                 }
                             )).padding()
-
+                            
                             ReportData(content: AnyView(
                                 VStack{
                                     Text("Battito Cardiaco").font(.headline)
@@ -74,7 +89,7 @@ struct ReportSheet: View {
                                     Text(String(list.glycemiaImportance+1))
                                 }
                             )).padding()
-
+                            
                             ReportData(content: AnyView(
                                 VStack{
                                     Text("Frequenza Respiratoria").font(.headline)
@@ -91,7 +106,7 @@ struct ReportSheet: View {
                         Spacer()
                         
                         VStack {
-                        Button(action: {
+                            Button(action: {
                                 self.showEditSheet.toggle()
                             }) {
                                 VStack(alignment: .center){
@@ -122,41 +137,25 @@ struct ReportSheet: View {
                             }
                             
                             Button(action: {
-                                    self.showEditSheet.toggle()
-                                }) {
-                                    VStack(alignment: .center){
-                                        Text("Elimina il Report")
-                                            .font(.title)
-                                            .foregroundColor(.red)
-                                    }
-                                    .padding(.all)
-                                    .frame(width: 370.0, height: 70.0)
-                                    .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
-                                    .cornerRadius(14.0)
-                                }.sheet(isPresented: $showEditSheet) {
-                                    EditViewSheet(
-                                        reports : self.reports,
-                                        showEditSheet: self.$showEditSheet,
-                                        showSheet: self.$showSheet,
-                                        title: list.title!,
-                                        text: list.text ?? "",
-                                        date: list.date!,
-                                        temperature: String(list.temperature),
-                                        heartbeat: String(list.heartbeat),
-                                        glycemia: String(list.glycemia),
-                                        breath: String(list.breath),
-                                        tempImportance: list.tempImportance,
-                                        heartImportance: list.heartImportance,
-                                        glycemiaImportance: list.glycemiaImportance,
-                                        breathImportance: list.breathImportance,
-                                        id : list.id!).environment(\.managedObjectContext, self.managedObjectContext)
+                                self.showSheet = false
+                                self.deleteReport(reports: list)
+                            }) {
+                                VStack(alignment: .center){
+                                    Text("Elimina il Report")
+                                        .font(.title)
+                                        .foregroundColor(.red)
                                 }
+                                .padding(.all)
+                                .frame(width: 370.0, height: 70.0)
+                                .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
+                                .cornerRadius(14.0)
+                            }
                             .padding()
                         }
-                        }
-                    )
-                }
+                    }
+                )
             }
+        }
         return AnyView(Text("Ops, qualcosa è andato storto"))
     }
     
@@ -174,18 +173,19 @@ struct ReportSheet: View {
             return false
         }
     }
+}
 
-    func deleteReport(at offsets : IndexSet) {
-            for index in offsets {
-                let report = reports[index]
-                managedObjectContext.delete(report)
-            }
-        
-        do {
-         try self.managedObjectContext.save()
-         print("Report Salvato.")
-        } catch {
-         print("Errore: \(error.localizedDescription)")
-         }
+struct ReportData: View {
+    var content : AnyView
+    
+    var body: some View {
+        Group {
+            self.content
         }
+        .padding(.all)
+        .frame(width: 170.0, height: 200.0)
+        .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
+        .cornerRadius(12.0)
+        
+    }
 }

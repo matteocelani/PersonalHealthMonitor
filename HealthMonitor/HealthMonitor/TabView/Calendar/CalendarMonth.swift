@@ -46,7 +46,7 @@ struct CalendarMonth: View {
                                         isSelected: self.isSpecialDate(date: column),
                                         isReport: self.isReport(date: column)
                                         ),
-                                        cellWidth: self.cellWidth)
+                                                 cellWidth: self.cellWidth)
                                         .onTapGesture {
                                             self.dateTapped(date: column)
                                             self.showSheet = true
@@ -54,11 +54,11 @@ struct CalendarMonth: View {
                                     .sheet(isPresented: self.$showSheet) {
                                         if self.isReport(date: self.CalendarManager.selectedDate ?? Date()) {
                                             ReportSheet(showSheet: self.$showSheet, reports: self.reports, date: self.CalendarManager.selectedDate)
-                                            .environment(\.managedObjectContext, self.managedObjectContext)
+                                                .environment(\.managedObjectContext, self.managedObjectContext)
                                         }
                                         else if (self.CompareDate(date: Date(), referenceDate: self.CalendarManager.selectedDate!)) {
                                             AddReportSheet(showSheet: self.$showSheet, date: self.CalendarManager.selectedDate ?? Date(), reports: self.reports)
-                                            .environment(\.managedObjectContext, self.managedObjectContext)
+                                                .environment(\.managedObjectContext, self.managedObjectContext)
                                         } else {
                                             FutureDay(showSheet: self.$showSheet)
                                         }
@@ -73,7 +73,7 @@ struct CalendarMonth: View {
                 }
             }.frame(minWidth: 0, maxWidth: .infinity)
         }.background(CalendarManager.colors.monthBackColor)
-        .padding()
+            .padding()
     }
     
     func CompareDate(date: Date, referenceDate: Date) -> Bool {
@@ -90,25 +90,25 @@ struct CalendarMonth: View {
             return false
         }
     }
-
-     func isThisMonth(date: Date) -> Bool {
-         return self.CalendarManager.calendar.isDate(date, equalTo: firstOfMonthForOffset(), toGranularity: .month)
-     }
+    
+    func isThisMonth(date: Date) -> Bool {
+        return self.CalendarManager.calendar.isDate(date, equalTo: firstOfMonthForOffset(), toGranularity: .month)
+    }
     
     func dateTapped(date: Date) {
-            if (self.CalendarManager.mode == 0)  {
-                if self.CalendarManager.selectedDate != nil &&
-                    self.CalendarManager.calendar.isDate(self.CalendarManager.selectedDate, inSameDayAs: date) {
-                    self.CalendarManager.selectedDate = nil
-                } else {
-                    self.CalendarManager.selectedDate = date
-                }
-            }
-                else {
+        if (self.CalendarManager.mode == 0)  {
+            if self.CalendarManager.selectedDate != nil &&
+                self.CalendarManager.calendar.isDate(self.CalendarManager.selectedDate, inSameDayAs: date) {
+                self.CalendarManager.selectedDate = nil
+            } else {
                 self.CalendarManager.selectedDate = date
             }
+        }
+        else {
+            self.CalendarManager.selectedDate = date
+        }
     }
-     
+    
     func monthArray() -> [[Date]] {
         var rowArray = [[Date]]()
         for row in 0 ..< (numberOfDays(offset: monthOffset) / 7) {
@@ -182,15 +182,15 @@ struct CalendarMonth: View {
     
     func isReport(date: Date) -> Bool {
         //if (reports.first!.date! != nil) {
-            for list in self.reports  {
-                if FormatAndCompareDate(date: date, referenceDate: list.date ?? Date()) {
-                    return true
-                }
+        for list in self.reports  {
+            if FormatAndCompareDate(date: date, referenceDate: list.date ?? Date()) {
+                return true
             }
-     //   }
+        }
+        //   }
         return false
     }
-     
+    
     func isSpecialDate(date: Date) -> Bool {
         return isSelectedDate(date: date)
     }
@@ -198,7 +198,7 @@ struct CalendarMonth: View {
     func isOneOfSelectedDates(date: Date) -> Bool {
         return self.CalendarManager.selectedDatesContains(date: date)
     }
-
+    
     func isSelectedDate(date: Date) -> Bool {
         if CalendarManager.selectedDate == nil {
             return false
@@ -241,5 +241,19 @@ struct CalendarMonth: View {
             return false
         }
         return true
+    }
+}
+
+struct FutureDay: View {
+    @Binding var showSheet : Bool
+    var body: some View {
+        NavigationView {
+            Text("Ops, non puoi aggiungere report futuri 😔")
+        }
+        .navigationBarItems(trailing: Button(action: {
+            self.showSheet = false
+        }) {
+            Text("Chiudi").bold()
+        })
     }
 }
