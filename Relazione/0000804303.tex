@@ -20,7 +20,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass{article}
-
+\usepackage[left=4cm, right=4cm, top=4cm]{geometry}
 
 \usepackage{listings}
 \lstset{
@@ -35,6 +35,7 @@ literate={à}{{\'a}}1 {è}{{\'e}}1 {ò}{{\'o}}1 {ù}{{\'u}}1 {ì}{{\'\i}}1,
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 
 \usepackage{siunitx} 						% Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx}						% Required for the inclusion of images
@@ -113,21 +114,36 @@ L'app è divisa in 3 sezioni principali richiamate nel ContentView.swift :
   \item \texttt{AddReport() }
 \end{itemize}
 
-Ogni view viene invocata tramite la TabView, in \textit{"Riepilogo"} abbiamo i grafici dei valori inseriti e la lista di tutti i report, in \textit{"Calendario"} abbiamo un calendario organizzato per mesi dove si può controllare i giorni in cui si è inserito il report, infine possiamo aggiungere un nuovo report nell'ultima tab \textit{"Nuovo"}.
+Ogni view viene invocata tramite una \texttt{TabView}, in \textit{"Riepilogo"} abbiamo i grafici dei valori inseriti e la lista di tutti i report, in \textit{"Calendario"} abbiamo un calendario organizzato per mesi dove si può controllare i giorni in cui si è inserito il report, infine possiamo aggiungere un nuovo report nell'ultima tab \textit{"Nuovo"}.
 
 \medskip
 
 \begin{figure}[htp]
 
 \centering
-\includegraphics[width=.3\textwidth]{img/riepilogo_iniziale.png}\hfill
-\includegraphics[width=.3\textwidth]{img/calendario_iniziale.png}\hfill
-\includegraphics[width=.3\textwidth]{img/nuovo_iniziale.png}
+\includegraphics[width=.32\textwidth]{img/riepilogo_iniziale.png}\hfill
+\includegraphics[width=.32\textwidth]{img/calendario_iniziale.png}\hfill
+\includegraphics[width=.32\textwidth]{img/nuovo_iniziale.png}
 
 \caption{Schermate Iniziali}
-\label{fig:figure3}
+\label{fig:figure1}
 
 \end{figure}
+
+\medskip
+
+\subsection{I Report}
+
+Nella nostra applicazione iOS è possibile aggiungere, modificare ed eliminare dei report giornalieri. \\
+I report sono composti da 4 valori e ogni valore ha un importanza che va da 1 a 5. In particolare i valori da inserire possono essere: 
+\begin{itemize}
+  \item temperatura
+  \item battito cardiaco
+  \item glicemia
+  \item frequenza respiratoria
+\end{itemize}
+
+Inoltre ogni report è caratterizzato da una data, un titolo (obbligatori) e una descrizione (facoltativa). 
 
 %----------------------------------------------------------------------------------------
 %	Riepilogo
@@ -136,30 +152,30 @@ Ogni view viene invocata tramite la TabView, in \textit{"Riepilogo"} abbiamo i g
 \newpage
 \section{Riepilogo}
 
-In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno inoltre è presenta una lista dove si possono consultare tutti i Report. I report possono essere visualizzati tramite alcuni filtri, possono essere modificati ed eliminati.\\
+In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno inoltre è presenta una lista dove si possono consultare tutti i Report, essi  possono essere visualizzati tramite alcuni filtri, possono essere modificati ed eliminati.\\
 Se non è presente nessun dato viene caricata una schermata iniziale di benvenuto. 
 
 \begin{figure}[htp]
 
 \centering
-\includegraphics[width=.3\textwidth]{img/riepilogo_iniziale.png}
+\includegraphics[width=.15\textwidth]{img/riepilogo_iniziale.png}
 
 \caption{Schermata di benvenuto}
-\label{fig:figure3}
+\label{fig:figure2}
 \end{figure}
 
 \subsection{Grafici}
 
 Quando si inseriscono i dati, si iniziano a generare 4 grafici uno per ogni valore presente nel Report.\\
-I grafici generati usando un pacchetto Swift dal nome \textbf{\textit{"SwiftUICharts"}}, esso permette di generare grafici, prendendo in input array di dati di tipo Double. Si è reso necessario trasformare i \textbf{Core Data} in array ordinati con tutti gli elementi di tipo Double tramite 4 semplici funzioni: \texttt{reportTempArray()}, \texttt{reportHeaArray()}, \texttt{reportGlyArray()}, \texttt{reportBreArray()}.\\
-I valori dei grafici sono ordinati per data, basta trascinare il dito sopra al grafico per visualizzarli. 
+I grafici vengono generati usando un pacchetto Swift dal nome \textbf{\textit{\href{https://github.com/AppPear/ChartView}{SwiftUICharts}}}, esso ha diverse configurazioni, in particolare in HealthMonitor troviamo \texttt{LineChartView()} che prende in input array di dati.\\
+I valori dei grafici sono ordinati per data, basta trascinare il dito sopra al grafico per visualizzare i valori. 
 
 \begin{figure}[htp]
 
 \centering
-\includegraphics[width=.3\textwidth]{img/grafico1.png}\hfill
-\includegraphics[width=.3\textwidth]{img/grafico2.png}\hfill
-\includegraphics[width=.3\textwidth]{img/grafico3.png}
+\includegraphics[width=.25\textwidth]{img/grafico1.png}\hfill
+\includegraphics[width=.25\textwidth]{img/grafico2.png}\hfill
+\includegraphics[width=.25\textwidth]{img/grafico3.png}
 
 \caption{Grafici con valori}
 \label{fig:figure3}
@@ -168,32 +184,52 @@ I valori dei grafici sono ordinati per data, basta trascinare il dito sopra al g
 
 \newpage
 
-\subsection{Tutti i grafici}
+\subsection{Tutti i Report}
 
+Nella schermata iniziale è presente un \texttt{NavigationLink} che ti permette di spostarti tra le View, toccandoci sopra si caricherà \texttt{AllReport()} nel quale troviamo una lista completa dei Report.
+
+\smallskip
+
+La lista completa dei report in \texttt{AllReport()} è ordinata per data all'interno di una \texttt{List} nel quale ritroviamo i \texttt{NavigationLink} che ci permettono di accedere ai dettagli dei report, inoltre si possono cancellare i report trascinando l'elemento verso sinistra. \\
+I report possono essere visualizzati anche tramite dei filtri, che calcolano la media dell'importanza dei 4 valori inseriti e restituisce una lita più corta. La funzione che si occupa del filtraggio dei report è definita nel seguente modo:
+
+\smallskip
 \begin{lstlisting}
-NavigationLink(destination: AllReport()) {
-	ListView(content: AnyView(
-		HStack {
-			Image(systemName: "list.bullet").font(.largeTitle)
-			Spacer()
-			Text("Tutti i report")
-			.font(.headline)
-			 Spacer()
-		}
-	))
-}
-
+    private func filterReport() -> [FetchedResults<Report>.Element] {
+        return self.reports.filter({
+            avgImp(tempImp: $0.tempImportance, heartImp: $0.heartImportance, glyImp: $0.glycemiaImportance, breImpo: $0.breathImportance) >= self.avgImportance
+        })
+    }
+    
+    func avgImp(tempImp: Int16, heartImp: Int16, glyImp: Int16, breImpo: Int16) -> Int16 {
+        let avgImp : Int16 = (tempImp + heartImp + glyImp + breImpo)/4
+        return avgImp
+    }
 \end{lstlisting}
 
 \begin{figure}[htp]
 
 \centering
-\includegraphics[width=.3\textwidth]{img/tutti1.png}\hfill
-\includegraphics[width=.3\textwidth]{img/tutti2.png}\hfill
-\includegraphics[width=.3\textwidth]{img/tutti3.png}
+\includegraphics[width=.32\textwidth]{img/tutti1.png}\hfill
+\includegraphics[width=.32\textwidth]{img/tutti2.png}\hfill
+\includegraphics[width=.32\textwidth]{img/tutti3.png}
 
-\caption{Grafici con valori}
-\label{fig:figure3}
+\caption{Lista Report}
+\label{fig:figure4}
+
+\end{figure}
+
+Toccando un oggetto della lista verrà caricata un nuova view \texttt{ReportView()} nel quale troviamo i dettagli del report selezionato. In \texttt{ReportView()}  è possibile modificare il report premendo sul bottone "Modifica il Report", esso caricherà a schermo una nuova \texttt{sheet} e prendendo in input tutti i dati del report corrente verrà mostrato \texttt{EditViewSheet()}. Tramite questa \texttt{sheet} è possibile salvare le modifiche con un bottone a fine pagina, se invece si cambia idea basterà trascinare in basso la \texttt{sheet} o toccare il bottone "Chiudi".
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.32\textwidth]{img/ReportView3.png}\hfill
+\includegraphics[width=.32\textwidth]{img/ReportView2.png}\hfill
+\includegraphics[width=.32\textwidth]{img/ReportView1.png}
+
+\caption{Dettagli del report/Modifica del report/Report modificato}
+\label{fig:figure4}
 
 \end{figure}
 
@@ -204,21 +240,22 @@ NavigationLink(destination: AllReport()) {
 \newpage
 \section{Calendario}
 
-In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno inoltre è presenta una lista dove si possono consultare tutti i Report. Se non è presente nessun dato viene caricata una schermata iniziale di benvenuto. 
+Al centro delle tre \texttt{TabView} troviamo il Calendario che, stilisticamente parlando, è l'oggetto più complesso dell'app.\\
+Tramite il calendario possiamo aggiungere eliminare e modificare i report. Inoltre la grafica colorata del calendario ci permette di comprendere i giorni che presentano i report e i giorni senza report. \\
+\\
+La grafica del calendario è stata costruita sulla base di \textbf{\textit{\href{https://github.com/RaffiKian/RKCalendar}{RKCalendar}}}, codice è stato ripulito ed adattato per lo sviluppo di HealthMonitor.\\
+Il Calendario è invocato tramite \\
+\texttt{CalendarController(reports: self.reports, CalendarManager: self.CalManager)} \\
+prendendo in input i report salvati e una classe nel quale sono state inseriti e la data di inizio, di fine calendario ed il tipo di calendario.\\
+In CalendarController per ogni mese presente viene richiamata la view \texttt{CalendarMonth()} che è il cuore del nostro calendario, essa non solo si occupa di costruire graficamente il calendario, ma si occupa anche di controllare i giorni e quindi segnalare il giorno corrente, se è presente un report ed il giorno selezionato. I giorni verranno colorati in base a determinate proprietà:
+\begin{itemize}
+  \item nessun colore $\rightarrow$ nessun report presente $\rightarrow$ è possibile aggiungere un nuovo report
+  \item giallo $\rightarrow$ report presente $\rightarrow$ è possibile visualizzare, modificare ed eliminare il report
+  \item rosso $\rightarrow$ giorno corrente 
+  \item verde $\rightarrow$ giorno selezionato
+\end{itemize}
 
-\begin{figure}[htp]
 
-\centering
-\includegraphics[width=.3\textwidth]{img/riepilogo_iniziale.png}
-
-\caption{Schermata di benvenuto}
-\label{fig:figure3}
-\end{figure}
-
-\subsection{Grafici}
-
-Quando si inseriscono i dati, si iniziano a generare 4 grafici uno per ogni valore presente nel Report.\\
-I grafici generati usando un pacchetto Swift \textbf{\textit{"SwiftUICharts"}}
 
 
 %----------------------------------------------------------------------------------------
@@ -228,21 +265,17 @@ I grafici generati usando un pacchetto Swift \textbf{\textit{"SwiftUICharts"}}
 \newpage
 \section{Nuovo}
 
-In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno inoltre è presenta una lista dove si possono consultare tutti i Report. Se non è presente nessun dato viene caricata una schermata iniziale di benvenuto. 
+Aggiunta nuovi report
 
-\begin{figure}[htp]
+%----------------------------------------------------------------------------------------
+%	Notifiche
+%----------------------------------------------------------------------------------------
 
-\centering
-\includegraphics[width=.3\textwidth]{img/riepilogo_iniziale.png}
+\newpage
+\section{Notifiche}
 
-\caption{Schermata di benvenuto}
-\label{fig:figure3}
-\end{figure}
+Notifiche
 
-\subsection{Grafici}
-
-Quando si inseriscono i dati, si iniziano a generare 4 grafici uno per ogni valore presente nel Report.\\
-I grafici generati usando un pacchetto Swift \textbf{\textit{"SwiftUICharts"}}
 
 
 

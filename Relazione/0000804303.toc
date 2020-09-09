@@ -1,14 +1,14 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {section}{\numberline {1}Personal health monitor}{3}%
-\contentsline {subsection}{\numberline {1.1}Creare e modificare report}{3}%
-\contentsline {subsection}{\numberline {1.2}Notifiche}{3}%
-\contentsline {subsection}{\numberline {1.3}Grafici}{3}%
-\contentsline {section}{\numberline {2}HealtMonitor per iOS}{5}%
-\contentsline {section}{\numberline {3}Riepilogo}{6}%
-\contentsline {subsection}{\numberline {3.1}Grafici}{6}%
-\contentsline {subsection}{\numberline {3.2}Tutti i grafici}{7}%
-\contentsline {section}{\numberline {4}Calendario}{8}%
-\contentsline {subsection}{\numberline {4.1}Grafici}{8}%
-\contentsline {section}{\numberline {5}Nuovo}{9}%
-\contentsline {subsection}{\numberline {5.1}Grafici}{9}%
+\contentsline {section}{\numberline {1}Personal health monitor}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Creare e modificare report}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Notifiche}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Grafici}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}HealtMonitor per iOS}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}I Report}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Riepilogo}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Grafici}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Tutti i Report}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Calendario}{9}{section.4}%
+\contentsline {section}{\numberline {5}Nuovo}{10}{section.5}%
+\contentsline {section}{\numberline {6}Notifiche}{11}{section.6}%

@@ -54,7 +54,7 @@ struct AllReport: View {
             
             if showFilter {
                 VStack(alignment: .leading) {
-                    Text("Importanza:").font(.headline)
+                    Text("Importanza").font(.headline)
                     Text("Solo elementi che hanno una media di importanza:").font(.subheadline)
                     Picker(selection: $avgImportance, label: Text("Determinare un importanza")) {
                         Text("1").tag(1)
