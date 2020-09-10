@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {3.3}Core Data}{7}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Aggiungi un Report}{8}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Calendario}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}The sheets}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}The sheets}{9}{subsection.4.1}%
 \contentsline {section}{\numberline {5}Riepilogo}{11}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Grafici}{11}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Tutti i Report}{12}{subsection.5.2}%

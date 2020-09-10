@@ -23,8 +23,33 @@
 \usepackage[left=4cm, right=4cm, top=4cm]{geometry}
 
 \usepackage{listings}
+\usepackage{xcolor}
+\lstdefinelanguage{swift}
+{
+  morekeywords={
+    func,if,then,else,for,in,while,do,switch,case,default,where,break,continue,fallthrough,return,
+    typealias,struct,class,enum,protocol,var,func,let,get,set,willSet,didSet,inout,init,deinit,extension,
+    subscript,prefix,operator,infix,postfix,precedence,associativity,left,right,none,convenience,dynamic,
+    final,lazy,mutating,nonmutating,optional,override,required,static,unowned,safe,weak,internal,
+    private,public,is,as,self,unsafe,dynamicType,true,false,nil,Type,Protocol,
+  },
+  morecomment=[l]{//}, % l is for line comment
+  morecomment=[s]{/*}{*/}, % s is for start and end delimiter
+  morestring=[b]" % defines that strings are enclosed in double quotes
+}
+
+\definecolor{keyword}{HTML}{BA2CA3}
+\definecolor{string}{HTML}{D12F1B}
+\definecolor{comment}{HTML}{008400}
+
 \lstset{
-language=Swift,
+  language=swift,
+  showstringspaces=false, % lets spaces in strings appear as real spaces
+  columns=fixed,
+  keepspaces=true,
+  keywordstyle=\color{keyword},
+  stringstyle=\color{string},
+  commentstyle=\color{comment},
 basicstyle=\small\ttfamily,
 columns=flexible,
 breaklines=true,
@@ -106,9 +131,11 @@ L'applicazione dovrebbe essere in grado di raccogliere statistiche sull'utilizzo
 \newpage
 \section{HealtMonitor per iOS}
 
-Questa versione di HealtMonitor è stata pensata e sviluppa per \textbf{iOS 13} usando \textbf{Swift 5} su \textbf{xCode 11}.
+Questa versione di HealtMonitor è stata pensata e sviluppa per \textbf{iOS 13} usando \textbf{Swift 5} su \textbf{xCode 11.7}, il tutto su \textbf{MacOS Catalina 10.15.6}.\\
+HealtMonitor per iOS stata testata su \textbf{iPhone 11} aggiornato ad \textbf{iOS 13.6.1}. Inoltre e stata testata su diversi dispositivi iOS sul \textbf{Simulatore}, versione \textbf{11.7}, che offre xCode.\\
 
-L'app è divisa in 3 sezioni principali richiamate nel ContentView.swift : 
+
+L'app è divisa in 3 sezioni principali richiamate nel \texttt{ContentView.swift} : 
 \begin{itemize}
   \item \texttt{Summary()}
   \item \texttt{CalendarTab()}
@@ -172,7 +199,7 @@ In questa tab si può aggiungere un nuovo report selezionando il giorno sul cale
   \item sono stati inseriti il numero di battiti e la glicemia con valori superiori a 40
   \item è stata inserita una frequenza respiratoria con valore superiore a 10 
 \end{itemize}
-false altrimenti
+false altrimenti.
 
 \begin{figure}[htp]
 
@@ -195,7 +222,7 @@ false altrimenti
 \caption{AdaptsKeyboard()}
 \end{wrapfigure}
 Per gestire le tastiere sono state scritte due funzioni fondamentali la prima è \texttt{AdaptsKeyboard()}.\\
-Essa, quando vengono toccati dei \texttt{TextField}, controlla se la tastiera "copre" il campo dove si dovrebbe scrivere ed in quel caso porta in alto la View appena sopra la tastiera non comprendo con quest'ultima la \texttt{TextField}.Ad esempio quando andiamo ad aggiungere la frequenza respiratoria essendo un campo che si trova alla fine del foglio quando salirà la tastiera non sarà più visibile, qui entra in gioco \texttt{AdaptsKeyboard()} che richiamata alla fine della View controlla tutti campi. 
+Essa, quando vengono toccati dei \texttt{TextField}, controlla se la tastiera "copre" il campo dove si dovrebbe scrivere ed in quel caso porta in alto la View appena sopra la tastiera non comprendo con quest'ultima la \texttt{TextField}. Ad esempio quando andiamo ad aggiungere la frequenza respiratoria essendo un campo che si trova alla fine del foglio quando salirà la tastiera non sarà più visibile, qui entra in gioco \texttt{AdaptsKeyboard()} che richiamata alla fine della View controlla tutti campi. 
 
 \subsection{endEditing()}
 
@@ -255,9 +282,9 @@ Infine viene stampato a video un alert che comunica che il report è stato inser
 \section{Calendario}
 
 Al centro delle tre \texttt{TabView} troviamo il Calendario che, stilisticamente parlando, è l'oggetto più complesso dell'app.\\
-Tramite il calendario possiamo aggiungere eliminare e modificare i report. Inoltre la grafica colorata del calendario ci permette di comprendere i giorni che presentano i report e i giorni senza report. \\
+Tramite il calendario possiamo aggiungere eliminare e modificare i report. Inoltre la grafica colorata del calendario ci permette di comprendere i giorni che presentano report ed i giorni senza report. \\
 \\
-La grafica del calendario è stata costruita sulla base di \textbf{\textit{\href{https://github.com/RaffiKian/RKCalendar}{RKCalendar}}}, codice è stato ripulito ed adattato per lo sviluppo di HealthMonitor.\\
+La grafica e la gestione del calendario sono state implementate grazie ad \textbf{\textit{\href{https://github.com/RaffiKian/RKCalendar}{RKCalendar}}}, non trattandosi di una libreria il codice è stato ripulito ed adattato per lo sviluppo di HealthMonitor.\\
 Il Calendario è invocato tramite \\
 \texttt{CalendarController(reports: self.reports, CalendarManager: self.CalManager)} \\
 prendendo in input i report salvati e una classe nel quale sono state inseriti e la data di inizio, di fine calendario ed il tipo di calendario.\\
@@ -287,10 +314,6 @@ Nella view "Calendario" non ci spostiamo verso nuove view, ma apriamo solo delle
 Come accennato prima il calendario è gestito tutto in \texttt{CalendarMonth()}. Qui troviamo dei controlli fondamentali: 
 
 \begin{lstlisting}
-.onTapGesture {
-	self.dateTapped(date: column)
-	 self.showSheet = true
-}
 .sheet(isPresented: self.$showSheet) {
 	if self.isReport(date: self.CalendarManager.selectedDate ?? Date()) {
 		ReportSheet(showSheet: self.$showSheet, reports: self.reports, date: self.CalendarManager.selectedDate)
@@ -304,6 +327,21 @@ Come accennato prima il calendario è gestito tutto in \texttt{CalendarMonth()}.
 	}
 }
 \end{lstlisting}
+
+Quando una data viene toccata \texttt{showSheet} diventa true e quindi viene mostrata la sheet in base alle caratteristiche del giorno:\\
+\\
+\begin{lstlisting}
+if self.isReport(date: self.CalendarManager.selectedDate ?? Date())
+\end{lstlisting}
+Se nel giorno toccato è presente il report allora verrà mostrato \texttt{ReportSheet()} con le informazioni del report presente per quel giorno.\\
+In \texttt{ReportSheet()} possiamo, modificare o eliminare il report corrente. Per la modifica del report abbiamo \texttt{EditViewSheet()} che prendendo in input tutti valori del report, li inserisce nei vari \texttt{TextField} e quindi da la possbilità di cambiare i valori e di inserirne dei nuovi.
+\\
+\begin{lstlisting}
+else if (self.CompareDate(date: Date(), referenceDate: self.CalendarManager.selectedDate!))}
+\end{lstlisting}
+Se il report per quel giorno non è presente allora ci sono due casi, è una data del calendario presente o passata o è una data del calendario futura.\\
+Nel caso che è una data del calendario presente o passata si ha la possibilità di aggiungere un nuovo report grazie a \texttt{AddReportSheet()} che è molto simile a \texttt{AddReport()} ma è ripensata per una \texttt{sheet}.\\
+Nel caso si tratta di una data futura allora verrà caricato \texttt{FutureDay()}, una sheet semivuota che avvisa che non si possono aggiungere report futuri. 
 
 %----------------------------------------------------------------------------------------
 %	Riepilogo
@@ -327,7 +365,7 @@ Se non è presente nessun dato viene caricata una schermata iniziale di benvenut
 \subsection{Grafici}
 
 Quando si inseriscono i dati, si iniziano a generare 4 grafici uno per ogni valore presente nel Report.\\
-I grafici vengono generati usando un pacchetto Swift dal nome \textbf{\textit{\href{https://github.com/AppPear/ChartView}{SwiftUICharts}}}, esso ha diverse configurazioni, in particolare in HealthMonitor troviamo \texttt{LineChartView()} che prende in input array di dati.\\
+I grafici vengono generati usando una libreria Swift dal nome \textbf{\textit{\href{https://github.com/AppPear/ChartView}{SwiftUICharts}}}, esso ha diverse configurazioni, in particolare in HealthMonitor troviamo \texttt{LineChartView()} che prende in input array di dati.\\
 I valori dei grafici sono ordinati per data, basta trascinare il dito sopra al grafico per visualizzare i valori. 
 
 \begin{figure}[htp]
@@ -401,7 +439,37 @@ Toccando un oggetto della lista verrà caricata un nuova view \texttt{ReportView
 \newpage
 \section{Notifiche}
 
-Notifiche
+In HealthMonitor abbiamo la possibilità di ricevere delle notifiche.\\
+Le notifiche vengono gestite in \texttt{NotificationSheet()}. Qui si viene avvisati se le notifiche sono attive o disattive. Nel caso sono attive tramite un DatePicker si ha la possbilità di selezionare l'orario in cui si vogliono ricevere le notifiche. Una volta attive le notifiche sono su base giornaliera. Ogni 24h l'app ricorderà all'utente di aggiungere un report. 
+
+\begin{lstlisting}
+func sendNotification(start: Date) ->(){
+	let content = UNMutableNotificationContent()
+	content.title = "Report Giornaliero"
+	content.body = "Cosa aspetti? E' giunto il momento di aggiungere il report giornaliero!"
+	content.sound = UNNotificationSound.default
+        
+	var hourStart = DateComponents()
+	hourStart.hour = Calendar.current.component(.hour, from: start)
+	hourStart.minute = Calendar.current.component(.minute, from: start)
+        
+	let trigger = UNCalendarNotificationTrigger(dateMatching: hourStart, repeats: true)
+	let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
+	UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+}    
+\end{lstlisting}
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.32\textwidth]{img/notifiche1.png}\hfill
+\includegraphics[width=.32\textwidth]{img/notifiche2.png}\hfill
+\includegraphics[width=.32\textwidth]{img/notifiche3.png}
+
+\caption{Notifiche disablitate/Notifiche abilitate/Notifica}
+\label{fig:figure5}
+
+\end{figure}
 
 
 

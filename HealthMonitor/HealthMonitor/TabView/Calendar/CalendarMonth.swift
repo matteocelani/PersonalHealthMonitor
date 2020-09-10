@@ -85,7 +85,7 @@ struct CalendarMonth: View {
         case .orderedAscending:
             return false
         case .orderedSame:
-            return false
+            return true
         default:
             return false
         }
@@ -97,14 +97,6 @@ struct CalendarMonth: View {
     
     func dateTapped(date: Date) {
         if (self.CalendarManager.mode == 0)  {
-            if self.CalendarManager.selectedDate != nil &&
-                self.CalendarManager.calendar.isDate(self.CalendarManager.selectedDate, inSameDayAs: date) {
-                self.CalendarManager.selectedDate = nil
-            } else {
-                self.CalendarManager.selectedDate = date
-            }
-        }
-        else {
             self.CalendarManager.selectedDate = date
         }
     }
