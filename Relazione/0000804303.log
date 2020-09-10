@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.5)  9 SEP 2020 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.5)  10 SEP 2020 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -238,20 +238,28 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip49
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/siunitx/siunitx.sty
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen152
+\WF@size=\dimen153
+\c@WF@wrappedlines=\count268
+\WF@box=\box47
+\WF@everypar=\toks20
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/siunitx/siunitx.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-03-06 L3 programming layer (loader) 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count268
-\l__pdf_internal_box=\box47
+\l__kernel_color_stack_int=\count269
+\l__pdf_internal_box=\box48
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2020-03-06 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count269
-\g__xparse_grabber_int=\count270
-\l__xparse_m_args_int=\count271
-\l__xparse_v_nesting_int=\count272
+\l__xparse_current_arg_int=\count270
+\g__xparse_grabber_int=\count271
+\l__xparse_m_args_int=\count272
+\l__xparse_v_nesting_int=\count273
 )
 Package: siunitx 2020/02/25 v2.8b A comprehensive (SI) units package
 
@@ -260,60 +268,60 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks20
-\ex@=\dimen152
+\@emptytoks=\toks21
+\ex@=\dimen154
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen153
-\ar@mcellbox=\box48
-\extrarowheight=\dimen154
-\NC@list=\toks21
+\col@sep=\dimen155
+\ar@mcellbox=\box49
+\extrarowheight=\dimen156
+\NC@list=\toks22
 \extratabsurround=\skip50
 \backup@length=\skip51
-\ar@cellbox=\box49
+\ar@cellbox=\box50
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2020-03-06 LaTeX2e option processing using LaTeX3 keys
 )
-\l__siunitx_tmp_box=\box50
-\l__siunitx_tmp_dim=\dimen155
-\l__siunitx_tmp_int=\count273
-\l__siunitx_number_mantissa_length_int=\count274
-\l__siunitx_number_uncert_length_int=\count275
-\l__siunitx_round_int=\count276
-\l__siunitx_process_decimal_int=\count277
-\l__siunitx_process_uncertainty_int=\count278
-\l__siunitx_process_fixed_int=\count279
-\l__siunitx_process_integer_min_int=\count280
-\l__siunitx_process_precision_int=\count281
-\l__siunitx_group_min_int=\count282
-\l__siunitx_angle_marker_box=\box51
-\l__siunitx_angle_unit_box=\box52
-\l__siunitx_angle_marker_dim=\dimen156
-\l__siunitx_angle_unit_dim=\dimen157
-\l__siunitx_unit_int=\count283
-\l__siunitx_unit_denominator_int=\count284
-\l__siunitx_unit_numerator_int=\count285
-\l__siunitx_unit_prefix_int=\count286
-\l__siunitx_unit_prefix_base_int=\count287
-\l__siunitx_unit_prefix_gram_int=\count288
-\l__siunitx_number_product_int=\count289
+\l__siunitx_tmp_box=\box51
+\l__siunitx_tmp_dim=\dimen157
+\l__siunitx_tmp_int=\count274
+\l__siunitx_number_mantissa_length_int=\count275
+\l__siunitx_number_uncert_length_int=\count276
+\l__siunitx_round_int=\count277
+\l__siunitx_process_decimal_int=\count278
+\l__siunitx_process_uncertainty_int=\count279
+\l__siunitx_process_fixed_int=\count280
+\l__siunitx_process_integer_min_int=\count281
+\l__siunitx_process_precision_int=\count282
+\l__siunitx_group_min_int=\count283
+\l__siunitx_angle_marker_box=\box52
+\l__siunitx_angle_unit_box=\box53
+\l__siunitx_angle_marker_dim=\dimen158
+\l__siunitx_angle_unit_dim=\dimen159
+\l__siunitx_unit_int=\count284
+\l__siunitx_unit_denominator_int=\count285
+\l__siunitx_unit_numerator_int=\count286
+\l__siunitx_unit_prefix_int=\count287
+\l__siunitx_unit_prefix_base_int=\count288
+\l__siunitx_unit_prefix_gram_int=\count289
+\l__siunitx_number_product_int=\count290
 \c__siunitx_one_fill_skip=\skip52
 \l__siunitx_table_unit_align_skip=\skip53
-\l__siunitx_table_exponent_dim=\dimen158
-\l__siunitx_table_integer_dim=\dimen159
-\l__siunitx_table_mantissa_dim=\dimen160
-\l__siunitx_table_marker_dim=\dimen161
-\l__siunitx_table_result_dim=\dimen162
-\l__siunitx_table_uncert_dim=\dimen163
-\l__siunitx_table_fill_pre_dim=\dimen164
-\l__siunitx_table_fill_post_dim=\dimen165
-\l__siunitx_table_fill_mid_dim=\dimen166
-\l__siunitx_table_pre_box=\box53
-\l__siunitx_table_post_box=\box54
-\l__siunitx_table_mantissa_box=\box55
-\l__siunitx_table_result_box=\box56
+\l__siunitx_table_exponent_dim=\dimen160
+\l__siunitx_table_integer_dim=\dimen161
+\l__siunitx_table_mantissa_dim=\dimen162
+\l__siunitx_table_marker_dim=\dimen163
+\l__siunitx_table_result_dim=\dimen164
+\l__siunitx_table_uncert_dim=\dimen165
+\l__siunitx_table_fill_pre_dim=\dimen166
+\l__siunitx_table_fill_post_dim=\dimen167
+\l__siunitx_table_fill_mid_dim=\dimen168
+\l__siunitx_table_pre_box=\box54
+\l__siunitx_table_post_box=\box55
+\l__siunitx_table_mantissa_box=\box56
+\l__siunitx_table_result_box=\box57
 \l__siunitx_table_number_align_skip=\skip54
 \l__siunitx_table_text_align_skip=\skip55
 (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator.sty
@@ -336,15 +344,15 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen167
-\Gin@req@width=\dimen168
+\Gin@req@height=\dimen169
+\Gin@req@width=\dimen170
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip56
 \bibsep=\skip57
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count290
+\c@NAT@ctr=\count291
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
@@ -353,72 +361,75 @@ Package: amsmath 2020/01/20 v2.17e AMS math features
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen169
+\pmbraise@=\dimen171
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count291
+\inf@bad=\count292
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count292
-\leftroot@=\count293
+\uproot@=\count293
+\leftroot@=\count294
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count294
-\DOTSCASE@=\count295
+\classnum@=\count295
+\DOTSCASE@=\count296
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box57
-\strutbox@=\box58
-\big@size=\dimen170
+\Mathstrutbox@=\box58
+\strutbox@=\box59
+\big@size=\dimen172
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count296
-\c@MaxMatrixCols=\count297
+\macc@depth=\count297
+\c@MaxMatrixCols=\count298
 \dotsspace@=\muskip17
-\c@parentequation=\count298
-\dspbrk@lvl=\count299
-\tag@help=\toks22
-\row@=\count300
-\column@=\count301
-\maxfields@=\count302
-\andhelp@=\toks23
-\eqnshift@=\dimen171
-\alignsep@=\dimen172
-\tagshift@=\dimen173
-\tagwidth@=\dimen174
-\totwidth@=\dimen175
-\lineht@=\dimen176
-\@envbody=\toks24
+\c@parentequation=\count299
+\dspbrk@lvl=\count300
+\tag@help=\toks23
+\row@=\count301
+\column@=\count302
+\maxfields@=\count303
+\andhelp@=\toks24
+\eqnshift@=\dimen173
+\alignsep@=\dimen174
+\tagshift@=\dimen175
+\tagwidth@=\dimen176
+\totwidth@=\dimen177
+\lineht@=\dimen178
+\@envbody=\toks25
 \multlinegap=\skip59
 \multlinetaggap=\skip60
-\mathdisplay@stack=\toks25
+\mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
 (./0000804303.aux
 
-LaTeX Warning: Label `fig:figure4' multiply defined.
+LaTeX Warning: Label `fig:figure6' multiply defined.
+
+
+LaTeX Warning: Label `fig:figure6' multiply defined.
 
 )
 \openout1 = `0000804303.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -454,11 +465,11 @@ LaTeX Font Info:    ... okay on input line 61.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count303
-LaTeX Info: Redefining \it@ocap on input line 61.
-LaTeX Info: Redefining \it@ccap on input line 61.
-\AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 61.
+\c@lstlisting=\count304
+LaTeX Info: Redefining \it@ocap on input line 62.
+LaTeX Info: Redefining \it@ccap on input line 62.
+\AtBeginShipoutBox=\box60
+Package hyperref Info: Link coloring OFF on input line 62.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -469,11 +480,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count304
+\c@section@level=\count305
 )
-LaTeX Info: Redefining \ref on input line 61.
-LaTeX Info: Redefining \pageref on input line 61.
-LaTeX Info: Redefining \nameref on input line 61.
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+LaTeX Info: Redefining \nameref on input line 62.
  (./0000804303.out) (./0000804303.out)
 \@outlinefile=\write3
 \openout3 = `0000804303.out'.
@@ -487,17 +498,17 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 ) (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count305
-\scratchdimen=\dimen177
-\scratchbox=\box60
-\nofMPsegments=\count306
-\nofMParguments=\count307
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count308
-\MPscratchDim=\dimen178
-\MPnumerator=\count309
-\makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count306
+\scratchdimen=\dimen179
+\scratchbox=\box61
+\nofMPsegments=\count307
+\nofMParguments=\count308
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count309
+\MPscratchDim=\dimen180
+\MPnumerator=\count310
+\makeMPintoPDFobject=\count311
+\everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -516,116 +527,203 @@ e
 
  [2] [3]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-12.
+13.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<img/riepilogo_iniziale.png, id=84, 481.8pt x 963.09813pt>
+<img/riepilogo_iniziale.png, id=109, 481.8pt x 963.09813pt>
 File: img/riepilogo_iniziale.png Graphic file (type png)
 <use img/riepilogo_iniziale.png>
-Package pdftex.def Info: img/riepilogo_iniziale.png  used on input line 124.
+Package pdftex.def Info: img/riepilogo_iniziale.png  used on input line 125.
 (pdftex.def)             Requested size: 123.73817pt x 247.34291pt.
-<img/calendario_iniziale.png, id=86, 476.27937pt x 958.07938pt>
+<img/calendario_iniziale.png, id=111, 476.27937pt x 958.07938pt>
 File: img/calendario_iniziale.png Graphic file (type png)
 <use img/calendario_iniziale.png>
-Package pdftex.def Info: img/calendario_iniziale.png  used on input line 125.
+Package pdftex.def Info: img/calendario_iniziale.png  used on input line 126.
 (pdftex.def)             Requested size: 123.73817pt x 248.90471pt.
-<img/nuovo_iniziale.png, id=87, 476.27937pt x 951.555pt>
+<img/nuovo_iniziale.png, id=112, 476.27937pt x 951.555pt>
 File: img/nuovo_iniziale.png Graphic file (type png)
 <use img/nuovo_iniziale.png>
-Package pdftex.def Info: img/nuovo_iniziale.png  used on input line 126.
+Package pdftex.def Info: img/nuovo_iniziale.png  used on input line 127.
 (pdftex.def)             Requested size: 123.73817pt x 247.2097pt.
  [4 <./img/riepilogo_iniziale.png> <./img/calendario_iniziale.png> <./img/nuovo
 _iniziale.png>]
-[5]
-File: img/riepilogo_iniziale.png Graphic file (type png)
-<use img/riepilogo_iniziale.png>
-Package pdftex.def Info: img/riepilogo_iniziale.png  used on input line 161.
-(pdftex.def)             Requested size: 57.99858pt x 115.93417pt.
-<img/grafico1.png, id=104, 463.23062pt x 919.435pt>
-File: img/grafico1.png Graphic file (type png)
-<use img/grafico1.png>
-Package pdftex.def Info: img/grafico1.png  used on input line 176.
-(pdftex.def)             Requested size: 96.66823pt x 191.86649pt.
-<img/grafico2.png, id=105, 467.7475pt x 927.465pt>
-File: img/grafico2.png Graphic file (type png)
-<use img/grafico2.png>
-Package pdftex.def Info: img/grafico2.png  used on input line 177.
-(pdftex.def)             Requested size: 96.66823pt x 191.67412pt.
-<img/grafico3.png, id=106, 466.74374pt x 920.43875pt>
-File: img/grafico3.png Graphic file (type png)
-<use img/grafico3.png>
-Package pdftex.def Info: img/grafico3.png  used on input line 178.
-(pdftex.def)             Requested size: 96.66823pt x 190.62933pt.
- [6 <./img/grafico1.png> <./img/grafico2.png> <./img/grafico3.png>]
+<img/NavigationView.png, id=124, 783.92876pt x 673.51625pt>
+File: img/NavigationView.png Graphic file (type png)
+<use img/NavigationView.png>
+Package pdftex.def Info: img/NavigationView.png  used on input line 154.
+(pdftex.def)             Requested size: 425.3426pt x 365.44044pt.
+
+Overfull \hbox (38.66965pt too wide) in paragraph at lines 154--156
+ [][] 
+ []
+
+[5 <./img/NavigationView.png>]
+<img/nuovo1.png, id=130, 462.72874pt x 918.43124pt>
+File: img/nuovo1.png Graphic file (type png)
+<use img/nuovo1.png>
+Package pdftex.def Info: img/nuovo1.png  used on input line 180.
+(pdftex.def)             Requested size: 116.00307pt x 230.23788pt.
+<img/nuovo2.png, id=131, 459.7175pt x 919.435pt>
+File: img/nuovo2.png Graphic file (type png)
+<use img/nuovo2.png>
+Package pdftex.def Info: img/nuovo2.png  used on input line 181.
+(pdftex.def)             Requested size: 116.00307pt x 232.00468pt.
+ [6 <./img/nuovo1.png> <./img/nuovo2.png>]
+<img/tastiera.png, id=139, 460.21938pt x 920.43875pt>
+File: img/tastiera.png Graphic file (type png)
+<use img/tastiera.png>
+Package pdftex.def Info: img/tastiera.png  used on input line 193.
+(pdftex.def)             Requested size: 116.00307pt x 232.00516pt.
+<img/CoreData.png, id=140, 693.08937pt x 357.335pt>
+File: img/CoreData.png Graphic file (type png)
+<use img/CoreData.png>
+Package pdftex.def Info: img/CoreData.png  used on input line 213.
+(pdftex.def)             Requested size: 348.0033pt x 179.42494pt.
+
+[7 <./img/tastiera.png> <./img/CoreData.png>]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 198.
-<img/tutti1.png, id=117, 461.22313pt x 918.93312pt>
-File: img/tutti1.png Graphic file (type png)
-<use img/tutti1.png>
-Package pdftex.def Info: img/tutti1.png  used on input line 213.
-(pdftex.def)             Requested size: 123.73817pt x 246.53079pt.
-<img/tutti2.png, id=118, 462.72874pt x 928.97063pt>
-File: img/tutti2.png Graphic file (type png)
-<use img/tutti2.png>
-Package pdftex.def Info: img/tutti2.png  used on input line 214.
-(pdftex.def)             Requested size: 123.73817pt x 248.41568pt.
-<img/tutti3.png, id=119, 464.23438pt x 924.95563pt>
-File: img/tutti3.png Graphic file (type png)
-<use img/tutti3.png>
-Package pdftex.def Info: img/tutti3.png  used on input line 215.
-(pdftex.def)             Requested size: 123.73817pt x 246.53755pt.
- [7 <./img/tutti1.png> <./img/tutti2.png> <./img/tutti3.png>]
-<img/ReportView3.png, id=141, 457.20813pt x 919.93687pt>
-File: img/ReportView3.png Graphic file (type png)
-<use img/ReportView3.png>
-Package pdftex.def Info: img/ReportView3.png  used on input line 227.
-(pdftex.def)             Requested size: 123.73817pt x 248.96179pt.
-<img/ReportView2.png, id=142, 461.22313pt x 919.435pt>
-File: img/ReportView2.png Graphic file (type png)
-<use img/ReportView2.png>
-Package pdftex.def Info: img/ReportView2.png  used on input line 228.
-(pdftex.def)             Requested size: 123.73817pt x 246.66544pt.
-<img/ReportView1.png, id=143, 457.20813pt x 918.43124pt>
-File: img/ReportView1.png Graphic file (type png)
-<use img/ReportView1.png>
-Package pdftex.def Info: img/ReportView1.png  used on input line 229.
-(pdftex.def)             Requested size: 123.73817pt x 248.55432pt.
- [8 <./img/ReportView3.png> <./img/ReportView2.png> <./img/ReportView1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 243--251
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 225.
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--249
 
  []
 
 
-Overfull \hbox (17.47835pt too wide) in paragraph at lines 243--251
+Underfull \hbox (badness 10000) in paragraph at lines 236--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--249
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 257--265
+
+ []
+
+
+Overfull \hbox (17.47835pt too wide) in paragraph at lines 257--265
 \T1/cmtt/m/n/10 CalendarController(reports: self.reports, CalendarManager: self
 .CalManager) 
  []
 
-[9] [10]
-No file 0000804303.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 296.
-[11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 296.
- (./0000804303.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 296.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 296.
-Package rerunfilecheck Info: File `0000804303.out' has not changed.
-(rerunfilecheck)             Checksum: 5A9A62B95E2D5083500DAD6536AC8F81;654.
+<img/Calendario1.png, id=167, 461.22313pt x 916.92563pt>
+File: img/Calendario1.png Graphic file (type png)
+<use img/Calendario1.png>
+Package pdftex.def Info: img/Calendario1.png  used on input line 275.
+(pdftex.def)             Requested size: 116.00307pt x 230.61597pt.
+<img/Calendario2.png, id=168, 462.22687pt x 917.4275pt>
+File: img/Calendario2.png Graphic file (type png)
+<use img/Calendario2.png>
+Package pdftex.def Info: img/Calendario2.png  used on input line 276.
+(pdftex.def)             Requested size: 116.00307pt x 230.23824pt.
+<img/Calendario3.png, id=169, 460.72125pt x 917.4275pt>
+File: img/Calendario3.png Graphic file (type png)
+<use img/Calendario3.png>
+Package pdftex.def Info: img/Calendario3.png  used on input line 277.
+(pdftex.def)             Requested size: 116.00307pt x 230.99417pt.
+[9 <./img/Calendario1.png> <./img/Calendario2.png> <./img/Calendario3.png>]
+[10]
+File: img/riepilogo_iniziale.png Graphic file (type png)
+<use img/riepilogo_iniziale.png>
+Package pdftex.def Info: img/riepilogo_iniziale.png  used on input line 321.
+(pdftex.def)             Requested size: 57.99858pt x 115.93417pt.
+<img/grafico1.png, id=203, 463.23062pt x 919.435pt>
+File: img/grafico1.png Graphic file (type png)
+<use img/grafico1.png>
+Package pdftex.def Info: img/grafico1.png  used on input line 336.
+(pdftex.def)             Requested size: 96.66823pt x 191.86649pt.
+<img/grafico2.png, id=204, 467.7475pt x 927.465pt>
+File: img/grafico2.png Graphic file (type png)
+<use img/grafico2.png>
+Package pdftex.def Info: img/grafico2.png  used on input line 337.
+(pdftex.def)             Requested size: 96.66823pt x 191.67412pt.
+<img/grafico3.png, id=205, 466.74374pt x 920.43875pt>
+File: img/grafico3.png Graphic file (type png)
+<use img/grafico3.png>
+Package pdftex.def Info: img/grafico3.png  used on input line 338.
+(pdftex.def)             Requested size: 96.66823pt x 190.62933pt.
+ [11 <./img/grafico1.png> <./img/grafico2.png> <./img/grafico3.png>]
+<img/tutti1.png, id=215, 461.22313pt x 918.93312pt>
+File: img/tutti1.png Graphic file (type png)
+<use img/tutti1.png>
+Package pdftex.def Info: img/tutti1.png  used on input line 373.
+(pdftex.def)             Requested size: 123.73817pt x 246.53079pt.
+<img/tutti2.png, id=216, 462.72874pt x 928.97063pt>
+File: img/tutti2.png Graphic file (type png)
+<use img/tutti2.png>
+Package pdftex.def Info: img/tutti2.png  used on input line 374.
+(pdftex.def)             Requested size: 123.73817pt x 248.41568pt.
+<img/tutti3.png, id=217, 464.23438pt x 924.95563pt>
+File: img/tutti3.png Graphic file (type png)
+<use img/tutti3.png>
+Package pdftex.def Info: img/tutti3.png  used on input line 375.
+(pdftex.def)             Requested size: 123.73817pt x 246.53755pt.
 
+[12 <./img/tutti1.png> <./img/tutti2.png> <./img/tutti3.png>]
+<img/ReportView3.png, id=237, 457.20813pt x 919.93687pt>
+File: img/ReportView3.png Graphic file (type png)
+<use img/ReportView3.png>
+Package pdftex.def Info: img/ReportView3.png  used on input line 387.
+(pdftex.def)             Requested size: 123.73817pt x 248.96179pt.
+<img/ReportView2.png, id=238, 461.22313pt x 919.435pt>
+File: img/ReportView2.png Graphic file (type png)
+<use img/ReportView2.png>
+Package pdftex.def Info: img/ReportView2.png  used on input line 388.
+(pdftex.def)             Requested size: 123.73817pt x 246.66544pt.
+<img/ReportView1.png, id=239, 457.20813pt x 918.43124pt>
+File: img/ReportView1.png Graphic file (type png)
+<use img/ReportView1.png>
+Package pdftex.def Info: img/ReportView1.png  used on input line 389.
+(pdftex.def)             Requested size: 123.73817pt x 248.55432pt.
+ [13 <./img/ReportView3.png> <./img/ReportView2.png> <./img/ReportView1.png>]
+No file 0000804303.bbl.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 423.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 423.
+ (./0000804303.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 423.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 423.
+
+
+Package rerunfilecheck Warning: File `0000804303.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `0000804303.out':
+(rerunfilecheck)             Before: 3A3F6600CE06F29EB78BBF4230AD5FFE;977
+(rerunfilecheck)             After:  98A2BC23B533F3B726D9C86049144348;1037.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12472 strings out of 480608
- 218948 string characters out of 5903631
- 520158 words of memory out of 5000000
- 28112 multiletter control sequences out of 15000+600000
+ 12700 strings out of 480608
+ 222337 string characters out of 5903631
+ 531636 words of memory out of 5000000
+ 28288 multiletter control sequences out of 15000+600000
  547526 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,51p,1263b,1252s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,7n,51p,1263b,1256s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
@@ -639,10 +737,10 @@ xlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texliv
 e/2020/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/
 2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on 0000804303.pdf (11 pages, 3508379 bytes).
+Output written on 0000804303.pdf (14 pages, 5429917 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 313 PDF objects out of 1000 (max. 8388607)
+ 243 compressed objects within 3 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

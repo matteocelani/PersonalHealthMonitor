@@ -36,6 +36,7 @@ literate={à}{{\'a}}1 {è}{{\'e}}1 {ò}{{\'o}}1 {ù}{{\'u}}1 {ì}{{\'\i}}1,
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{wrapfig}
 
 \usepackage{siunitx} 						% Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx}						% Required for the inclusion of images
@@ -145,6 +146,165 @@ I report sono composti da 4 valori e ogni valore ha un importanza che va da 1 a 
 
 Inoltre ogni report è caratterizzato da una data, un titolo (obbligatori) e una descrizione (facoltativa). 
 
+\subsection{NavigationView}
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=1.1\textwidth]{img/NavigationView.png}\
+\label{fig:figure0}
+
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+%	Nuovo
+%----------------------------------------------------------------------------------------
+
+\newpage
+\section{Nuovo}
+
+La Tab "Nuovo" è una delle più importanti per il funzionamento della nostra app. In HealthMonitor vogliamo aggiungere nuovi report quindi questa operazione è stata semplificata il più possibile con una tab specifica. \\
+Purtroppo  \textbf{iOS 13} e \textbf{Swift 5} non ci sono venuti incontro quindi diverse funzioni di controllo si sono rese necessarie per la gestione della tastiera. \\
+In questa tab si può aggiungere un nuovo report selezionando il giorno sul calendario, e compilando correttamente i campi obbligatori. C'è una funzione di controllo \texttt{validateForm()} che ritorna un Bool, essa ha il compito di sbloccare il tasto "Aggiungi Report" solo quando tutte le voci inserite rispettano i criteri specificati, quindi ritornerà true sse: 
+\begin{itemize}
+  \item è stato inserito un titolo
+  \item è stata inserita una temperatura con un valore tra i 30 ed i 45 gradi
+  \item sono stati inseriti il numero di battiti e la glicemia con valori superiori a 40
+  \item è stata inserita una frequenza respiratoria con valore superiore a 10 
+\end{itemize}
+false altrimenti
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{img/nuovo1.png}
+\includegraphics[width=.3\textwidth]{img/nuovo2.png}
+
+
+\caption{Nuovo report}
+\label{fig:figure6}
+
+\end{figure}
+\newpage
+
+\subsection{AdaptsKeyboard()}
+\begin{wrapfigure}{r}{0.4\textwidth}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{img/tastiera.png}
+  \end{center}
+\caption{AdaptsKeyboard()}
+\end{wrapfigure}
+Per gestire le tastiere sono state scritte due funzioni fondamentali la prima è \texttt{AdaptsKeyboard()}.\\
+Essa, quando vengono toccati dei \texttt{TextField}, controlla se la tastiera "copre" il campo dove si dovrebbe scrivere ed in quel caso porta in alto la View appena sopra la tastiera non comprendo con quest'ultima la \texttt{TextField}.Ad esempio quando andiamo ad aggiungere la frequenza respiratoria essendo un campo che si trova alla fine del foglio quando salirà la tastiera non sarà più visibile, qui entra in gioco \texttt{AdaptsKeyboard()} che richiamata alla fine della View controlla tutti campi. 
+
+\subsection{endEditing()}
+
+Un altra funzione fondamentale per facilitare l'utilizzo delle tastiera è \texttt{endEditing()}.\\
+Questa funzione si occupa di chiudere la tastiera quando si è finito a scrivere. Essa richiamata nella classe \texttt{SceneDelegate} nel quale specifichiamo che se viene toccato due volte di fila lo schermo, la tastiera deve essere chiusa. 
+
+
+\subsection{Core Data}
+
+I report vengono salvati e mantenuti in memoria attraverso i Core Data. E' stata creata una nuova entità dal nome \texttt{Report} che presenta in essa i 12 attributi necessari per il salvataggio dei dati. 
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=0.9\textwidth]{img/CoreData.png}
+
+
+\caption{Core Data}
+\label{fig:figure6}
+
+\end{figure}
+
+\subsection{Aggiungi un Report}
+
+\begin{lstlisting}
+Button(action: {
+	self.controlReport()
+	self.clearField()
+}) {
+	ButtonView()
+}.disabled(!self.validateForm())
+.alert(isPresented: $showingAlert) {
+	Alert(title: Text("Il tuo report è stato aggiunto"), message: Text("Puoi modificarlo nel calendario o in riepilogo"), dismissButton: 		.default(Text("Capito")))
+}
+\end{lstlisting}
+
+
+Quando viene spinto il pulsante "Aggiungi un report" vengono fatti alcuni controlli prima che il report venga aggiunto. \\
+\\
+\texttt{controlReport()} si occupa di controllare se il report inserito per quella specifica data è già presente o meno. Se il report è presente verrà calcolata una media tra il report vecchio e quello nuovo, se il report non è presente verrà aggiunto un nuovo report.\\
+\\
+\texttt{avgReport(report:Report)} è la funzione che, prendendo in input un report calcola la media tra i dati presenti all'interno del report passato come input e i dati che sono stati inseriti nel report, quindi aggiorna il report per quella data con i nuovi dati ed infine salva.\\
+\\
+\texttt{newReport()} si occupa di creare un nuovo report, inserisce all'interno di ogni campo del Core Data i valori che sono stati messi nel report.\\
+\\
+\texttt{clearField()} una volta salvato il report, clearField() si occupa di svuotare i \texttt{TextField} dai valori presenti.\\
+\\
+\texttt{disabled(!self.validateForm())} il bottone risulta diabilitato finche i dati inseriti non sono rispettano i criteri imposti.\\
+\\
+Infine viene stampato a video un alert che comunica che il report è stato inserito.
+
+%----------------------------------------------------------------------------------------
+%	Calendario
+%----------------------------------------------------------------------------------------
+
+\newpage
+\section{Calendario}
+
+Al centro delle tre \texttt{TabView} troviamo il Calendario che, stilisticamente parlando, è l'oggetto più complesso dell'app.\\
+Tramite il calendario possiamo aggiungere eliminare e modificare i report. Inoltre la grafica colorata del calendario ci permette di comprendere i giorni che presentano i report e i giorni senza report. \\
+\\
+La grafica del calendario è stata costruita sulla base di \textbf{\textit{\href{https://github.com/RaffiKian/RKCalendar}{RKCalendar}}}, codice è stato ripulito ed adattato per lo sviluppo di HealthMonitor.\\
+Il Calendario è invocato tramite \\
+\texttt{CalendarController(reports: self.reports, CalendarManager: self.CalManager)} \\
+prendendo in input i report salvati e una classe nel quale sono state inseriti e la data di inizio, di fine calendario ed il tipo di calendario.\\
+In CalendarController per ogni mese presente viene richiamata la view \texttt{CalendarMonth()} che è il cuore del nostro calendario, essa non solo si occupa di costruire graficamente il calendario, ma si occupa anche di controllare i giorni e quindi segnalare il giorno corrente, se è presente un report ed il giorno selezionato. I giorni verranno colorati in base a determinate proprietà:
+\begin{itemize}
+  \item nessun colore $\rightarrow$ nessun report presente $\rightarrow$ è possibile aggiungere un nuovo report
+  \item giallo $\rightarrow$ report presente $\rightarrow$ è possibile visualizzare, modificare ed eliminare il report
+  \item rosso $\rightarrow$ giorno corrente 
+  \item verde $\rightarrow$ giorno selezionato
+\end{itemize}
+
+\begin{figure}[htp]
+
+\centering
+\includegraphics[width=.3\textwidth]{img/Calendario1.png}\hfill
+\includegraphics[width=.3\textwidth]{img/Calendario2.png}\hfill
+\includegraphics[width=.3\textwidth]{img/Calendario3.png}
+
+\caption{Calendario con report/Sheet con dettagli report/Sheet con aggiunta report}
+\label{fig:figure6}
+
+\end{figure}
+
+\subsection{The sheets}
+
+Nella view "Calendario" non ci spostiamo verso nuove view, ma apriamo solo delle \texttt{sheet}. \\
+Come accennato prima il calendario è gestito tutto in \texttt{CalendarMonth()}. Qui troviamo dei controlli fondamentali: 
+
+\begin{lstlisting}
+.onTapGesture {
+	self.dateTapped(date: column)
+	 self.showSheet = true
+}
+.sheet(isPresented: self.$showSheet) {
+	if self.isReport(date: self.CalendarManager.selectedDate ?? Date()) {
+		ReportSheet(showSheet: self.$showSheet, reports: self.reports, date: self.CalendarManager.selectedDate)
+		.environment(\.managedObjectContext, self.managedObjectContext)
+	 }
+	 else if (self.CompareDate(date: Date(), referenceDate: self.CalendarManager.selectedDate!)) {
+		AddReportSheet(showSheet: self.$showSheet, date: self.CalendarManager.selectedDate ?? Date(), reports: self.reports)
+		.environment(\.managedObjectContext, self.managedObjectContext)
+	} else {
+		FutureDay(showSheet: self.$showSheet)
+	}
+}
+\end{lstlisting}
+
 %----------------------------------------------------------------------------------------
 %	Riepilogo
 %----------------------------------------------------------------------------------------
@@ -229,43 +389,10 @@ Toccando un oggetto della lista verrà caricata un nuova view \texttt{ReportView
 \includegraphics[width=.32\textwidth]{img/ReportView1.png}
 
 \caption{Dettagli del report/Modifica del report/Report modificato}
-\label{fig:figure4}
+\label{fig:figure5}
 
 \end{figure}
 
-%----------------------------------------------------------------------------------------
-%	Calendario
-%----------------------------------------------------------------------------------------
-
-\newpage
-\section{Calendario}
-
-Al centro delle tre \texttt{TabView} troviamo il Calendario che, stilisticamente parlando, è l'oggetto più complesso dell'app.\\
-Tramite il calendario possiamo aggiungere eliminare e modificare i report. Inoltre la grafica colorata del calendario ci permette di comprendere i giorni che presentano i report e i giorni senza report. \\
-\\
-La grafica del calendario è stata costruita sulla base di \textbf{\textit{\href{https://github.com/RaffiKian/RKCalendar}{RKCalendar}}}, codice è stato ripulito ed adattato per lo sviluppo di HealthMonitor.\\
-Il Calendario è invocato tramite \\
-\texttt{CalendarController(reports: self.reports, CalendarManager: self.CalManager)} \\
-prendendo in input i report salvati e una classe nel quale sono state inseriti e la data di inizio, di fine calendario ed il tipo di calendario.\\
-In CalendarController per ogni mese presente viene richiamata la view \texttt{CalendarMonth()} che è il cuore del nostro calendario, essa non solo si occupa di costruire graficamente il calendario, ma si occupa anche di controllare i giorni e quindi segnalare il giorno corrente, se è presente un report ed il giorno selezionato. I giorni verranno colorati in base a determinate proprietà:
-\begin{itemize}
-  \item nessun colore $\rightarrow$ nessun report presente $\rightarrow$ è possibile aggiungere un nuovo report
-  \item giallo $\rightarrow$ report presente $\rightarrow$ è possibile visualizzare, modificare ed eliminare il report
-  \item rosso $\rightarrow$ giorno corrente 
-  \item verde $\rightarrow$ giorno selezionato
-\end{itemize}
-
-
-
-
-%----------------------------------------------------------------------------------------
-%	Nuovo
-%----------------------------------------------------------------------------------------
-
-\newpage
-\section{Nuovo}
-
-Aggiunta nuovi report
 
 %----------------------------------------------------------------------------------------
 %	Notifiche

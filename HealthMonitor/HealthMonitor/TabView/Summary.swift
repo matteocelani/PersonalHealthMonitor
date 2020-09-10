@@ -83,7 +83,7 @@ struct Summary: View {
                 Image(systemName: "bell.fill").font(.title)
             })
         }.sheet(isPresented: self.$showSheet) {
-            FilterSheet(showSheet: self.$showSheet)
+            NotificationSheet(showSheet: self.$showSheet)
         }
     }
     
