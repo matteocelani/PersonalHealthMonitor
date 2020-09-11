@@ -41,38 +41,21 @@ The application should be able to collect usage stats displaying at least two gr
 </figure>
 
 ### 4. Images <a name="images"></a>
-<figure style= "width:100%;">
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/riepilogo_iniziale.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/calendario_iniziale.png"  />
          <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/nuovo_iniziale.png"  /> <br>
-</figure>
-
-<figure style= "width:100%;">
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/nuovo1.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/tastiera.png"  />
          <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/nuovo2.png"  /> <br>
-</figure>
-
-<figure style= "width:100%;">
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/Calendario1.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/Calendario2.png"  />
          <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/Calendario3.png"  /> <br>
-</figure>
-
-<figure style= "width:100%;">
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/grafico1.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/grafico2.png"  />
          <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/grafico3.png"  /> <br>
-</figure>
-
-<figure style= "width:100%;">
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/tutti1.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/tutti2.png"  />
          <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/tutti3.png"  /> <br>
-</figure>
-
-<figure style= "width:100%;">
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche1.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche2.png"  />
          <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche3.png"  /> <br>
-</figure>
