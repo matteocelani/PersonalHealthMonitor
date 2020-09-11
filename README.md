@@ -41,6 +41,8 @@ The application should be able to collect usage stats displaying at least two gr
 </figure>
 
 ### 4. Images <a name="images"></a>
+
+![alt-text-1](Relazione/img/riepilogo_iniziale.png) ![alt-text-2](Relazione/img/calendario_iniziale.png) ![alt-text-2](Relazione/img/calendario_iniziale.png)
 <figure>
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/riepilogo_iniziale.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/calendario_iniziale.png"  />
