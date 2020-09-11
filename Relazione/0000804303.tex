@@ -132,7 +132,7 @@ L'applicazione dovrebbe essere in grado di raccogliere statistiche sull'utilizzo
 \section{HealtMonitor per iOS}
 
 Questa versione di HealtMonitor è stata pensata e sviluppa per \textbf{iOS 13} usando \textbf{Swift 5} su \textbf{xCode 11.7}, il tutto su \textbf{MacOS Catalina 10.15.6}.\\
-HealtMonitor per iOS stata testata su \textbf{iPhone 11} aggiornato ad \textbf{iOS 13.6.1}. Inoltre e stata testata su diversi dispositivi iOS sul \textbf{Simulatore}, versione \textbf{11.7}, che offre xCode.\\
+HealtMonitor per iOS è stata testata su \textbf{iPhone 11} aggiornato ad \textbf{iOS 13.6.1}. Inoltre e stata testata su diversi dispositivi iOS sul \textbf{Simulatore}, versione \textbf{11.7}, che offre xCode.\\
 
 
 L'app è divisa in 3 sezioni principali richiamate nel \texttt{ContentView.swift} : 
@@ -163,7 +163,7 @@ Ogni view viene invocata tramite una \texttt{TabView}, in \textit{"Riepilogo"} a
 \subsection{I Report}
 
 Nella nostra applicazione iOS è possibile aggiungere, modificare ed eliminare dei report giornalieri. \\
-I report sono composti da 4 valori e ogni valore ha un importanza che va da 1 a 5. In particolare i valori da inserire possono essere: 
+I report sono composti da 4 valori e ogni valore ha un'importanza che va da 1 a 5. In particolare i valori da inserire possono essere: 
 \begin{itemize}
   \item temperatura
   \item battito cardiaco
@@ -192,7 +192,7 @@ Inoltre ogni report è caratterizzato da una data, un titolo (obbligatori) e una
 
 La Tab "Nuovo" è una delle più importanti per il funzionamento della nostra app. In HealthMonitor vogliamo aggiungere nuovi report quindi questa operazione è stata semplificata il più possibile con una tab specifica. \\
 Purtroppo  \textbf{iOS 13} e \textbf{Swift 5} non ci sono venuti incontro quindi diverse funzioni di controllo si sono rese necessarie per la gestione della tastiera. \\
-In questa tab si può aggiungere un nuovo report selezionando il giorno sul calendario, e compilando correttamente i campi obbligatori. C'è una funzione di controllo \texttt{validateForm()} che ritorna un Bool, essa ha il compito di sbloccare il tasto "Aggiungi Report" solo quando tutte le voci inserite rispettano i criteri specificati, quindi ritornerà true sse: 
+In questa tab si può aggiungere un nuovo report selezionando il giorno sul calendario e compilando correttamente i campi obbligatori. C'è una funzione di controllo \texttt{validateForm()} che ritorna un Bool, essa ha il compito di sbloccare il tasto "Aggiungi Report" solo quando tutte le voci inserite rispettano i criteri specificati, quindi ritornerà true sse: 
 \begin{itemize}
   \item è stato inserito un titolo
   \item è stata inserita una temperatura con un valore tra i 30 ed i 45 gradi
@@ -222,12 +222,12 @@ false altrimenti.
 \caption{AdaptsKeyboard()}
 \end{wrapfigure}
 Per gestire le tastiere sono state scritte due funzioni fondamentali la prima è \texttt{AdaptsKeyboard()}.\\
-Essa, quando vengono toccati dei \texttt{TextField}, controlla se la tastiera "copre" il campo dove si dovrebbe scrivere ed in quel caso porta in alto la View appena sopra la tastiera non comprendo con quest'ultima la \texttt{TextField}. Ad esempio quando andiamo ad aggiungere la frequenza respiratoria essendo un campo che si trova alla fine del foglio quando salirà la tastiera non sarà più visibile, qui entra in gioco \texttt{AdaptsKeyboard()} che richiamata alla fine della View controlla tutti campi. 
+Essa, quando vengono toccati dei \texttt{TextField}, controlla se la tastiera "copre" il campo dove si dovrebbe scrivere ed in quel caso porta in alto la View appena sopra la tastiera non coprendo con quest'ultima la \texttt{TextField}. Ad esempio quando andiamo ad aggiungere la frequenza respiratoria essendo un campo che si trova alla fine del foglio quando salirà la tastiera non sarà più visibile, qui entra in gioco \texttt{AdaptsKeyboard()} che richiamata alla fine della View controlla tutti campi. 
 
 \subsection{endEditing()}
 
-Un altra funzione fondamentale per facilitare l'utilizzo delle tastiera è \texttt{endEditing()}.\\
-Questa funzione si occupa di chiudere la tastiera quando si è finito a scrivere. Essa richiamata nella classe \texttt{SceneDelegate} nel quale specifichiamo che se viene toccato due volte di fila lo schermo, la tastiera deve essere chiusa. 
+Un'altra funzione fondamentale per facilitare l'utilizzo delle tastiera è \texttt{endEditing()}.\\
+Questa funzione si occupa di chiudere la tastiera quando si è finito di scrivere. Essa viene richiamata nella classe \texttt{SceneDelegate} nel quale specifichiamo che se viene toccato due volte di fila lo schermo, la tastiera deve essere chiusa. 
 
 
 \subsection{Core Data}
@@ -264,13 +264,13 @@ Quando viene spinto il pulsante "Aggiungi un report" vengono fatti alcuni contro
 \\
 \texttt{controlReport()} si occupa di controllare se il report inserito per quella specifica data è già presente o meno. Se il report è presente verrà calcolata una media tra il report vecchio e quello nuovo, se il report non è presente verrà aggiunto un nuovo report.\\
 \\
-\texttt{avgReport(report:Report)} è la funzione che, prendendo in input un report calcola la media tra i dati presenti all'interno del report passato come input e i dati che sono stati inseriti nel report, quindi aggiorna il report per quella data con i nuovi dati ed infine salva.\\
+\texttt{avgReport(report:Report)} è la funzione che, prendendo in input un report, calcola la media tra i dati presenti all'interno del report passato come input e i dati che sono stati inseriti nel report, quindi aggiorna il report per quella data con i nuovi dati ed infine salva.\\
 \\
 \texttt{newReport()} si occupa di creare un nuovo report, inserisce all'interno di ogni campo del Core Data i valori che sono stati messi nel report.\\
 \\
 \texttt{clearField()} una volta salvato il report, clearField() si occupa di svuotare i \texttt{TextField} dai valori presenti.\\
 \\
-\texttt{disabled(!self.validateForm())} il bottone risulta diabilitato finche i dati inseriti non sono rispettano i criteri imposti.\\
+\texttt{disabled(!self.validateForm())} il bottone risulta disabilitato finché i dati inseriti non rispettano i criteri imposti.\\
 \\
 Infine viene stampato a video un alert che comunica che il report è stato inserito.
 
@@ -282,13 +282,13 @@ Infine viene stampato a video un alert che comunica che il report è stato inser
 \section{Calendario}
 
 Al centro delle tre \texttt{TabView} troviamo il Calendario che, stilisticamente parlando, è l'oggetto più complesso dell'app.\\
-Tramite il calendario possiamo aggiungere eliminare e modificare i report. Inoltre la grafica colorata del calendario ci permette di comprendere i giorni che presentano report ed i giorni senza report. \\
+Tramite il calendario possiamo aggiungere, eliminare e modificare i report. Inoltre la grafica colorata del calendario ci permette di comprendere i giorni che presentano report ed i giorni senza report. \\
 \\
-La grafica e la gestione del calendario sono state implementate grazie ad \textbf{\textit{\href{https://github.com/RaffiKian/RKCalendar}{RKCalendar}}}, non trattandosi di una libreria il codice è stato ripulito ed adattato per lo sviluppo di HealthMonitor.\\
+La grafica e la gestione del calendario sono state implementate grazie ad \textbf{\textit{\href{https://github.com/RaffiKian/RKCalendar}{RKCalendar}}}, non trattandosi di una libreria il codice è stato ripulito e adattato per lo sviluppo di HealthMonitor.\\
 Il Calendario è invocato tramite \\
 \texttt{CalendarController(reports: self.reports, CalendarManager: self.CalManager)} \\
-prendendo in input i report salvati e una classe nel quale sono state inseriti e la data di inizio, di fine calendario ed il tipo di calendario.\\
-In CalendarController per ogni mese presente viene richiamata la view \texttt{CalendarMonth()} che è il cuore del nostro calendario, essa non solo si occupa di costruire graficamente il calendario, ma si occupa anche di controllare i giorni e quindi segnalare il giorno corrente, se è presente un report ed il giorno selezionato. I giorni verranno colorati in base a determinate proprietà:
+prendendo in input i report salvati e una classe nel quale sono state inserite la data di inizio, di fine calendario e il tipo di calendario.\\
+In CalendarController per ogni mese presente viene richiamata la view \texttt{CalendarMonth()} che è il cuore del nostro calendario, essa non solo si occupa di costruire graficamente il calendario, ma si occupa anche di controllare i giorni e quindi segnalare il giorno corrente, se è presente un report e il giorno selezionato. I giorni verranno colorati in base a determinate proprietà:
 \begin{itemize}
   \item nessun colore $\rightarrow$ nessun report presente $\rightarrow$ è possibile aggiungere un nuovo report
   \item giallo $\rightarrow$ report presente $\rightarrow$ è possibile visualizzare, modificare ed eliminare il report
@@ -311,7 +311,7 @@ In CalendarController per ogni mese presente viene richiamata la view \texttt{Ca
 \subsection{The sheets}
 
 Nella view "Calendario" non ci spostiamo verso nuove view, ma apriamo solo delle \texttt{sheet}. \\
-Come accennato prima il calendario è gestito tutto in \texttt{CalendarMonth()}. Qui troviamo dei controlli fondamentali: 
+Come accennato prima, il calendario è gestito tutto in \texttt{CalendarMonth()}. Qui troviamo dei controlli fondamentali: 
 
 \begin{lstlisting}
 .sheet(isPresented: self.$showSheet) {
@@ -339,8 +339,8 @@ In \texttt{ReportSheet()} possiamo, modificare o eliminare il report corrente. P
 \begin{lstlisting}
 else if (self.CompareDate(date: Date(), referenceDate: self.CalendarManager.selectedDate!))}
 \end{lstlisting}
-Se il report per quel giorno non è presente allora ci sono due casi, è una data del calendario presente o passata o è una data del calendario futura.\\
-Nel caso che è una data del calendario presente o passata si ha la possibilità di aggiungere un nuovo report grazie a \texttt{AddReportSheet()} che è molto simile a \texttt{AddReport()} ma è ripensata per una \texttt{sheet}.\\
+Se il report per quel giorno non è presente allora ci sono due casi: è una data del calendario presente o passata o è una data del calendario futura.\\
+Nel caso in cui è una data del calendario presente o passata si ha la possibilità di aggiungere un nuovo report grazie a \texttt{AddReportSheet()} che è molto simile a \texttt{AddReport()} ma è ripensata per una \texttt{sheet}.\\
 Nel caso si tratta di una data futura allora verrà caricato \texttt{FutureDay()}, una sheet semivuota che avvisa che non si possono aggiungere report futuri. 
 
 %----------------------------------------------------------------------------------------
@@ -350,7 +350,7 @@ Nel caso si tratta di una data futura allora verrà caricato \texttt{FutureDay()
 \newpage
 \section{Riepilogo}
 
-In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno inoltre è presenta una lista dove si possono consultare tutti i Report, essi  possono essere visualizzati tramite alcuni filtri, possono essere modificati ed eliminati.\\
+In riepilogo vengono generati i grafici relativi ai dati inseriti giorno per giorno. Inoltre è presenta una lista dove si possono consultare tutti i Report, essi  possono essere visualizzati tramite alcuni filtri, modificati ed eliminati.\\
 Se non è presente nessun dato viene caricata una schermata iniziale di benvenuto. 
 
 \begin{figure}[htp]
@@ -384,12 +384,12 @@ I valori dei grafici sono ordinati per data, basta trascinare il dito sopra al g
 
 \subsection{Tutti i Report}
 
-Nella schermata iniziale è presente un \texttt{NavigationLink} che ti permette di spostarti tra le View, toccandoci sopra si caricherà \texttt{AllReport()} nel quale troviamo una lista completa dei Report.
+Nella schermata iniziale è presente un \texttt{NavigationLink} che permette di spostarti tra le View, toccandoci sopra si caricherà \texttt{AllReport()} nel quale troviamo una lista completa dei Report.
 
 \smallskip
 
 La lista completa dei report in \texttt{AllReport()} è ordinata per data all'interno di una \texttt{List} nel quale ritroviamo i \texttt{NavigationLink} che ci permettono di accedere ai dettagli dei report, inoltre si possono cancellare i report trascinando l'elemento verso sinistra. \\
-I report possono essere visualizzati anche tramite dei filtri, che calcolano la media dell'importanza dei 4 valori inseriti e restituisce una lita più corta. La funzione che si occupa del filtraggio dei report è definita nel seguente modo:
+I report possono essere visualizzati anche tramite dei filtri che calcolano la media dell'importanza dei 4 valori inseriti e restituisce una lita più corta. La funzione che si occupa del filtraggio dei report è definita nel seguente modo:
 
 \smallskip
 \begin{lstlisting}
@@ -417,7 +417,7 @@ I report possono essere visualizzati anche tramite dei filtri, che calcolano la 
 
 \end{figure}
 
-Toccando un oggetto della lista verrà caricata un nuova view \texttt{ReportView()} nel quale troviamo i dettagli del report selezionato. In \texttt{ReportView()}  è possibile modificare il report premendo sul bottone "Modifica il Report", esso caricherà a schermo una nuova \texttt{sheet} e prendendo in input tutti i dati del report corrente verrà mostrato \texttt{EditViewSheet()}. Tramite questa \texttt{sheet} è possibile salvare le modifiche con un bottone a fine pagina, se invece si cambia idea basterà trascinare in basso la \texttt{sheet} o toccare il bottone "Chiudi".
+Toccando un oggetto della lista verrà caricata un nuova view \texttt{ReportView()} nel quale troviamo i dettagli del report selezionato. In \texttt{ReportView()}  è possibile modificare il report premendo sul bottone "Modifica il Report", esso caricherà a schermo una nuova \texttt{sheet}, prendendo in input tutti i dati del report corrente, verrà mostrato \texttt{EditViewSheet()}. Tramite questa \texttt{sheet} è possibile salvare le modifiche con un bottone a fine pagina, se invece si cambia idea basterà trascinare in basso la \texttt{sheet} o toccare il bottone "Chiudi".
 
 \begin{figure}[htp]
 
@@ -440,7 +440,7 @@ Toccando un oggetto della lista verrà caricata un nuova view \texttt{ReportView
 \section{Notifiche}
 
 In HealthMonitor abbiamo la possibilità di ricevere delle notifiche.\\
-Le notifiche vengono gestite in \texttt{NotificationSheet()}. Qui si viene avvisati se le notifiche sono attive o disattive. Nel caso sono attive tramite un DatePicker si ha la possbilità di selezionare l'orario in cui si vogliono ricevere le notifiche. Una volta attive le notifiche sono su base giornaliera. Ogni 24h l'app ricorderà all'utente di aggiungere un report. 
+Le notifiche vengono gestite in \texttt{NotificationSheet()}. Qui si viene avvisati se le notifiche sono attive o disattive. Nel caso sono attive tramite un DatePicker si ha la possbilità di selezionare l'orario in cui si vogliono ricevere le notifiche. Una volta attive, le notifiche sono su base giornaliera. Ogni 24h l'app ricorderà all'utente di aggiungere un report. 
 
 \begin{lstlisting}
 func sendNotification(start: Date) ->(){

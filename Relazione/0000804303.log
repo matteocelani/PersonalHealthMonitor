@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.5)  10 SEP 2020 18:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.5)  11 SEP 2020 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -581,6 +581,11 @@ Overfull \hbox (38.66965pt too wide) in paragraph at lines 181--183
  []
 
 [5 <./img/NavigationView.png>]
+Overfull \hbox (13.96996pt too wide) in paragraph at lines 193--196
+\T1/cmr/m/n/10 com-pi-lan-do cor-ret-ta-men-te i cam-pi ob-bli-ga-to-ri. C'è un
+a fun-zio-ne di con-trol-lo \T1/cmtt/m/n/10 validateForm()
+ []
+
 <img/nuovo1.png, id=135, 462.72874pt x 918.43124pt>
 File: img/nuovo1.png Graphic file (type png)
 <use img/nuovo1.png>
@@ -591,7 +596,7 @@ File: img/nuovo2.png Graphic file (type png)
 <use img/nuovo2.png>
 Package pdftex.def Info: img/nuovo2.png  used on input line 208.
 (pdftex.def)             Requested size: 116.00307pt x 232.00468pt.
- [6 <./img/nuovo1.png> <./img/nuovo2.png>]
+[6 <./img/nuovo1.png> <./img/nuovo2.png>]
 <img/tastiera.png, id=144, 460.21938pt x 920.43875pt>
 File: img/tastiera.png Graphic file (type png)
 <use img/tastiera.png>
@@ -602,8 +607,7 @@ File: img/CoreData.png Graphic file (type png)
 <use img/CoreData.png>
 Package pdftex.def Info: img/CoreData.png  used on input line 240.
 (pdftex.def)             Requested size: 348.0033pt x 179.42494pt.
-
-[7 <./img/tastiera.png> <./img/CoreData.png>]
+ [7 <./img/tastiera.png> <./img/CoreData.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 263--276
 
  []
@@ -780,7 +784,7 @@ xlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texliv
 e/2020/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/
 2020/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on 0000804303.pdf (14 pages, 6811765 bytes).
+Output written on 0000804303.pdf (14 pages, 6811942 bytes).
 PDF statistics:
  343 PDF objects out of 1000 (max. 8388607)
  267 compressed objects within 3 object streams
