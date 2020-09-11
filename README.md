@@ -49,9 +49,9 @@ The application should be able to collect usage stats displaying at least two gr
    <img src="Relazione/img/nuovo1.png" width="260"/>
       <img src="Relazione/img/tastiera.png" width="260"/>
          <img src="Relazione/img/nuovo2.png" width="260"/> <br>
-   <img src="Relazione/img/Calendario1.png" width="260"/>
-      <img src="Relazione/img/Calendario2.png" width="260"/>
-         <img src="Relazione/img/Calendario3.png" width="260"/> <br>
+   <img src="Relazione/img/calendario1.png" width="260"/>
+      <img src="Relazione/img/calendario2.png" width="260"/>
+         <img src="Relazione/img/calendario3.png" width="260"/> <br>
    <img src="Relazione/img/grafico1.png" width="260"/>
       <img src="Relazione/img/grafico2.png" width="260"/>
          <img src="Relazione/img/grafico3.png" width="260"/> <br>
