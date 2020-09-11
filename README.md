@@ -41,6 +41,7 @@ The application should be able to collect usage stats displaying at least two gr
 </figure>
 
 ### 4. Images <a name="images"></a>
+<figure>
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/riepilogo_iniziale.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/calendario_iniziale.png"  />
          <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/nuovo_iniziale.png"  /> <br>
@@ -59,3 +60,4 @@ The application should be able to collect usage stats displaying at least two gr
    <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche1.png"  />
       <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche2.png"  />
          <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche3.png"  /> <br>
+</figure>
