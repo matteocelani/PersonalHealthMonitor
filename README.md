@@ -42,24 +42,23 @@ The application should be able to collect usage stats displaying at least two gr
 
 ### 4. Images <a name="images"></a>
 
-![alt-text-1](Relazione/img/riepilogo_iniziale.png) ![alt-text-2](Relazione/img/calendario_iniziale.png) ![alt-text-2](Relazione/img/calendario_iniziale.png)
-<figure>
-   <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/riepilogo_iniziale.png"  />
-      <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/calendario_iniziale.png"  />
-         <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/nuovo_iniziale.png"  /> <br>
-   <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/nuovo1.png"  />
-      <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/tastiera.png"  />
-         <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/nuovo2.png"  /> <br>
-   <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/Calendario1.png"  />
-      <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/Calendario2.png"  />
-         <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/Calendario3.png"  /> <br>
-   <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/grafico1.png"  />
-      <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/grafico2.png"  />
-         <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/grafico3.png"  /> <br>
-   <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/tutti1.png"  />
-      <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/tutti2.png"  />
-         <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/tutti3.png"  /> <br>
-   <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche1.png"  />
-      <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche2.png"  />
-         <img style="border: 0px  solid black;margin-left: auto;margin-right: auto; width:260px;" src="Relazione/img/notifiche3.png"  /> <br>
-</figure>
+<p float="left">
+   <img src="Relazione/img/riepilogo_iniziale.png" width="260"/>
+      <img src="Relazione/img/calendario_iniziale.png" width="260"/>
+         <img src="Relazione/img/nuovo_iniziale.png" width="260"/> <br>
+   <img src="Relazione/img/nuovo1.png" width="260"/>
+      <img src="Relazione/img/tastiera.png" width="260"/>
+         <img src="Relazione/img/nuovo2.png" width="260"/> <br>
+   <img src="Relazione/img/Calendario1.png" width="260"/>
+      <img src="Relazione/img/Calendario2.png" width="260"/>
+         <img src="Relazione/img/Calendario3.png" width="260"/> <br>
+   <img src="Relazione/img/grafico1.png" width="260"/>
+      <img src="Relazione/img/grafico2.png" width="260"/>
+         <img src="Relazione/img/grafico3.png" width="260"/> <br>
+   <img src="Relazione/img/tutti1.png" width="260"/>
+      <img src="Relazione/img/tutti2.png" width="260"/>
+         <img src="Relazione/img/tutti3.png" width="260"/> <br>
+   <img src="Relazione/img/notifiche1.png" width="260"/>
+      <img src="Relazione/img/notifiche2.png" width="260"/>
+         <img src="Relazione/img/notifiche3.png" width="260"/> <br>
+</p>
