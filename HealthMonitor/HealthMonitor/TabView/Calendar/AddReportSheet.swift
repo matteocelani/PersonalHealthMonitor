@@ -151,13 +151,13 @@ struct AddReportSheet: View {
                             .font(.title)
                         
                         
-                        TextField("Titolo", text: $title){self.endEditing()}
+                        TextField("Titolo", text: $title, onCommit: {self.endEditing()})
                             .frame(height: 30.0)
                             .background(Color(UIColor.systemBackground))
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .multilineTextAlignment(TextAlignment.center)
                         
-                        TextField("Descrizione", text: $text){self.endEditing()}
+                        TextField("Descrizione", text: $text, onCommit: {self.endEditing()})
                             .frame(height: 30.0)
                             .background(Color(UIColor.systemBackground))
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -183,7 +183,7 @@ struct AddReportSheet: View {
                             
                             Spacer()
                             
-                            Text("\(date, formatter: dateFormatter)")
+//                            Text("\(date, formatter: dateFormatter)")
                             
                         }
                     ))
@@ -197,7 +197,7 @@ struct AddReportSheet: View {
                                 .font(.title)
                             
                             
-                            TextField("valore compreso tra 30 e 45", text: $temperature){self.endEditing()}
+                            TextField("valore compreso tra 30 e 45", text: $temperature, onCommit: {self.endEditing()})
                                 .frame(height: 30.0)
                                 .keyboardType(.decimalPad)
                                 .background(Color(UIColor.systemBackground))
@@ -225,7 +225,7 @@ struct AddReportSheet: View {
                                 .font(.title)
                             
                             
-                            TextField("valore maggiore di 40", text: $heartbeat){self.endEditing()}
+                            TextField("valore maggiore di 40", text: $heartbeat, onCommit: {self.endEditing()})
                                 .frame(height: 30.0)
                                 .keyboardType(.decimalPad)
                                 .background(Color(UIColor.systemBackground))
@@ -253,7 +253,7 @@ struct AddReportSheet: View {
                                 .font(.title)
                             
                             
-                            TextField("valore maggiore di 40", text: $glycemia){self.endEditing()}
+                            TextField("valore maggiore di 40", text: $glycemia, onCommit: {self.endEditing()})
                                 .frame(height: 30.0)
                                 .keyboardType(.decimalPad)
                                 .background(Color(UIColor.systemBackground))
@@ -281,7 +281,7 @@ struct AddReportSheet: View {
                                 .font(.title)
                             
                             
-                            TextField("valore maggiore di 10", text: $breath){self.endEditing()}
+                            TextField("valore maggiore di 10", text: $breath, onCommit: {self.endEditing()})
                                 .frame(height: 30.0)
                                 .keyboardType(.decimalPad)
                                 .background(Color(UIColor.systemBackground))

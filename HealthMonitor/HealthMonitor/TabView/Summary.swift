@@ -16,6 +16,11 @@ struct Summary: View {
     var reports: FetchedResults<Report>
     
     init() {
+        if #available(iOS 14.0, *) {
+            
+        } else {
+            UITableView.appearance().tableFooterView = UIView()
+        }
         // To remove all separators including the actual ones:
         UITableView.appearance().separatorStyle = .none
     }
@@ -46,7 +51,7 @@ struct Summary: View {
                         Spacer()
                     }
                 } else {
-                    List{
+//                    List{
                         NavigationLink(destination: AllReport()) {
                             ListView(content: AnyView(
                                 HStack {
@@ -55,6 +60,7 @@ struct Summary: View {
                                     Text("Tutti i report")
                                         .font(.headline)
                                     Spacer()
+                                    Image(systemName: "arrow.right").font(.largeTitle)
                                 }
                             ))
                         }
@@ -73,7 +79,7 @@ struct Summary: View {
                             LineChartView(data: self.reportBreArray(), title: "Respiro", rateValue: 0)
                                 .padding(.top)
                         }
-                    }
+//                    }
                 }
             }
             .navigationBarTitle(Text("Sommario"))
@@ -129,7 +135,7 @@ struct ListView: View {
             self.content
         }
         .padding(.all)
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: 375.0)
         .frame(height: 50.0)
         .background(Color(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.2))
         .cornerRadius(12.0)

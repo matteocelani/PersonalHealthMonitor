@@ -30,7 +30,7 @@ The application should be able to collect usage stats displaying at least two gr
 
 ### 2. Requirements <a name="requirements"></a>
 
-* iOS 13.0+
+* iOS 14.0+
 * Xcode 11+
 * Swift 5.1+
 

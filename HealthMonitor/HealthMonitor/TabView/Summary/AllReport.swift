@@ -50,7 +50,7 @@ struct AllReport: View {
                 Toggle(isOn: $showFilter){
                     Text("Attiva filtri")
                 }
-            }
+            }.padding()
             
             if showFilter {
                 VStack(alignment: .leading) {
@@ -63,8 +63,8 @@ struct AllReport: View {
                         Text("4").tag(4)
                         Text("5").tag(5)
                     }.pickerStyle(SegmentedPickerStyle())
-                    Divider()
-                }
+//                    Divider()
+                }.padding()
                 ForEach(filterReport(), id: \.id) { report in
                     VStack{
                         HStack {
@@ -72,7 +72,7 @@ struct AllReport: View {
                                 ListReportDetail(report: report, date: report.date!)
                             }
                         }
-                        Divider()
+//                        Divider()
                     }
                 }.onDelete(perform: self.deleteReport)
             } else {
@@ -84,7 +84,7 @@ struct AllReport: View {
                                 ListReportDetail(report: report, date: report.date!)
                             }
                         }
-                        Divider()
+//                        Divider()
                     }
                 }.onDelete(perform: self.deleteReport)
             }
@@ -114,6 +114,6 @@ struct ListReportDetail: View {
                     .font(.subheadline)
             }
         }
-        .frame(height: 50.0)
+        .frame(height: 55.0)
     }
 }
