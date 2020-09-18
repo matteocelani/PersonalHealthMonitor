@@ -63,7 +63,7 @@ struct Summary: View {
                                     Image(systemName: "arrow.right").font(.largeTitle)
                                 }
                             ))
-                        }
+                        }.padding(.bottom)
                         Divider()
                         HStack {
                             LineChartView(data: self.reportTempArray(), title: "Temp",rateValue: 0)

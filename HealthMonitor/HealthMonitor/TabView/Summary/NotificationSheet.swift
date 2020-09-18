@@ -63,8 +63,8 @@ struct NotificationSheet: View {
             VStack{
                 if notificationManager.state {
                     VStack(alignment: .leading){
-                        Text("Le notifiche sono attive.").font(.headline).padding(.top).padding(.leading)
-                        Text("Per disattivarle va in Impostazioni > Notifiche > HealthMonitor").padding(.bottom).padding(.leading)
+                        Text("Le notifiche sono attive.").font(.headline).padding(.top)
+                        Text("Per disattivarle vai in Impostazioni > Notifiche > HealthMonitor").padding(.bottom)
                     }
                     
                     CardViewData(contentData: AnyView(
@@ -104,8 +104,8 @@ struct NotificationSheet: View {
                     
                 } else {
                     VStack(alignment: .leading){
-                        Text("Le notifiche sono disattive.").font(.headline).padding(.top).padding(.leading)
-                        Text("Per attivarle va in Impostazioni > Notifiche > HealthMonitor").padding(.bottom).padding(.leading)
+                        Text("Le notifiche sono disattive.").font(.headline).padding(.top)
+                        Text("Per attivarle vai in Impostazioni > Notifiche > HealthMonitor").padding(.bottom)
                     }
                     
                 }
